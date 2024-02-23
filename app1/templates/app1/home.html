@@ -6,7 +6,7 @@
 {% endblock %}
 {% block style %}
    
-   {%endblock%}
+   {%endblock%} 
    
    {% block body %}
  
@@ -28,6 +28,26 @@
     <a href="#myModal" data-toggle="modal" data-target="#myModal"> 
         <button id="allif-link-buttons" type="button" class="btn btn-success mybuttonlinks" >
         Add Details</button></a>
+        
+        <h3>
+            form here
+        </h3>
+        <form method='POST' action='' enctype="">{% csrf_token %}
+            <div class="card my-card shadow text-left p-3">
+              <label>Name</label>{{form.name}}
+              <label>Address</label>{{form.address}}
+              
+              <input type="submit" value='Save' id="allif-link-buttons" class="btn btn-success mybuttonlinks" style="width:100%;">
+             
+           
+            </div>
+      
+
+       
+
+      
+
+        <p>end of form</p>
    
     
 
@@ -52,91 +72,6 @@
             Company Details
         </div>
        
-      <!--start of the table here-->
-      <table class="table">
-        <tbody>
-            {% for detail in CompanySettingDetails %}
-            <tr>
-               
-                <td>Name</td>
-                <td>
-                    
-                {{detail.name}} 
-                    
-                </td>
-
-                </tr>
-                <tr>
-                <td>Telephone 1</td>
-                <td>
-                {{detail.phone1}}
-                </td>
-                </tr>
-                <tr>
-                    <td>Telephone 2</td>
-                    <td>
-                    {{detail.phone2}}
-                    </td>
-                    </tr>
-        <tr>
-        <td>Address</td>
-        <td>{{detail.address}}</td>
-        
-        </tr>
-        <tr>
-        <td>City</td>
-        <td>{{detail.city}}</td>
-        
-        </tr>
-        
-       
-        
-        
-     
-  </tbody>
-  </table>
-     
-                
-            </div>
-        </div>
-        
-<!--end of column two-->
-
-
-<!-- start of column three-->
-<div class="col-md-4">
-    <div class="card">
-        <div id="allif-section-headers" class="card-header ">
-            Company Details
-        </div>
-       
-      <!--start of the table here-->
-      <table class="table">
-        <tbody>
-            
-            <tr>
-                <td>Email</td>
-                <td>{{detail.email}}</td>
-                
-                </tr>
-                <tr>
-                <td>P.O.Box</td>
-                <td>{{detail.pobox}}</td>
-               
-                </tr>
-                <tr>
-                    <td>Country</td>
-                    <td>{{detail.country}}</td>
-                    
-                    </tr>
-                <tr>
-                    <td>Website</td>
-                    <td>{{detail.website}}</td>
-                   
-                    </tr>
-                {% endfor %}
-        </tbody>
-        </table>
      
                 
             </div>
@@ -148,113 +83,7 @@
     </div>
 
         <!-- end of first row-->
-       
-    
-<!-- start of row 2..................................................................................-->
-
-
-<!-- start of modal section-->
-
-
-        
-    <!--start of the modal main container-->
-    <div class="allif-modal-container" style="opacity: 1; background-color: #006666;">
-    <!--start of  modal body part-->
-      <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog modal-xl"><!--if you remove this div, the modal will work but it will cover the whole page-->
-          <div class="modal-content" ><!--if you remove this div, the modal will open but it will not show its header section-->
-    
-            <form method='POST' action='' enctype="multipart/form-data">{% csrf_token %}
-    
-        <!----------------------------------------------start of row----------------------------------------------------->
-        <div class="col-md-12"><!--start of the first row body-->
-                
-            <div class="card-header text-center" >
-                <h5>Company Details Card</h5>
-            </div>
-                    
-            <div class="row row-mt-12"><!--start of row div --->
-                    
-                <div class="col-md-4"><!--start of column 1-->
-                    <div class="card my-card shadow text-left p-3">
-                    <label>Name</label> {{form.name}} 
-                    <label>Phone 1</label>{{form.phone1}} 
-                    </div>
-                </div><!--end of column 1-->
-    
-                <div class="col-md-4"><!--start of column 2-->
-                    <div class="card my-card shadow text-left p-3">
-                    <label>Phone 2</label> {{form.phone2}} 
-                    <label>Email</label> {{form.email}} 
-                    
-                    </div>
-                </div><!--end of column 2-->
-    
-                <div class="col-md-4"><!--start of column 3-->
-                    <div class="card my-card shadow text-left p-3">
-                    <label>Physical Address</label> {{form.address}} 
-                    <label>P.O.BOX</label> {{form.pobox}} 
-                    </div>
-                </div><!--end of column 1-->
-    
-            </div><!--end of row div --->
-    
-        </div><!--end of first row body-->
-        <!----------------------------------------------end of row----------------------------------------------------->
-    
-    <!-----------------------------------------------start of row ---------------------------------------------------->
-        <div class="col-md-12"><!--start of the second row body-->
-          
-            <div class="row"><!--start of second row div --->
-                    
-                <div class="col-md-4"><!--start of column 1-->
-                    <div class="card my-card shadow text-left p-3">
-                    <label>City</label> {{form.city}} 
-                    
-                    
-                    </div>
-                </div><!--end of column 1-->
-    
-                <div class="col-md-4"><!--start of column 2-->
-                    <div class="card my-card shadow text-left p-3">
-                    <label>Country</label> {{form.country}} 
-                    
-                   
-                    </div>
-                </div><!--end of column 2-->
-    
-                <div class="col-md-4"><!--start of column 3-->
-                    <div class="card my-card shadow text-left p-3">
-                        
-                    <label>Website</label> {{form.website}} 
-                    <label>Logo</label> {{form.logo}} 
-                    </div>
-                </div><!--end of column 1-->
-    
-            </div><!--end of the second row div --->
-    
-        </div><!--end of the second row body-->
-    
-        <!----------------------------------------------end of row---------------------------------------------------->
-    
-        <!------------------------------------------------start of row--------------------------------------------------->
-        
-    
-        <!----------------------------------------------end of row----------------------------------------------------->
-    
-    
-        <div class="modal-footer">  
-            <input type="submit" value='Save' id="allif-link-buttons" class="btn btn-success mybuttonlinks" style="width:auto;">
-         
-        <button type="button" data-dismiss="modal" id="allif-link-buttons" class="btn btn-success mybuttonlinks" style="width:auto;">Close</button></div>
-          
-     </form>
-    </div>
-    
-    </div>
-    </div>
-    </div><!--end of modal part-->
-                       
+                  
 
 </div><!--end of main container of the page-->
 

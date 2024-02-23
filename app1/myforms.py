@@ -6,7 +6,7 @@ class MyForm1(forms.ModelForm):
         fields = ['name','address' ]
 
         widgets={
-            'name':forms.TextInput(attrs={'class':'form-control','value':'item.name'}),
+            'name':forms.TextInput(attrs={'class':'form-control'}),
             'address':forms.TextInput(attrs={'class':'form-control'}),
             
         }
