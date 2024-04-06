@@ -90,13 +90,20 @@
     
     <div class="topnav" id="myTopnav">
      
-      
+     
         <a href="{% url 'app1:customers' %}">Customers</a>
-        <a href="">Schemes</a>
-       
-       
+
+        <a href="{% url 'login:logout' %}">Logout</a>
         
-       
+        <a href="">{{sysuser}}</a>
+        <a href="{% url 'app1:app1home' sysuser %}">Home</a>
+        <a href="{% url 'login:CustomUser' %}">custom user</a>
+        <a href="{% url 'login:CreateUserProfile' %}">Profile</a>
+        <a href="{% url 'login:edit-profile' %}">Edit Profile</a>
+        <a href="{% url 'login:changeUserPassword' %}">Change Password</a>
+        
+        
+        
 
 
     </div>

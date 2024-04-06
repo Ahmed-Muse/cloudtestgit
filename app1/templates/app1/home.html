@@ -34,8 +34,9 @@
         </h3>
         <form method='POST' action='' enctype="">{% csrf_token %}
             <div class="card my-card shadow text-left p-3">
-              <label>Name</label>{{form.name}}
-              <label>Address</label>{{form.address}}
+              <label>Username</label>{{form.username}}
+              
+              <label>pass</label>{{form.passwrd}}
               
               <input type="submit" value='Save' id="allif-link-buttons" class="btn btn-success mybuttonlinks" style="width:100%;">
              

@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'app1',
     'app2',
     'crispy_forms',
+    "login"
 ]
 
 MIDDLEWARE = [
@@ -83,6 +84,7 @@ WSGI_APPLICATION = 'cloudtest.wsgi.application'
    # }
 #}
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -100,7 +102,7 @@ DATABASES = {
 
 }  
 
-
+AUTH_USER_MODEL = 'login.AllifmaalCustomUserModel'
 
 
 # Password validation

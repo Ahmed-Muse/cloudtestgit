@@ -10,8 +10,9 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
    
-     path('', include('app1.urls')),
+     path('allifmaal-erp/', include('app1.urls')),
      path('app2/', include('app2.urls')),
+     path('', include('login.urls')),
 
     
     
