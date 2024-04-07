@@ -6,9 +6,9 @@ from django.template.defaultfilters import register, slugify
 from uuid import uuid4
 # Create your models here.
 from django.contrib.auth.models import (
-    BaseUserManager, AbstractBaseUser,PermissionsMixin
+    BaseUserManager, AbstractBaseUser,PermissionsMixin,
 )
-
+from django.contrib.auth import get_user_model
 class UserDetailsModel(models.Model):
     username = models.CharField(max_length=255, null=True)
     password = models.CharField(max_length=255, null=True)
@@ -117,7 +117,7 @@ class AllifmaalCustomUserModel(AbstractBaseUser):
         return self.email
 
     def __str__(self):
-        return self.email
+        return str(self.fname)
 
     def has_perm(self, perm, obj=None):
         "Does the user have a specific permission?"
@@ -153,9 +153,12 @@ class AllifmaalCustomUserModel(AbstractBaseUser):
         super(AllifmaalCustomUserModel, self).save(*args, **kwargs)
 
 # if you wish you can extend the above model information by adding profile model as below
+from django.conf import settings
 class UserProfileModel(models.Model):# you can have the profile for the user
     name= models.OneToOneField(AllifmaalCustomUserModel,on_delete=models.SET_NULL,null=True)# this extends functionality through inheritance
     title= models.CharField(max_length=255, null=True)
+
+    #author = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.CASCADE,)
     def __str__(self):
         return self.title
     

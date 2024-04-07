@@ -2,74 +2,80 @@ from django.shortcuts import render,HttpResponse,redirect,get_object_or_404
 from .myforms import *
 from .models import *
 from login.models import *
-
+from django.contrib.auth.decorators import login_required 
 # Create your views here.
 
 #inventory per category
 from django.contrib.auth import authenticate, login, get_user, logout#for login and logout- and authentication
 from django.contrib.auth.models import AbstractUser,User
+@login_required(login_url='login:userLoginPage')
 def home(request,user):
-    k=AllifmaalCustomUserModel.objects.all()
-    kw=UserProfileModel.objects.all()
-    
-    
-    sysuser=request.user
-    print(f"userrrrrrrrrrrrrr{sysuser.email,sysuser.lname}")
-    
-    myobj=MyModel.objects.all()
-    staf=request.user
-    class Title:
-        def __init__(allif,pagetitle) -> None:
-            allif.title=pagetitle
+    if request.user.is_authenticated:
+        k=AllifmaalCustomUserModel.objects.all()
+       
+        kw=UserProfileModel.objects.all()
+        userprofiles=UserProfileModel.objects.all()
         
-    title=Title("Home page")
-    
-    form=MyForm1()
-    if request.method == 'POST':
         
-        form = MyForm1(request.POST) # A form bound to the POST data
-        if form.is_valid(): # All validation rules pass
-           
-            #name=form.cleaned_data['name']
-            usrname=request.POST.get('username')
-            passwd=request.POST.get('passwrd')
+        sysuser=request.user
+        print(f"userrrrrrrrrrrrrr{sysuser.email,sysuser.lname}")
+        
+        myobj=MyModel.objects.all()
+        staf=request.user
+        class Title:
+            def __init__(allif,pagetitle) -> None:
+                allif.title=pagetitle
             
-            myname=MyModel.objects.filter(username=usrname,passwrd=passwd).first()
+        title=Title("Home page")
         
-            if myname !=None:
-                myslug=myname.slug
+        form=MyForm1()
+        if request.method == 'POST':
             
+            form = MyForm1(request.POST) # A form bound to the POST data
+            if form.is_valid(): # All validation rules pass
+            
+                #name=form.cleaned_data['name']
+                usrname=request.POST.get('username')
+                passwd=request.POST.get('passwrd')
                 
-                return redirect('app1:myfunction',system_user=staf.id,slug=myslug)#just redirection page
-                print(myname)
-                print("yesssssssssssss")
+                myname=MyModel.objects.filter(username=usrname,passwrd=passwd).first()
+            
+                if myname !=None:
+                    myslug=myname.slug
+                
+                    
+                    return redirect('app1:myfunction',system_user=staf.id,slug=myslug)#just redirection page
+                    print(myname)
+                    print("yesssssssssssss")
+                else:
+                
+                    return redirect('app1:payments')
+                    print("no much")
+                
+            
+        
+            # name=request.POST.get('name')
+            #print(name)
+            #if name in myobj:
+                #return redirect('app1:customers')#just redirection page
             else:
-               
-                return redirect('app1:payments')
-                print("no much")
-            
-           
-       
-           # name=request.POST.get('name')
-        #print(name)
-        #if name in myobj:
+                print("not valid")
+
+        
+                
+                
             #return redirect('app1:customers')#just redirection page
-        else:
-            print("not valid")
+        context={
+            "title":title.title,
+            "form":form,
+            "sysuser":sysuser,
+            "userprofiles":userprofiles,
 
-       
-            
-            
-        #return redirect('app1:customers')#just redirection page
-    context={
-        "title":title.title,
-        "form":form,
-        "sysuser":sysuser,
-
-    }
-    return render(request,'app1/home.html',context)
+        }
+        return render(request,'app1/home.html',context)
     
-    
+    else:
+            return login_required(login_url='login:loginpage')
 
 def customers(request):
     sysuser=request.user

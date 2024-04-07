@@ -70,8 +70,42 @@
 <div class="col-md-4">
     <div class="card">
         <div id="allif-section-headers" class="card-header ">
-            Company Details
+            Users and their titles
         </div>
+        <table class="table table-layout">
+            <thead >
+            <tr class="allif-table-header-row">
+                <td>Branch</td>
+                <td>Location</td>
+                <td>Open</td>
+                <td>Phone</td>
+
+                <td>Comments</td>
+                
+            </tr>
+                </thead>
+                <tbody>
+                            
+                    {% for item in userprofiles %}
+    <tr>
+          
+            <td>
+                
+                {{item.name}}</a>
+               
+            </td>
+            <td>{{item.title}}</td>
+            <td>{{item.name.slug}}</td>
+            <td>{{item.is_staff}}</td>
+          
+            <td>{{item.is_admin}}</td>
+        
+        </tr>
+        {% endfor %}
+    
+                  </tbody>
+                </table>
+
        
      
                 

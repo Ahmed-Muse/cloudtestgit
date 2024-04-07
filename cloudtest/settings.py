@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
-
+from django.conf import settings#for uploading files
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -51,9 +51,23 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    #'login.middleware.SessionTimeoutMiddleware',
+    'django_auto_logout.middleware.auto_logout',
 ]
 
 ROOT_URLCONF = 'cloudtest.urls'
+
+# below is for auto logout when there is inactivity... there is two ways to do it as below.
+AUTO_LOGOUT = {'IDLE_TIME': 60}  # logout after 10 minutes of downtime
+from datetime import timedelta
+AUTO_LOGOUT = {
+    'IDLE_TIME': timedelta(minutes=10),
+    'login:userLoginPage': True,
+}
+
+# django_project/settings.py
+LOGIN_REDIRECT_URL = "home"
+LOGOUT_REDIRECT_URL = "home"
 
 TEMPLATES = [
     {
@@ -66,6 +80,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django_auto_logout.context_processors.auto_logout_client',# this is for auto log out
             ],
         },
     },
@@ -103,6 +118,7 @@ DATABASES = {
 }  
 
 AUTH_USER_MODEL = 'login.AllifmaalCustomUserModel'
+#settings.SESSION_SECURITY_EXPIRE_AFTER=1
 
 
 # Password validation

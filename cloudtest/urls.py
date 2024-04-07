@@ -19,4 +19,5 @@ urlpatterns = [
     ]
     
 if settings.DEBUG:#if debug which is in development stage only, then add the path below
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)#this will enable 
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)#this will enable \
+
