@@ -1,0 +1,122 @@
+{% extends 'allifapp/bases/subsbase.html'%}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}
+{{title}}
+{% endblock %}
+{% block style %}
+   
+   {%endblock%}
+   
+   {% block body %}
+ 
+<div class="container"><!--start of main container of the page--...#17a2b8;  -->
+
+
+   
+      <!----------------------------------------------start of row----------------------------------------------------->
+      <div class="col-md-12"><!--start of the first row body-->
+       
+              
+          <div class="card-header text-center" >
+              <h5>Customers;;;;add customers</h5>
+          </div>
+          {% for item in customers %}
+          {{item.name}}
+          {% endfor %}
+          
+                  
+          <div class="row"><!--start of row div --->
+                  
+              <div class="col-md-4"><!--start of column 1-->
+                 <!--start of first row-->
+                <form method='POST' action='' enctype="multipart/form-data">{% csrf_token %}
+                  <div class="card my-card shadow text-left p-3">
+                    <label>Staff No</label> {{form.staffNo}} 
+                    <label>First Name</label>{{form.firstName}} 
+                    <label>Middle Name</label> {{form.middleName}}
+                    <label>Last Name</label> {{form.lastName}}
+                    <label>User Name</label> {{form.username}}
+                   
+                   
+                  
+              
+                  </div>
+              </div><!--end of column 1-->
+  
+              <div class="col-md-4"><!--start of column 2-->
+                  <div class="card my-card shadow text-left p-3">
+                    <label>Title</label> {{form.title}}
+                    <label>Department</label> {{form.department}}
+                    <label>Gender</label> {{form.gender}}
+                    <label>Education</label> {{form.education}}
+                    <label>Rights</label> {{form.sysperms}}
+                   
+                  
+                  </div>
+              </div><!--end of column 2-->
+  
+              <div class="col-md-4"><!--start of column 3-->
+                  <div class="card my-card shadow text-left p-3">
+                    <label>Comments</label> {{form.comment}}
+                    <label>Salary</label> {{form.salary}}
+                    <label>Total Paid Salary</label> {{form.total_salary_paid}}
+                    <label>Payable Salary</label> {{form.salary_payable}}
+                    <label>Salary Balance</label> {{form.salary_balance}}
+                   
+                   
+                    
+                    <input type="submit" value='Save' id="allif-link-buttons" class="btn btn-success mybuttonlinks" style="width:100%;">
+                   
+                  </div>
+              </div><!--end of column 1-->
+  
+          </div><!--end of row div --->
+  
+      </div><!--end of first row body-->
+      <!----------------------------------------------end of row----------------------------------------------------->
+  <p>
+    We need to add field for the company and add the employees names first... then now connect employee name and their login username
+  </p>
+  <p>a chained drop down link... meaning field to select company and then only related users shown </p>
+  <p>or the company owner creates all his employees connected to his company with unique username 
+    and this username is given to employees username and passwordto login and when they login tehy can change their pass and  they will be able to see their company data only</p>
+<p>create non dependent staff name with unique username that will be used as the login email...so now u as admin 
+    and system/conpany owner, log out and register all your staff using the unique names created in the system and one time passowrds
+    and when every employee logs in they will be able to change their password.... the way system differentiates is that
+    we will give the system owner the user creation page as normal and he will be able to create his crendentials, company and then create those
+    of his staff and share with them... so when you first come to the login page, teh system will check if you are brand new (create from scratch)or if you 
+    belong to employees list (login as staff)
+    <p>
+      Give owner comp registration link then they register all their staff with email as unique username then
+       staff given refistration page to register with given username and then when they login in they 
+       are already part of company and directed acxodringly
+    </p>
+</p>
+<p>for the owner of the company, we give him link to create his user account and then he creates his comapny, then
+  he creates user names for all his staff, then he is now able to build the profiles for these users and he 
+  will get usernames he created for the staff at the username dropdown and this dropdown will be only the ones he created 
+  since the droopdown will be filtered with his company... then he shares the login and changeable passwords 
+  with his staff and then they can login and change their passwords.... so whenever the user logs in, they will be directd 
+  to their particular company... this means the staff are not given total freedom to create their acocunts... just like
+  us we are only given login credentails....
+</p>
+<p>then charge each company as per the number of their users and we can deactivate the copany account if they
+  dont pay... so say like each user will be charged $10/month and is paid upfront....
+</p>
+<p>owner to register staff while they are logged in so that the staff are connected to his company.. this 
+  means that there is need to add another row/column/field to teh users model which states company so that when the 
+  owner creates them the company is assigned to that field....
+</p>
+<p> this works alx...now update on the decision page to check if employee</p>
+    </div><!--end of first row body-->
+    <!----------------------------------------------end of row----------------------------------------------------->
+<h5>have u relaized if u can login as admin using subscribers login form and still directed to login page....
+  this means u only need to remember admin register page link since its data is saveed also in other model.
+</h5>
+      </form>
+      
+</div><!--end of main container of the page-->
+
+   {% endblock %}
+

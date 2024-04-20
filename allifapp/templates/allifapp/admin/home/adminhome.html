@@ -1,0 +1,67 @@
+{% extends 'allifapp/admin/bases/subsbaseadmin.html'%}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}
+{{title}}
+{% endblock %}
+{% block style %}
+   
+   {%endblock%}
+   
+   {% block body %}
+ 
+<div class="container"><!--start of main container of the page--...#17a2b8;  -->
+
+
+   
+      <!----------------------------------------------start of row----------------------------------------------------->
+      <div class="col-md-12"><!--start of the first row body-->
+       
+              
+          <div class="card-header text-center" >
+          
+              <h3>Admin Home</h3>
+              {% for customer in customers %}
+              <a href="{% url 'allifapp:customerDetails' customer.slug %}">
+              {{customer.name}}
+              </a>
+              {% endfor %}
+          </div>
+         
+      
+        <br>
+        
+            <a href="{% url 'allifapp:addCustomer' glblslug %}">
+               add customer
+            </a>
+            <br>
+
+
+         
+        
+            
+                  <p>
+                    <a href="{% url 'allifapp:quotations' glblslug %}">Quotations</a>
+                  </p>
+          </p>
+          <hr>
+          
+      </div><!--end of first row body-->
+      <!----------------------------------------------end of row----------------------------------------------------->
+  
+
+    </div><!--end of first row body-->
+    <!----------------------------------------------end of row----------------------------------------------------->
+
+      </form>
+      
+</div><!--end of main container of the page-->
+
+   {% endblock %}
+
+
+
+
+
+    
+    

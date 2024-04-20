@@ -1,0 +1,354 @@
+{% extends 'allifapp/bases/subsbase.html'%}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}
+{{title}}
+{% endblock %}
+{% block style %}
+   
+   {%endblock%}
+   
+   {% block body %}
+
+
+ 
+<div class="container"><!--start of main container of the page--...#17a2b8;  -->
+
+    <!--start of first row-->
+    <div class="row mt-12" >
+        
+        <div class="col-md-4">
+            <div class="card">
+                <div id="allif-section-headers" class="card-header ">
+                    Suppliers
+                </div>
+
+                     
+ <!-- start of on click dropdown Menu-->
+ <div class="allif-clikable-dropdown">
+    <button onclick="openOnClickFunction()" id="allif-link-buttons" class="allifmaal-dropbtn btn btn-success mybuttonlinks">
+      Open Module Related Functions 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div id="allif-clikable-myDropdown" type="button" class="clikable-dropdown-content">
+      <table class="table">
+        <tr>
+            
+    
+        <form method='POST' action=''>{% csrf_token %}
+            <label id="numofitems"> </label>
+          
+            <input type="text" id="allifsearchcommonfield" class="form-control allifsearchcommonfieldclass"
+             placeholder="Search For Suppliers" >
+            </form>
+               
+          </tr>
+           
+        <tr>
+          
+            <td>
+        <a href="">
+            
+            New Supplier
+
+
+          </a>
+          </td>
+          <td>
+                    
+            <a href="">Stock</a>
+          </td>
+          
+              
+          </tr>
+          <tr>
+            <td>
+                <a href="">
+                
+                  Supplier Payments
+                  </a>
+               
+                  </td>
+                  <td>
+                    <a href="{">
+                
+                      Direct Pay
+                      </a>
+
+                    
+                  </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="">
+              
+                Supplier Statements
+                </a>
+             
+                </td>
+            
+          </tr>
+         
+         
+          <tr>
+            <thead></thead>
+            <thead></thead>
+          </tr>
+        
+        <tr>
+            
+        
+        <td scope="col">Customer</td>
+        <td scope="col">Balance</td>
+        
+        </tr>
+        </thead>
+            <tbody id="tbody">
+                </tbody>
+                </table>
+      
+    </div>
+    </div>
+
+    <hr>
+
+
+        <div>
+          
+            <div class="col-md-12">
+                <div class="card">
+                    <div id="allif-section-headers" class="card-header">
+                        
+                       Some Of The Unpaid Suppliers
+                    </div>
+                    <div class="col-md-12">
+                        <!--start of the table-->
+                            
+                            <!--table here-->
+    <table class="table table-layout">
+        <thead>
+          <tr>
+            
+           
+            <td scope="col">Staff</td>
+            <td scope="col">Company</td>
+           
+            
+          </tr>
+        </thead>
+        <tbody id="tbody">
+
+            {% for record in subscriber_employees %}
+                    
+            <tr>
+               
+                   <td>
+                    <a href="">
+                    {{record.firstName}}
+                    </a>
+                   </td>
+                   <td>
+                   
+                    {{record.company}}
+                    
+                   </td>
+                  
+                  
+                  
+            </tr>
+            {% endfor %}
+
+            </tbody>
+            </table>
+            <table class="table table-layout">
+                <thead>
+                  <tr>
+                    
+                   
+                    <td scope="col">Username</td>
+                    <td scope="col">Email</td>
+                   
+                    
+                  </tr>
+                </thead>
+                <tbody id="tbody">
+        
+                    {% for record in users %}
+                            
+                    <tr>
+                       
+                           <td>
+                            <a href="">
+                            {{record.username}}
+                            </a>
+                           </td>
+                           <td>
+                           
+                            {{record.email}}
+                            
+                           </td>
+                          
+                          
+                          
+                    </tr>
+                    {% endfor %}
+        
+                    </tbody>
+                    </table>
+                        
+                        <!--end of table-->
+                            </div>
+                        </div></div>
+                
+
+
+
+                    </div>
+
+                    
+                
+            </div>
+        </div>
+        
+
+    <div class="col-md-8">
+        <div class="card">
+            <div id="allif-section-headers" class="card-header">
+                
+                Total Customers <strong>{{total_suppliers}}</strong>
+            </div>
+            <div class="col-md-12">
+        <!--start of the table-->
+        <div class="AllifTableFixedHeader Allifmaal-scroll-table">
+            <table class="table table-layout">
+            <thead>
+            <tr class="allif-table-header-row">
+            <td>Name</td>
+            <td>Address</td>
+            <td>Edit</td>
+            <td>Delete</td>
+          
+            <td>Sector</td>
+          
+            </tr>
+        </thead>
+        <tbody>
+          {% for record in employees %}
+          <tr>
+          
+              <td>
+               <a href="">
+                {{record.firstName}} </a></td>
+                <td>
+                    {{record.company}}</td>
+                <td>{{record.username}}</td>
+                <td>
+                  <a href="">{{record.id}}
+                    Edit
+                  </a>
+                </td>
+                <td>
+                  {{record.owner.company}}
+                </td>
+
+                
+
+                
+            
+                
+             
+          </tr>
+          {% endfor %}
+
+        </tbody>
+        </table>
+      
+
+
+        </div>
+
+        
+        <!--end of table-->
+            </div>
+        </div></div>
+
+
+    
+    </div>
+        <!-- end of first row-->
+
+</div><!--end of main container of the page-->
+
+<script>
+
+     const waitTime = 2000;
+     
+    const allif_input_value = $("#allifsearchcommonfield").val()
+    const allif_input = document.getElementById('allifsearchcommonfield');
+    allif_input.addEventListener('keyup', function allifmaal(event){
+        
+    
+    event.preventDefault();
+    output=""
+    allifdata=$(this).val();
+   
+    
+    // chek if the field is emtpy
+    if (allifdata.length>3){
+    const allif_input_val= document.getElementById('allifsearchcommonfield').value;
+    allifmaal_search();
+    }
+    else{
+        console.log("required length not reached")
+    }
+   
+    //timer=setTimeout(() => {allifmaal_search();}, waitTime);
+    })
+
+        function allifmaal_search() {
+        allifmaaldata={search_result_key:allifdata,};//data to be sent to backend
+        $.ajax({
+                url:"{% url 'allifapp:CustomerCommonDynamicsearch' %}", //behind the scenes run this url
+                method:"GET",
+                data:allifmaaldata,//this is the collected data sent to the backend
+                dataType:"json",
+        
+        // start of section that ensures that the data appears on the client side immediately the user adds a record
+        success:function(allifmaalengdata){
+            const datafrombackend=allifmaalengdata
+            const mydata=JSON.stringify(datafrombackend)
+            const ourdata=JSON.parse(mydata)
+            
+
+            var number_of_items=0
+            for (i=0; i<ourdata.length; i++){
+                allifproductid=ourdata[i].slug
+
+                output+=`<tr><td> <a href='/allifmaal-erp/subscriptions/Customer/Details/More/Information/About/Customer/${allifproductid}/'</a>`
+                    +ourdata[i].name+`</td>`+
+                    `<td>`
+                        + ourdata[i].balance +`</td>`+
+                        
+                         `</tr>`;
+
+                    number_of_items++;
+            };
+            
+            
+            //document.getElementById("numofitems").innerHTML = number_of_items+" "+'items';
+            $("#tbody").html(output);
+
+                //artists_div.fadeTo('slow',2)
+                //artists_div.html(allifmaalengdata)
+                
+}
+}
+
+)};
+
+  
+
+    
+</script>
+
+   {% endblock %}

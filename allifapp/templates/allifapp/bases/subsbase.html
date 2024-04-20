@@ -1,0 +1,1175 @@
+
+{% load static %}
+<link rel="shortcut icon" href='{% static "css/images/Allifmaal-icon.png" %}' type="png/ico">
+<DOCTYPE html>
+    
+    <head>
+      
+        <title>
+            {% block title %}
+           
+            {% endblock %}
+        </title>
+       
+        {% block style %}
+        {% endblock %}
+        
+          
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="{% static 'css/allifmaalmainbootstrap.css' %}" rel="stylesheet">
+
+
+        <!--FontAwesome CDN ...necessary for the icons-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+            integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+
+        <script src="{% static 'js/chart.min.js' %}">/*Remember that this is a dist file.... source is: 
+        https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js*/
+
+        </script>
+        <!--Chartjs CDN-->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+
+
+        
+
+<!--below is for the dropdown of the select2 lib-->
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+rel="stylesheet" />
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" 
+integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<style>
+ .allifSelect2DropdownContent{
+ font-size:15px;
+ color: black;
+ border: 1px solid black;
+}
+
+.allifSelect2DropdownContent:hover {
+
+color: black;
+}
+</style>
+
+
+        
+
+    </head>
+    <body>
+      
+        
+<!-- start of clickable dropdown menu styling-->
+<style>
+  /* Extra small devices (phones, 600px and down) */
+    @media only screen and (max-width: 600px) {}
+
+    /* Small devices (portrait tablets and large phones, 600px and up) */
+    @media only screen and (min-width: 600px) {}
+
+    /* Medium devices (landscape tablets, 768px and up) */
+    @media only screen and (min-width: 768px) {}
+
+    /* Large devices (laptops/desktops, 992px and up) */
+    @media only screen and (min-width: 992px) {}
+
+    /* Extra large devices (large laptops and desktops, 1200px and up) */
+    @media only screen and (min-width: 1200px) {}
+
+/* .............. note that 1cm = 37.8px.....................*/
+  body {
+        /*background-color: #F6F7F8;*/
+        font-size: 2rem;
+        opacity: 1;
+        position:sticky;
+        overflow: auto;
+        text-align: left;
+        max-width: 100%; 
+        background-color: #F6F7F8;
+        margin: auto;
+        padding: auto;
+        
+
+    }
+   
+    .container{
+      background-color: #F6F7F8;
+      }
+    .container tr:hover {
+      background-color: #FFF;
+      color: black;
+    }
+    table{
+      background-color: #F6F7F8;
+    }
+.mybuttonlinks{
+    margin-top: 7px; margin-left: 7px;
+    margin-bottom: 5px;
+   
+ 
+}
+
+    th{
+      font-weight: normal;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    #allif-section-headers{
+    background-color: #e9eaec;
+    color: black;
+    font-size: 16px;
+    text-align: center;
+    }
+    #allif-link-buttons{
+        background-color: #F6F7F8;
+        color: black;
+      text-align: center;
+     
+      
+    
+    }
+    #allif-link-buttons:hover {
+        background-color: #714b67;
+        color: white;
+    }
+hr{
+  background-color: blue;
+}
+
+    a:link{
+      text-decoration: none;
+      
+    }
+
+/*-- start--- of clickable dropdown menu styling--*/
+  .clikable-dropdown-content {
+      display: none;
+      position: absolute;
+      
+      border: 1px solid #714b67;
+      border-radius: 2px;
+      margin: auto;
+      
+      z-index: 1;
+      margin-left: 1px;
+      z-index: 1;
+      max-width:max-content;
+      max-height:200px;
+      overflow: scroll;
+      min-width: max-content;
+      
+    }
+    
+    
+  .clikable-dropdown-content a:hover {
+      font-size: inherit;
+  }
+  
+    .allif-clikable-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .showAllifDropDown {display: block;}
+    /*-- end--- of clickable dropdown menu styling--*/
+
+
+     /* start --- below is for changing the color of the clicked row in the tables*/
+     .table-layout .clickedrow td{
+      background-color: #16f33b;
+      }
+      /* end--- below is for changing the color of the clicked row in the tables*/
+
+
+
+      /* start--- making tables fixed and scrollable*/
+    .Allifmaal-scroll-table{
+      background-color: #F6F7F8;
+      width: auto;
+      max-height: 400px;
+      overflow-x: scroll;
+      overflow-y: scroll;
+      margin-left: 0px;
+      overflow: auto;
+      margin-right: 0px;
+      }
+    .Allifmaal-scroll-table-small{
+      background-color: #F6F7F8;
+      width: auto;
+      max-height: 200px;
+      overflow-x: scroll;
+      overflow-y: scroll;
+      margin-left: 0px;
+      overflow: auto;
+      margin-right: 0px;
+
+    }
+    .Allifmaal-scroll-table-small-tasks-table{
+      background-color: #F6F7F8;
+      width: auto;
+      max-height: 350px;
+      overflow-x: scroll;
+      overflow-y: scroll;
+      margin-left: 0px;
+      overflow: auto;
+      margin-right: 0px;
+
+    }
+/* make the table heads sticky and fixed */
+.AllifTableFixedHeader thead tr {
+    position: sticky; /* make the table heads sticky */
+    top: 0px; /* table head will be placed from the top of the table and sticks to it */
+   
+  }
+  .AllifTableFixedHeader thead td {
+    color: #fff;
+
+  }
+  .AllifTableFixedHeader thead tr:hover {
+    font-size: inherit;
+    background-color: #3a0bf7;
+    }
+    /* end--- making tables fixed and scrollable*/
+
+
+    /* start---changing the color of the fixed table header row...*/
+    .allif-table-header-row{
+      background-color: #3a0bf7;
+      }
+    /* end---changing the color of the fixed table header row...*/
+
+  .Allifmaal-scroll-links-adminpage{
+    
+      max-height: 500px;
+     
+     
+     overflow: auto;
+      margin-left: 0px;
+      
+      margin-right: 0px;
+
+  }
+    
+/*!-- start of clickable dropdown menu styling for the links button-->*/
+
+/* start--- making tables fixed and scrollable*/
+.Allifmaal-scroll-detaials-section{
+      background-color: #F6F7F8;
+      width: auto;
+      max-height: 200px;
+      overflow-x: scroll;
+      overflow-y: scroll;
+      margin-left: 0px;
+      overflow: auto;
+      margin-right: 0px;
+      }
+      .admin-click-r1-c1{
+      
+      position: relative;
+       display: inline-block;
+    }
+    .admin-click-r1-c1-content{
+     
+       display: none;
+      position: absolute;
+      
+      border: 1px solid #714b67;
+      border-radius: 2px;
+      
+      margin-left: 1px;
+      z-index: 1;
+      max-width:max-content;
+      max-height:200px;
+      overflow: scroll;
+      min-width: max-content;
+
+    }
+
+
+
+    .admin-click-r2-c1{
+      
+      position: relative;
+       display: inline-block;
+    }
+    .admin-click-r2-c1-content{
+     
+       display: none;
+      position: absolute;
+      
+      border: 1px solid #714b67;
+      border-radius: 2px;
+      
+      margin-left: 1px;
+      z-index: 1;
+      max-width:max-content;
+      max-height:200px;
+      overflow: scroll;
+      min-width: max-content;
+
+    }
+    .admin-click-r2-c2{
+      
+      position: relative;
+       display: inline-block;
+    }
+    .admin-click-r2-c2-content{
+     
+       display: none;
+      position: absolute;
+      
+      border: 1px solid #714b67;
+      border-radius: 2px;
+      
+      margin-left: 1px;
+      z-index: 1;
+      max-width:max-content;
+      max-height:200px;
+      overflow: scroll;
+      min-width: max-content;
+
+    }
+
+    .admin-click-r2-c3{
+      
+      position: relative;
+       display: inline-block;
+    }
+    .admin-click-r2-c3-content{
+     
+       display: none;
+      position: absolute;
+      
+      border: 1px solid #714b67;
+      border-radius: 2px;
+      
+      margin-left: 1px;
+      z-index: 1;
+      max-width:max-content;
+      max-height:200px;
+      overflow: scroll;
+      min-width: max-content;
+
+    }
+
+    .admin-click-r2-c4{
+      
+      position: relative;
+       display: inline-block;
+    }
+    .admin-click-r2-c4-content{
+     
+       display: none;
+      position: absolute;
+      
+      border: 1px solid #714b67;
+      border-radius: 2px;
+      
+      margin-left: 1px;
+      z-index: 1;
+      max-width:max-content;
+      max-height:200px;
+      overflow: scroll;
+      min-width: max-content;
+
+    }
+
+    .admin-click-r3-c1{
+      
+      position: relative;
+       display: inline-block;
+    }
+    .admin-click-r3-c1-content{
+     
+       display: none;
+      position: absolute;
+      
+      border: 1px solid #714b67;
+      border-radius: 2px;
+      
+      margin-left: 1px;
+      z-index: 1;
+      max-width:max-content;
+      max-height:200px;
+      overflow: scroll;
+      min-width: max-content;
+
+    }
+
+    .admin-click-r3-c2{
+      
+      position: relative;
+       display: inline-block;
+    }
+    .admin-click-r3-c2-content{
+     
+       display: none;
+      position: absolute;
+      
+      border: 1px solid #714b67;
+      border-radius: 2px;
+      
+      margin-left: 1px;
+      z-index: 1;
+      max-width:max-content;
+      max-height:200px;
+      overflow: scroll;
+      min-width: max-content;
+
+    }
+    .admin-click-r3-c3{
+      
+      position: relative;
+       display: inline-block;
+    }
+    .admin-click-r3-c3-content{
+     
+       display: none;
+      position: absolute;
+      
+      border: 1px solid #714b67;
+      border-radius: 2px;
+      
+      margin-left: 1px;
+      z-index: 1;
+      max-width:max-content;
+      max-height:200px;
+      overflow: scroll;
+      min-width: max-content;
+
+    }
+    .admin-click-r3-c4{
+      
+      position: relative;
+       display: inline-block;
+    }
+    .admin-click-r3-c4-content{
+     
+       display: none;
+      position: absolute;
+      
+      border: 1px solid #714b67;
+      border-radius: 2px;
+      
+      margin-left: 1px;
+      z-index: 1;
+      max-width:max-content;
+      max-height:200px;
+      overflow: scroll;
+      min-width: max-content;
+
+    }
+
+    .admin-click-r4-c1{
+      
+      position: relative;
+       display: inline-block;
+    }
+    .admin-click-r4-c1-content{
+     
+       display: none;
+      position: absolute;
+      
+      border: 1px solid #714b67;
+      border-radius: 2px;
+      
+      margin-left: 1px;
+      z-index: 1;
+      max-width:max-content;
+      max-height:200px;
+      overflow: scroll;
+      min-width: max-content;
+
+    }
+    .admin-click-r4-c2{
+      
+      position: relative;
+       display: inline-block;
+    }
+    .admin-click-r4-c2-content{
+     
+       display: none;
+      position: absolute;
+      
+      border: 1px solid #714b67;
+      border-radius: 2px;
+      
+      margin-left: 1px;
+      z-index: 1;
+      max-width:max-content;
+      max-height:200px;
+      overflow: scroll;
+      min-width: max-content;
+
+    }
+    .admin-click-r4-c3{
+      
+      position: relative;
+       display: inline-block;
+    }
+    .admin-click-r4-c3-content{
+     
+       display: none;
+      position: absolute;
+      
+      border: 1px solid #714b67;
+      border-radius: 2px;
+      
+      margin-left: 1px;
+      z-index: 1;
+      max-width:max-content;
+      max-height:200px;
+      overflow: scroll;
+      min-width: max-content;
+
+    }
+    .admin-click-r4-c4{
+      
+      position: relative;
+       display: inline-block;
+    }
+    .admin-click-r4-c4-content{
+     
+       display: none;
+      position: absolute;
+      
+      border: 1px solid #714b67;
+      border-radius: 2px;
+      
+      margin-left: 1px;
+      z-index: 1;
+      max-width:max-content;
+      max-height:200px;
+      overflow: scroll;
+      min-width: max-content;
+
+    }
+
+    .clikable-dropdown-content-links {
+      display: none;
+      position: absolute;
+      
+      border: 1px solid #714b67;
+      border-radius: 2px;
+      
+      margin-left: 1px;
+      z-index: 1;
+      max-width:max-content;
+      max-height:200px;
+      overflow: scroll;
+      min-width: max-content;
+    
+    }
+    
+    
+    
+     .allif-clikable-dropdown-links {
+       position: relative;
+       display: inline-block;
+     }
+     
+     
+     .showAllifDropDown-links {display: block;}
+     /*
+    
+      <!-- end of clickable dropdown menu styling for the links button-->*/
+
+
+/*
+<!-- start of clickable dropdown menu styling for the links two button-->*/
+
+    
+    .clikable-dropdown-content-links-two {
+      display: none;
+      position: absolute;
+      
+      border: 1px solid #714b67;
+      border-radius: 2px;
+      
+      margin-left: 1px;
+      z-index: 1;
+     
+      max-height:200px;
+      overflow: scroll;
+      min-width: max-content;
+    
+    }
+    
+    
+    
+     .allif-clikable-dropdown-links-two {
+       position: relative;
+       display: inline-block;
+     }
+     
+     
+     .showAllifDropDown-links-two {display: block;}
+     /*
+      <!-- end of clickable dropdown menu styling for the links button-->*/
+      .fulltablelinksheader{
+        background-color:#F6F7F8;
+        text-align: center;
+
+      }
+    
+  .allif-delete-link{
+    color: red;
+  }
+  .deletewithX{
+    color: red;
+  }
+
+  .shortdetailsheaderdiv{
+    margin-top: 1%; margin-bottom: 1%;
+
+  }
+
+  .shortdetailspagelinks{
+    margin-left: 10%; margin-right: 10%; margin-top: 5%; margin-bottom: 5%;
+
+  }
+
+  .shortdetailspagelinksheader{
+    background-color:#F6F7F8;
+
+  } 
+
+  .allifsearchcommonfieldclass{
+    margin-top: 5%;
+    
+    margin-bottom: 5%;
+  }
+
+  .dropdown-on-hover-adminpage {
+  position: relative;
+  display: inline-block;
+  
+
+  
+  
+  
+}
+
+.dropdown-content-on-hover-adminpage {
+  display: none;
+  position: absolute;
+  
+  border: 1px solid #714b67;
+  border-radius: 3px;
+  margin: auto;
+  margin-left: 3px;
+  max-height:300px;
+      overflow: scroll;
+      min-width: max-content;
+ 
+  
+ 
+  z-index: 1;
+}
+
+
+.dropdown-content-on-hover-adminpage a:hover {
+    font-size: inherit;
+    
+    
+}
+
+.dropdown-on-hover-adminpage:hover .dropdown-content-on-hover-adminpage {
+  display: block;
+  
+}
+
+.adminlinkspagemainheader{
+  background-color:#3a0bf7;
+  text-align: center;
+  color: white;
+}
+                      
+/************************************************************* starting of styling for extra small mobiles*/
+@media screen and (min-width:200px) and (max-width:800px) {
+        /*@media screen and (min-width: 700px) and (max-width:800px) {}*/
+        /*.sidenav {padding-top: 15px;}*/
+        /*.sidenav a {font-size: 18px;}*/
+        .container {
+            
+            margin-top: 110px;
+            /*display: inline-block;
+            overflow: auto;*/
+            font-size: 0.95rem;
+           
+            
+            color:black;
+            overflow: auto;
+            overflow-x: scroll;
+            overflow-y: scroll;
+            height: 480px;
+          
+        }
+        .mycomments{
+          display: none;
+        }
+       
+      }
+/*********************************************************** end of styling for extra small mobiles*/
+
+  
+ 
+/************************************************************* starting of styling for extra small mobiles*/
+@media screen and (min-width:800px) and (max-width:1000px) {
+        /*@media screen and (min-width: 700px) and (max-width:800px) {}*/
+        /*.sidenav {padding-top: 15px;}*/
+        /*.sidenav a {font-size: 18px;}*/
+        .container{
+            
+            /*display: inline-block;
+            overflow: auto;*/
+            font-size: 0.95rem;
+           
+            margin-top: 8px;
+            margin-left: auto;
+            padding-left: 90px;
+            
+        }
+        
+      }
+/*********************************************************** end of styling for extra small mobiles*/
+
+ 
+/************************************************************* starting of styling for extra small mobiles*/
+@media screen and (min-width:1000px) and (max-width:2000px) {
+        /*@media screen and (min-width: 700px) and (max-width:800px) {}*/
+        /*.sidenav {padding-top: 15px;}*/
+        /*.sidenav a {font-size: 18px;}*/
+        .container {
+            
+            margin-top: 10px;
+            display: block;
+           
+            font-size: 0.95rem;
+            
+            margin-left:auto ;
+            
+            margin-right: auto;
+            margin: auto;
+            padding-left: 90px;
+            
+        }
+        
+      }
+/*********************************************************** end of styling for extra small mobiles*/
+
+/************************************************************* starting of styling for extra small mobiles*/
+@media screen and (min-width:2000px)  {
+        /*@media screen and (min-width: 700px) and (max-width:800px) {}*/
+        /*.sidenav {padding-top: 15px;}*/
+        /*.sidenav a {font-size: 18px;}*/
+       .container {
+            
+            margin-top: 10px;
+            display: block;
+            overflow: auto;
+            font-size: 1.00rem;
+            
+            margin-left: 120px;
+            overflow-x: hidden;
+            margin-right: 20px;
+           
+        }
+      }
+/*********************************************************** end of styling for extra small mobiles*/
+
+      </style>
+                  
+    
+        {% include 'allifapp/bases/subtopnavbar.html' %}
+        {% include 'allifapp/bases/subsidenavbar.html' %}
+
+         
+        <!--Please note that the jquery lib below is very important for the search to work-->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js">
+        //this lib is very important for this to work
+        </script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+        //this lib is necessary for the on click highlight of the table row
+        </script>
+
+              
+      <!-- start....below libs are important for the selct2 dropwdown to work-->
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js" 
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+       <!-- end....below libs are important for the selct2 dropwdown to work-->
+
+        
+        {% block body %}
+
+        
+
+        {% endblock %}
+        
+       
+
+
+
+<!--start----below is for opening the clikable dropdown menu-->
+<script>
+    /* When the user clicks on the button, 
+    toggle between hiding and showing the dropdown content */
+    function openOnClickFunction() {
+      document.getElementById("allif-clikable-myDropdown").classList.toggle("showAllifDropDown");
+    }
+    
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+      if (!event.target.matches('.allifmaal-dropbtn')) {
+        var dropdowns = document.getElementsByClassName("allif-clikable-dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('showAllifDropDown')) {
+            openDropdown.classList.remove('showAllifDropDown');
+          }
+        }
+      }
+    }
+
+
+    
+  /* When the user clicks on the button, 
+  toggle between hiding and showing the dropdown content */
+  function openOnClickFunctionLinks() {
+    document.getElementById("allif-clikable-myDropdown-links").classList.toggle("showAllifDropDown-links");
+  }
+  
+  // Close the dropdown if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.allifmaal-dropbtn-links')) {
+      var dropdowns = document.getElementsByClassName("allif-clikable-dropdown-content-links");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('showAllifDropDown-links')) {
+          openDropdown.classList.remove('showAllifDropDown-links');
+        }
+      }
+    }
+  }
+
+
+  /* When the user clicks on the button, 
+  toggle between hiding and showing the dropdown content */
+  function openOnClickFunctionLinksTwo() {
+    document.getElementById("allif-clikable-myDropdown-links-two").classList.toggle("showAllifDropDown-links-two");
+  }
+  
+  // Close the dropdown if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.allifmaal-dropbtn-links-two')) {
+      var dropdowns = document.getElementsByClassName("allif-clikable-dropdown-content-links-two");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('showAllifDropDown-links-two')) {
+          openDropdown.classList.remove('showAllifDropDown-links-two');
+        }
+      }
+    }
+  }
+
+  /* When the user clicks on the button, 
+  toggle between hiding and showing the dropdown content */
+  function openOnClickFunctionLinksR1C1() {
+    document.getElementById("admin-click-r1-c1").classList.toggle("showAllifDropDown-links-two");
+  }
+  
+  // Close the dropdown if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.admin-click-r1-c1-button')) {
+      var dropdowns = document.getElementsByClassName("admin-click-r1-c1-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('showAllifDropDown-links-two')) {
+          openDropdown.classList.remove('showAllifDropDown-links-two');
+        }
+      }
+    }
+  }
+
+  /* When the user clicks on the button, 
+  toggle between hiding and showing the dropdown content */
+  function openOnClickFunctionLinksRowTwoColOne() {
+    document.getElementById("admin-click-r2-c1").classList.toggle("showAllifDropDown-links-two");
+  }
+  
+  // Close the dropdown if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.admin-click-r2-c1-button')) {
+      var dropdowns = document.getElementsByClassName("admin-click-r2-c1-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('showAllifDropDown-links-two')) {
+          openDropdown.classList.remove('showAllifDropDown-links-two');
+        }
+      }
+    }
+  }
+
+
+  /* When the user clicks on the button, 
+  toggle between hiding and showing the dropdown content */
+  function openOnClickFunctionLinksRowTwoColTwo() {
+    document.getElementById("admin-click-r2-c2").classList.toggle("showAllifDropDown-links-two");
+  }
+  
+  // Close the dropdown if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.admin-click-r2-c2-button')) {
+      var dropdowns = document.getElementsByClassName("admin-click-r2-c2-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('showAllifDropDown-links-two')) {
+          openDropdown.classList.remove('showAllifDropDown-links-two');
+        }
+      }
+    }
+  }
+
+  /* When the user clicks on the button, 
+  toggle between hiding and showing the dropdown content */
+  function openOnClickFunctionLinksRowTwoColThree() {
+    document.getElementById("admin-click-r2-c3").classList.toggle("showAllifDropDown-links-two");
+  }
+  
+  // Close the dropdown if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.admin-click-r2-c3-button')) {
+      var dropdowns = document.getElementsByClassName("admin-click-r2-c3-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('showAllifDropDown-links-two')) {
+          openDropdown.classList.remove('showAllifDropDown-links-two');
+        }
+      }
+    }
+  }
+
+  /* When the user clicks on the button, 
+  toggle between hiding and showing the dropdown content */
+  function openOnClickFunctionLinksRowTwoColFour() {
+    document.getElementById("admin-click-r2-c4").classList.toggle("showAllifDropDown-links-two");
+  }
+  
+  // Close the dropdown if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.admin-click-r2-c4-button')) {
+      var dropdowns = document.getElementsByClassName("admin-click-r2-c4-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('showAllifDropDown-links-two')) {
+          openDropdown.classList.remove('showAllifDropDown-links-two');
+        }
+      }
+    }
+  }
+
+  /* When the user clicks on the button, 
+  toggle between hiding and showing the dropdown content */
+  function openOnClickFunctionLinksRowTwoColFive() {
+    document.getElementById("admin-click-r3-c1").classList.toggle("showAllifDropDown-links-two");
+  }
+  
+  // Close the dropdown if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.admin-click-r3-c1-button')) {
+      var dropdowns = document.getElementsByClassName("admin-click-r3-c1-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('showAllifDropDown-links-two')) {
+          openDropdown.classList.remove('showAllifDropDown-links-two');
+        }
+      }
+    }
+  }
+
+  /* When the user clicks on the button, 
+  toggle between hiding and showing the dropdown content */
+  function openOnClickFunctionLinksRowTwoColSix() {
+    document.getElementById("admin-click-r3-c2").classList.toggle("showAllifDropDown-links-two");
+  }
+  
+  // Close the dropdown if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.admin-click-r3-c2-button')) {
+      var dropdowns = document.getElementsByClassName("admin-click-r3-c2-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('showAllifDropDown-links-two')) {
+          openDropdown.classList.remove('showAllifDropDown-links-two');
+        }
+      }
+    }
+  }
+
+
+  /* When the user clicks on the button, 
+  toggle between hiding and showing the dropdown content */
+  function openOnClickFunctionLinksRowTwoColSeven() {
+    document.getElementById("admin-click-r3-c3").classList.toggle("showAllifDropDown-links-two");
+  }
+  
+  // Close the dropdown if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.admin-click-r3-c3-button')) {
+      var dropdowns = document.getElementsByClassName("admin-click-r3-c3-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('showAllifDropDown-links-two')) {
+          openDropdown.classList.remove('showAllifDropDown-links-two');
+        }
+      }
+    }
+  }
+
+
+  /* When the user clicks on the button, 
+  toggle between hiding and showing the dropdown content */
+  function openOnClickFunctionLinksRowTwoColEight() {
+    document.getElementById("admin-click-r3-c4").classList.toggle("showAllifDropDown-links-two");
+  }
+  
+  // Close the dropdown if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.admin-click-r3-c4-button')) {
+      var dropdowns = document.getElementsByClassName("admin-click-r3-c4-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('showAllifDropDown-links-two')) {
+          openDropdown.classList.remove('showAllifDropDown-links-two');
+        }
+      }
+    }
+  }
+
+  /* When the user clicks on the button, 
+  toggle between hiding and showing the dropdown content */
+  function openOnClickFunctionLinksRowTwoColNine() {
+    document.getElementById("admin-click-r4-c1").classList.toggle("showAllifDropDown-links-two");
+  }
+  
+  // Close the dropdown if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.admin-click-r4-c1-button')) {
+      var dropdowns = document.getElementsByClassName("admin-click-r4-c1-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('showAllifDropDown-links-two')) {
+          openDropdown.classList.remove('showAllifDropDown-links-two');
+        }
+      }
+    }
+  }
+
+
+  /* When the user clicks on the button, 
+  toggle between hiding and showing the dropdown content */
+  function openOnClickFunctionLinksRowTwoColTen() {
+    document.getElementById("admin-click-r4-c2").classList.toggle("showAllifDropDown-links-two");
+  }
+  
+  // Close the dropdown if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.admin-click-r4-c2-button')) {
+      var dropdowns = document.getElementsByClassName("admin-click-r4-c2-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('showAllifDropDown-links-two')) {
+          openDropdown.classList.remove('showAllifDropDown-links-two');
+        }
+      }
+    }
+  }
+
+/* When the user clicks on the button, 
+  toggle between hiding and showing the dropdown content */
+  function openOnClickFunctionLinksRowTwoColEleven() {
+    document.getElementById("admin-click-r4-c3").classList.toggle("showAllifDropDown-links-two");
+  }
+  
+  // Close the dropdown if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.admin-click-r4-c3-button')) {
+      var dropdowns = document.getElementsByClassName("admin-click-r4-c3-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('showAllifDropDown-links-two')) {
+          openDropdown.classList.remove('showAllifDropDown-links-two');
+        }
+      }
+    }
+  }
+
+
+  /* When the user clicks on the button, 
+  toggle between hiding and showing the dropdown content */
+  function openOnClickFunctionLinksRowTwoColTwelve() {
+    document.getElementById("admin-click-r4-c4").classList.toggle("showAllifDropDown-links-two");
+  }
+  
+  // Close the dropdown if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.admin-click-r4-c4-button')) {
+      var dropdowns = document.getElementsByClassName("admin-click-r4-c4-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('showAllifDropDown-links-two')) {
+          openDropdown.classList.remove('showAllifDropDown-links-two');
+        }
+      }
+    }
+  }
+
+
+  
+
+    </script>
+    <!--end----below is for opening the clikable dropdown menu-->
+
+    
+
+
+    <!-- start --below is for turning the color of the clicked row-->
+    <script>
+      $(document).ready(function() {
+
+    //Highlight clicked row
+    $('.table-layout td').on('click', function() {
+
+      // Remove previous highlight class
+      $(this).closest('table').find('tr.clickedrow').removeClass('clickedrow');
+      
+      // add highlight to the parent tr of the clicked td
+      $(this).parent('tr').addClass("clickedrow");
+    });
+    });
+    </script>
+    <!-- end --below is for turning the color of the clicked row-->
+        
+    </body>
+<html>
+
+
+     

@@ -1,0 +1,489 @@
+{% extends 'allifapp/bases/subsbase.html'%}
+{% load static %}
+{% load crispy_forms_tags %}
+{% load humanize %}
+{% block title %}
+{{title}}
+{% endblock %}
+{% block style %}
+   
+   {%endblock%}
+   
+   {% block body %}
+ 
+<div class="container"><!--start of main container of the page--...#17a2b8;  -->
+
+    <!--start of first row-->
+<div class="row mt-12" >
+
+<!--start of column-->
+<div class="col-md-4">
+    <div class="card">
+        <div id="allif-section-headers" class="card-header ">
+          Related Functions
+        </div>
+                           
+ <!-- start of on click dropdown Menu-->
+ <div class="allif-clikable-dropdown">
+    <button onclick="openOnClickFunction()" id="allif-link-buttons" class="allifmaal-dropbtn btn btn-success mybuttonlinks">
+      Open Module Related Functions 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div id="allif-clikable-myDropdown" type="button" class="clikable-dropdown-content">
+      <table class="table">
+        <tr>
+            <td>
+                <a href="">Suppliers</a>
+            </td>
+            <td>
+                <a href="">Customers</a>
+            </td>
+        </tr>
+       
+        <tr>
+          
+            <td>
+        <a href="">
+            
+            New Supplier
+
+
+          </a>
+          </td>
+          <td>
+                    
+            <a href="">Edit Supplier</a>
+          </td>
+          
+              
+          </tr>
+          <tr>
+            <td>
+                <a href="">
+                
+                  Supplier Payments
+                  </a>
+               
+                  </td>
+                  <td>
+                    <a href="">
+                
+                       Pay Supplier
+                        </a>
+                    
+                  </td>
+          </tr>
+          <tr>
+            <td>
+        <a href="">
+            
+          Supplier Statement
+          </a>
+          </td>
+          <td>
+            
+              </td>
+              
+          </tr>
+
+          <tr>
+            <td>
+                <a href="">
+            
+              Check this
+                    </a>
+                
+              </td>
+            <td>
+                <a href="" class="allif-delete-link">
+                
+                  Delete Supplier
+                  </a>
+               
+                  </td>
+                 
+          </tr>
+
+          
+                </table>
+      
+    </div>
+    </div>
+       
+    <hr >
+     
+      <!--start of the table here-->
+      <table class="table">
+        <tbody>
+           
+            <tr>
+                <th>Supplier Name</th>
+                <td>{{allifobj.first_name}}</td>
+                
+                </tr>
+                <tr>
+                <th>Contact Person</th>
+                <td>{{Supplier_detail.contact}}</td>
+                
+                </tr>
+                
+                <tr>
+               
+
+        </tbody>
+        </table>
+     
+                
+            </div>
+        </div>
+        <!-- end of column-->
+
+<!--start of column two-->
+<div class="col-md-4">
+    <div class="card">
+        <div id="allif-section-headers" class="card-header ">
+           Supplier Details
+        </div>
+       
+      <!--start of the table here-->
+      <table class="table">
+        <tbody>
+        </tr>
+        <tr>
+        <th>Address</th>
+        <td>{{Supplier_detail.address}}</td>
+        
+        </tr>
+        <tr>
+        <th>Phone</th>
+        <td>{{Supplier_detail.phone}}</td>
+        
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td>{{Supplier_detail.email}}</td>
+            
+            </tr>
+        
+        
+     
+  </tbody>
+  </table>
+     
+                
+            </div>
+        </div>
+        
+<!--end of column two-->
+
+
+<!-- start of column three-->
+<div class="col-md-4">
+    <div class="card">
+        <div id="allif-section-headers" class="card-header ">
+            Supplier Details
+        </div>
+        
+      <!--start of the table here-->
+      <table class="table">
+        <tbody>
+           
+                <tr>
+                <th>Country</th>
+                <td>{{Supplier_detail.country}}</td>
+                
+                
+                </tr>
+                <tr>
+                    <th>Balance</th>
+                    <td>{{Supplier_detail.balance|intcomma}}</td>
+                    
+                    
+                    </tr>
+                    <tr>
+                        <th>Turn Over</th>
+                        <td>{{Supplier_detail.turnover|intcomma}}</td>
+                        
+                        
+                        </tr>
+        </tbody>
+        </table>
+     
+                
+            </div>
+        </div>
+        
+
+<!--end of column three-->
+   
+    </div>
+        <!-- end of first row-->
+        
+    
+
+    <hr>
+    <div style="font-family:Georgia, 'Times New Roman', Times, serif; text-align: center;">
+        <h5> Supplier Transactions</h5>
+    </div>
+    <!-- end of first row-->
+
+
+
+ <!--start of second row-->
+<div class="row mt-12" >
+
+<!--start of column-->
+<div class="col-md-4">
+    <div class="card">
+        <div id="allif-section-headers" class="card-header ">
+            
+    Related Payments
+        </div>
+        
+     
+    <table class="table">
+        <thead>
+        <tr>
+        <th>Date</th>
+        
+        <th>Amount</th>
+        
+      
+    
+        </tr>
+    </thead>
+    <tbody>
+       
+      {% for payment in payments %}
+      <tr>
+       
+        <td>{{payment.date|date:'d/m/Y'}}</td>
+      <td>
+        <a href="" >
+        {{payment.amount|intcomma}}</a>
+      </td>
+    
+      </tr>
+      {% endfor %}
+      
+      
+      </tbody>
+      </table>
+     
+                
+            </div>
+        </div>
+        <!-- end of column-->
+
+<!--start of column two-->
+<div class="col-md-4">
+    <div class="card">
+        <div id="allif-section-headers" class="card-header ">
+            
+        Related Purchases Orders
+        </div>
+       
+      <!--start of the table here-->
+      <table class="table">
+        <thead>
+        <tr>
+        <th>Date</th>
+       
+        <th>Amount</th>
+      
+       
+    
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in purchases %}
+         
+
+      <tr>
+          <td>{{item.date|date:'d/m/Y'}}</td>
+          <td>
+            
+            <a href="" >
+            {{item.total|intcomma}}</a>
+        
+        </td>
+     
+      </tr>
+      {% endfor %}
+    
+      </tbody>
+      </table>
+     
+                
+            </div>
+        </div>
+        
+<!--end of column two-->
+
+
+<!-- start of column three-->
+<div class="col-md-4">
+    <div class="card">
+        <div id="allif-section-headers" class="card-header ">
+            
+        Related Misc. Supplies
+        </div>
+        
+      <!--start of the table here-->
+      <table class="table">
+        <thead>
+        <tr>
+        <th>Date</th>
+       
+        <th>Amount</th>
+        
+    
+    
+        </tr>
+    </thead>
+    <tbody>
+        {% for object in misccosts %}
+         
+
+      <tr>
+          <td>{{object.date|date:'d/m/Y'}}</td>
+          <td>{{object.amount|intcomma}}</td>
+         
+          
+      </tr>
+      {% endfor %}
+     
+      
+      </tbody>
+      </table>
+     
+                
+            </div>
+        </div>
+        
+
+<!--end of column three-->
+   
+    </div>
+        <!-- end of first row-->
+    
+   
+
+    
+        
+        <hr >
+       
+        <!-- end of first row-->
+    
+    
+    
+     <!--start of second row-->
+    <div class="row mt-12" >
+    
+    <!--start of column-->
+    <div class="col-md-6">
+        <div class="card">
+            <div id="allif-section-headers" class="card-header ">
+                
+        Related Assets
+            </div>
+            
+         
+        <table class="table">
+            <thead>
+            <tr>
+            <th>Acquired</th>
+           
+            <th>Value</th>
+            <th>Mode</th>
+            
+          
+        
+            </tr>
+        </thead>
+        <tbody>
+           
+          {% for object in assets %}
+          <tr>
+            <td>{{object.acquired|date:'d/m/Y'}}</td>
+
+            <td>
+                <a href="" >
+                
+                {{object.value|intcomma}}</a>
+            
+            </td>
+            <td>
+                {{object.payment_terms}}
+            </td>
+           
+        
+          </tr>
+          {% endfor %}
+          
+          
+          </tbody>
+          </table>
+         
+                    
+                </div>
+            </div>
+            <!-- end of column-->
+    
+    <!--start of column two-->
+    <div class="col-md-6">
+        <div class="card">
+            <div id="allif-section-headers" class="card-header ">
+                
+            Related Expenses
+            </div>
+           
+          <!--start of the table here-->
+          <table class="table">
+            <thead>
+            <tr>
+            <th>Date</th>
+           
+            <th>Amount</th>
+            <th>Mode</th>
+          
+           
+        
+            </tr>
+        </thead>
+        <tbody>
+            {% for object in expenses %}
+             
+    
+          <tr>
+              <td>{{object.date|date:'d/m/Y'}}</td>
+              <td>{{object.amount|intcomma}}</td>
+              <td>{{object.mode}}</td>
+         
+          </tr>
+          {% endfor %}
+        
+          </tbody>
+          </table>
+         
+                    
+                </div>
+            </div>
+            
+    <!--end of column two-->
+    
+    
+   
+            
+    
+    <!--end of column three-->
+       
+        </div>
+            <!-- end of first row-->
+        
+       
+
+</div><!--end of main container of the page-->
+
+   {% endblock %}
+

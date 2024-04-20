@@ -1,0 +1,115 @@
+{% extends 'allifapp/bases/subsbase.html'%}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}
+{{title}}
+{% endblock %}
+{% block style %}
+   
+   {%endblock%}
+   
+   {% block body %}
+    <!--below is for the dropdown of the select2 lib-->
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+rel="stylesheet" />
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" 
+integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<style>
+ .allifSelect2DropdownContent{
+ font-size:15px;
+ color: black;
+ border: 1px solid black;
+}
+
+.allifSelect2DropdownContent:hover {
+
+color: black;
+}
+</style>
+ 
+<div class="container"><!--start of main container of the page--...#17a2b8;  -->
+
+
+   
+      <!----------------------------------------------start of row----------------------------------------------------->
+      <div class="col-md-12"><!--start of the first row body-->
+       
+              
+          <div class="card-header text-center" >
+              <h5>Company Details Card3333333333333333</h5>
+              
+
+            
+
+          </div>
+          {% for item in AllifScopeDetails %}
+          {{item.company}}
+          {% endfor %}
+                  
+          <div class="row"><!--start of row div --->
+                  
+              <div class="col-md-4"><!--start of column 1-->
+                 <!--start of first row-->
+                <form method='POST' action='' enctype="multipart/form-data">{% csrf_token %}
+                  <div class="card my-card shadow text-left p-3">
+                    <label>Customer</label> {{form.customer}} 
+                  
+                <label>owner</label> {{form.owner}} 
+                <label>company</label> {{form.company}} 
+                
+                   
+                  </div>
+              </div><!--end of column 1-->
+  
+              <div class="col-md-4"><!--start of column 2-->
+                  <div class="card my-card shadow text-left p-3">
+                   
+                 
+                  </div>
+              </div><!--end of column 2-->
+  
+              <div class="col-md-4"><!--start of column 3-->
+                  <div class="card my-card shadow text-left p-3">
+                   
+                 
+                        
+                    
+                    <input type="submit" value='Save' id="allif-link-buttons" class="btn btn-success mybuttonlinks" style="width:100%;">
+                   
+                  </div>
+              </div><!--end of column 1-->
+  
+          </div><!--end of row div --->
+  
+      </div><!--end of first row body-->
+      <!----------------------------------------------end of row----------------------------------------------------->
+  
+
+    </div><!--end of first row body-->
+    <!----------------------------------------------end of row----------------------------------------------------->
+
+      </form>
+      
+</div><!--end of main container of the page-->
+<script>
+    
+  $(document).ready(function () {
+    $('#id_customer').select2({
+        dropdownCssClass: "allifSelect2DropdownContent",
+        
+        placeholder: "Select a customer",
+        theme: "classic",
+        width: 'element',
+        closeOnSelect: true,
+        disabled:false,
+        customClass: "form-control",
+        })
+    });
+    
+   
+</script>
+
+   {% endblock %}
+

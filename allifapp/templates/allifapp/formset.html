@@ -1,0 +1,95 @@
+{% extends 'allifapp/bases/subsbase.html'%}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}
+{{title}}
+{% endblock %}
+{% block style %}
+   
+   {%endblock%}
+   
+   {% block body %}
+ 
+<div class="container"><!--start of main container of the page--...#17a2b8;  -->
+
+
+   
+      <!----------------------------------------------start of row----------------------------------------------------->
+      <div class="col-md-12"><!--start of the first row body-->
+       
+              
+          <div class="card-header text-center" >
+              <h6>Limiting foreign key choices to related objects only using formsets</h6>
+              
+
+            
+
+          </div>
+        
+          <div class="row"><!--start of row div --->
+                  
+              <div class="col-md-4"><!--start of column 1-->
+                 <!--start of first row-->
+                <form method='POST' action='' enctype="multipart/form-data">{% csrf_token %}
+                  <div class="card my-card shadow text-left p-3">
+
+                    {% if formset %}
+            {{formset.management_form}}
+            <div id="room-features-form-list">
+            {% for form in formset %}
+            <div class="room-features-form">
+            
+                  {{form.name}}
+
+              
+                  {{form.price}}
+
+              
+                  {{form.category}}
+
+              
+            </div>
+            {% endfor %}
+          </div>
+            {% endif %}
+
+
+
+
+
+                  </div>
+              </div><!--end of column 1-->
+  
+              <div class="col-md-4"><!--start of column 2-->
+                  <div class="card my-card shadow text-left p-3">
+                   
+                 
+                  </div>
+              </div><!--end of column 2-->
+  
+              <div class="col-md-4"><!--start of column 3-->
+                  <div class="card my-card shadow text-left p-3">
+                   
+                 
+                        
+                    
+                    <input type="submit" value='Save' id="allif-link-buttons" class="btn btn-success mybuttonlinks" style="width:100%;">
+                   
+                  </div>
+              </div><!--end of column 1-->
+  
+          </div><!--end of row div --->
+  
+      </div><!--end of first row body-->
+      <!----------------------------------------------end of row----------------------------------------------------->
+  
+
+    </div><!--end of first row body-->
+    <!----------------------------------------------end of row----------------------------------------------------->
+
+      </form>
+      
+</div><!--end of main container of the page-->
+
+   {% endblock %}
+

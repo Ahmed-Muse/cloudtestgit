@@ -1,0 +1,47 @@
+{% extends 'allifapp/bases/subsbase.html'%}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}
+{{title}}
+{% endblock %}
+{% block style %}
+   
+   {%endblock%}
+   
+   {% block body %}
+ 
+<div class="container"><!--start of main container of the page--...#17a2b8;  -->
+
+
+   
+      <!----------------------------------------------start of row----------------------------------------------------->
+      <div class="col-md-12"><!--start of the first row body-->
+       
+              
+          <div class="card-header text-center" >
+              <h5>Subscribers</h5>
+          </div>
+
+          {% for sub in subs %}
+          <a href="{% url 'allifapp:subscriberDetails' sub.slug %}">
+          {{sub.company}}
+          </a>
+          {% endfor%}
+          <hr>
+          <a href="{% url 'allifapp:subQuotes' %}">
+            Quotes
+            </a>
+          
+      </div><!--end of first row body-->
+      <!----------------------------------------------end of row----------------------------------------------------->
+  
+
+    </div><!--end of first row body-->
+    <!----------------------------------------------end of row----------------------------------------------------->
+
+      </form>
+      
+</div><!--end of main container of the page-->
+
+   {% endblock %}
+
