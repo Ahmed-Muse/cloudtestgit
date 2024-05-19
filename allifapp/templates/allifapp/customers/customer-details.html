@@ -33,7 +33,7 @@
        
         <tr>
             <td>
-        <a href="{% url 'allifmaalapp:allifmaalcustomers' %}">
+        <a href="">
             
             Customers
           </a>
@@ -232,7 +232,7 @@
             <td>{{payment.date|date:'d/m/Y'}}</td>
             <td>Payment</td>
           <td>
-            <a href="{% url 'allifmaalapp:AllifmaalCustomerPaymentDetails' payment.id %}" style="text-decoration: none;">
+            <a href="" style="text-decoration: none;">
             {{payment.amount}}</a>
           </td>
         
@@ -276,7 +276,7 @@
               <td>{{inv.date|date:'d/m/Y'}}</td>
               <td>{{inv.invoice_number}} </td>
               <td>
-                <a href="{% url 'allifmaalapp:add_allifmaal_invoice_items' inv.id %}" style="text-decoration: none;">
+                <a href="" style="text-decoration: none;">
                     {{inv.invoice_total}}</a>
                       
                 </td>
@@ -326,7 +326,7 @@
               <td>{{inv.date|date:'d/m/Y'}}</td>
               <td>{{inv.number}} </td>
               <td>
-                <a href="{% url 'allifmaalapp:add_allifmaal_quote_items' inv.id %}" style="text-decoration: none;">
+                <a href="" style="text-decoration: none;">
                 
                     {{inv.total}}</a>
                       

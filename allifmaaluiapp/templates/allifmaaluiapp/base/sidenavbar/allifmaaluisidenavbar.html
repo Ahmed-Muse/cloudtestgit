@@ -1,0 +1,1106 @@
+
+<style>
+
+/*............start of styling of side nav one bar menu and its content.............................*/
+.sidenavonemenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  padding: 0.1em;
+  background: #f7f7f7;
+  z-index:10;  
+  overflow-y: auto;
+  overflow-x: auto;
+  box-shadow: 2px 0 18px rgba(0, 0, 0, 0.26);
+  }
+
+.sidenavonemenu a,.sidenavonedropdownbtn{
+  position: relative;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight:lighter;
+  font-size: 1em;
+  text-align: left;
+  left: 0.1em;
+  padding: 0.1em 0.1em 0.1em 0.1em;
+  text-decoration: none;
+  color: #474747;
+  display: block;
+  width: 100%;
+  line-height: 2em;
+  border: none;
+  background: #f7f7f7;
+  border-bottom: 1px solid #dfdede;
+}
+
+.sidenavonemenu a:hover,.sidenavonedropdownbtn:hover{
+  color: #3a0bf7;
+}
+
+/*style the clicked active buttons in the side nav dropdown buttons*/
+.active {
+  background: #f7f7f7;
+  color: #3a0bf7;
+  }
+
+  /*style the side nav one drop down menu and its content*/
+.sidenavone-dropdown-container {
+  display: none;
+  position:absolute;
+  left: 0.1em;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  z-index: 1;/*drop down will not open without this property....*/
+  float: left;
+  text-align: left;
+  padding: 0.1em 0.1em 0.1em 0.1em;
+  background: #f7f7f7;
+  
+  }
+
+.sidenavone-dropdown-container a{
+  position: relative;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight:lighter;
+  font-size: 1em;
+  text-align: left;
+  left: 0.1em;
+  padding: 0.1em 0.1em 0.1em 0.1em;
+  text-decoration: none;
+  color: #3a0bf7;
+  display: block;
+  line-height: 2em;
+  background: #f7f7f7;
+  border-bottom: 1px solid #dfdede;
+  width: 100%;
+  }
+  
+  .sidenavone-dropdown-container a:hover{
+    color: #474747;
+  }
+
+
+/* .............styling side nav bar one for various screen heights................*/
+@media all and (min-height: 0px) and (max-height: 500px) and (min-width: 0px) and (max-width: 800px) {
+  .sidenavonemenu {
+    width: max-content;
+    height: 2.2em;
+    overflow:hidden;/*if not hidden, it will show all menu links with scroll bar*/
+    z-index: 10;
+    box-shadow: 2px 0 18px rgba(0, 0, 0, 0.26);
+    text-align: center;
+    background-color: red;
+    
+  }
+  .sidenavonemenu a.sidenavonemenulinksforminiscreens{
+    display: block;
+    top: 0em;
+    left: 0em;
+    height: fit-content;
+    z-index: 10;
+    border:none;
+    padding-bottom: 1em;
+    font-size: 0.8em;
+    
+  }
+  
+.sidenavonemenu a,button.sidenavonedropdownbtn{
+  position: relative;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight:lighter;
+  font-size: 0.8em;
+  text-align: left;
+  left: 0.1em;
+  padding: 0.1em 0.1em 0.1em 0.1em;
+  text-decoration: none;
+  color: #474747;
+  display: block;
+  width: 100%;
+  line-height: 2em;
+  border: none;
+  background: #f7f7f7;
+  border-bottom: 1px solid #dfdede;
+}
+.sidenavone-dropdown-container a{
+  position: relative;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight:lighter;
+  font-size: 0.8em;
+  text-align: left;
+  left: 0.1em;
+  padding: 0.1em 0.1em 0.1em 0.1em;
+  text-decoration: none;
+  color: #3a0bf7;
+  display: block;
+  line-height: 2em;
+  background: #f7f7f7;
+  border-bottom: 1px solid #dfdede;
+  width: 100%;
+  
+}
+
+.opensidenavone{
+  width:fit-content;
+  height:100%;
+  padding-left: 0em;
+  margin-left: 0em;
+  overflow: auto;
+}
+
+}
+
+
+/* .............styling side nav bar one for various screen heights................*/
+@media all and (min-height: 0px) and (max-height: 500px) and (min-width: 800px) and (max-width: 1200px) {
+  .sidenavonemenu {
+    width: max-content;
+    height: 100%;
+    overflow:hidden;/*if not hidden, it will show all menu links with scroll bar*/
+    z-index: 10;
+    box-shadow: 2px 0 18px rgba(0, 0, 0, 0.26);
+    text-align: center;
+    background-color: rgb(85, 255, 0);
+    
+  }
+  .sidenavonemenu a.sidenavonemenulinksforminiscreens{
+    display: block;
+    top: 0em;
+    left: 0em;
+    height: fit-content;
+    z-index: 10;
+    border:none;
+   
+    font-size: 0.9em;
+    
+  }
+  
+.sidenavonemenu a,button.sidenavonedropdownbtn{
+  position: relative;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight:lighter;
+  font-size: 0.9em;
+  text-align: left;
+  left: 0.1em;
+  padding: 0.1em 0.1em 0.1em 0.1em;
+  text-decoration: none;
+  color: #474747;
+  display: block;
+  width: 100%;
+  line-height: 2em;
+  border: none;
+  background: #f7f7f7;
+  border-bottom: 1px solid #dfdede;
+}
+.sidenavone-dropdown-container a{
+  position: relative;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight:lighter;
+  font-size: 0.9em;
+  text-align: left;
+  left: 0.1em;
+  padding: 0.1em 0.1em 0.1em 0.1em;
+  text-decoration: none;
+  color: #3a0bf7;
+  display: block;
+  line-height: 2em;
+  background: #f7f7f7;
+  border-bottom: 1px solid #dfdede;
+  width: 100%;
+  
+}
+
+.opensidenavone{
+  width:fit-content;
+  height:100%;
+  padding-left: 0em;
+  margin-left: 0em;
+  overflow: auto;
+}
+
+}
+
+
+/* .............styling side nav bar one for various screen heights................*/
+@media all and (min-height: 0px) and (max-height: 500px) and (min-width: 1200px) {
+  .sidenavonemenu {
+    width: max-content;
+    height: 100%;
+    overflow:hidden;/*if not hidden, it will show all menu links with scroll bar*/
+    z-index: 10;
+    box-shadow: 2px 0 18px rgba(0, 0, 0, 0.26);
+    text-align: center;
+    background-color: rgb(255, 213, 0);
+    
+  }
+  .sidenavonemenu a.sidenavonemenulinksforminiscreens{
+    display: block;
+    top: 0em;
+    left: 0em;
+    height: fit-content;
+    z-index: 10;
+    border:none;
+   
+    font-size: 1em;
+    
+  }
+  
+.sidenavonemenu a,button.sidenavonedropdownbtn{
+  position: relative;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight:lighter;
+  font-size: 1em;
+  text-align: left;
+  left: 0.1em;
+  padding: 0.1em 0.1em 0.1em 0.1em;
+  text-decoration: none;
+  color: #474747;
+  display: block;
+  width: 100%;
+  line-height: 2em;
+  border: none;
+  background: #f7f7f7;
+  border-bottom: 1px solid #dfdede;
+}
+.sidenavone-dropdown-container a{
+  position: relative;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight:lighter;
+  font-size: 1em;
+  text-align: left;
+  left: 0.1em;
+  padding: 0.1em 0.1em 0.1em 0.1em;
+  text-decoration: none;
+  color: #3a0bf7;
+  display: block;
+  line-height: 2em;
+  background: #f7f7f7;
+  border-bottom: 1px solid #dfdede;
+  width: 100%;
+  
+}
+
+.opensidenavone{
+  width:fit-content;
+  height:100%;
+  padding-left: 0em;
+  margin-left: 0em;
+  overflow: auto;
+}
+
+}
+
+
+  /*............end of styling of side nav one bar menu and its content.............................*/
+
+  /*############################################################################################*/
+  
+/*............start.....styling of second hiden side nav two menu bar and its content..................*/
+.sidenavtwomenu {
+    position: absolute;
+    top: 2.5em;
+    margin: 0;
+    padding: 0.1em;
+    background: #f7f7f7;
+    overflow-x:auto;
+    overflow-y:auto;
+    box-shadow: 2px 0 18px rgba(0, 0, 0, 0.26);
+    left: 7em;
+    z-index:2;
+    width:0; height:0;/*this ensures that the side two menu is only shown on click... is like hiding the menu*/
+    overflow: auto;
+   
+   
+    
+}
+
+.sidenavtwomenudropdownbtn,.sidenavtwomenu a{
+  display: block;
+  border: none;
+ 
+  text-align:center;
+  color: #474747;
+  text-decoration:none;  
+  position: relative;
+  line-height: 2em;
+  font-weight:lighter;
+  font-size: 1em;
+  text-align:left;
+  padding: 0.1em 0.1em 0.1em 0.1em;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  font-family:Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  border-bottom: 1px solid #dfdede;
+  background: #f7f7f7;
+  margin-left: 1em;
+  max-width:max-content;
+  max-height:fit-content;
+  padding-left: 0em;
+  padding-right: 0.5em;
+  
+}
+.sidenavtwomenu a:hover,.sidenavtwomenudropdownbtn:hover{
+  color: #3a0bf7;
+}
+/**styling side nav two drop down container*/
+  
+.sidenavtwo-dropdown-container {
+  display: none;
+  position:absolute;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  z-index: 1;/*drop down will not open without this property....*/
+  float: left;
+  text-align: left;
+  padding: 0.1em 0.1em 0.1em 0.1em;
+  background: #f7f7f7;
+ 
+ 
+  }
+
+.sidenavtwo-dropdown-container a{
+  position: relative;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight:lighter;
+  font-size: 1em;
+  text-align: left;
+  padding: 0.1em 0.1em 0.1em 0.1em;
+  text-decoration: none;
+  color: #3a0bf7;
+  display: block;
+  line-height: 2em;
+  background: #f7f7f7;
+  border-bottom: 1px solid #dfdede;
+  width: 100%;
+  
+  }
+  
+  .sidenavtwo-dropdown-container a:hover{
+    color: #474747;
+  }
+
+
+.sidenavtwo-dropdown-container a{
+  color: #3a0bf7;
+  }
+  
+
+/*this opening window is for the second side nav bar*/
+.opensidenavtwo{
+  width:fit-content;
+  height:100%;
+  
+ 
+}
+
+
+
+/*styling for various screen heights*/
+
+@media all and (min-height: 0px) and (max-height: 500px) and (min-width: 0px) and (max-width: 800px) {
+.sidenavtwomenu {
+  top: 0em;
+  padding-left: 0em;
+  margin-left: 0em;
+  text-align:left;
+  z-index: 10;
+  width: 0em;
+  height: 0em;
+  left: 5em;
+  overflow-x: auto;
+
+  }
+
+.sidenavtwomenu a, .sidenavtwomenudropdownbtn{
+  display: block;
+  border: none;
+  left: 0em;
+  color: #474747;
+  text-decoration:none;  
+  position: relative;
+  line-height: 2em;
+  font-weight:lighter;
+  font-size: 0.8em;
+  text-align:left;
+  padding: 0.1em 0.1em 0.1em 0.1em;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  font-family:Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  border-bottom: 1px solid #dfdede;
+  background: #f7f7f7;
+  width: max-content;
+  overflow: auto;
+}
+
+.sidenavtwo-dropdown-container a{
+  position: relative;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight:lighter;
+  font-size: 0.8em;
+  text-align: left;
+  left: 0em;
+  padding: 0.1em 0.1em 0.1em 0.1em;
+  text-decoration: none;
+  color: #3a0bf7;
+  display: block;
+  line-height: 2em;
+  background: #f7f7f7;
+  border-bottom: 1px solid #dfdede;
+  width: 100%;
+  
+}
+
+.sidenavtwo-dropdown-container a{
+  color: #3a0bf7;
+}
+/*the property below determinses the size of the window that opens when clicked on the hidden links*/
+.opensidenavtwo{
+  width:fit-content;
+  height:100%;
+}
+
+}
+
+@media all and (min-height: 0px) and (max-height: 500px) and (min-width: 800px) and (max-width: 1200px) {
+.sidenavtwomenu {
+  top: 0em;
+  padding-left: 0em;
+  margin-left: 0em;
+  text-align:left;
+  z-index: 10;
+  width: 0em;
+  height: 0em;
+  left: 5em;
+  overflow-x: auto;
+
+  }
+
+.sidenavtwomenu a, .sidenavtwomenudropdownbtn{
+  display: block;
+  border: none;
+  left: 0em;
+  color: #474747;
+  text-decoration:none;  
+  position: relative;
+  line-height: 2em;
+  font-weight:lighter;
+  font-size: 0.8em;
+  text-align:left;
+  padding: 0.1em 0.1em 0.1em 0.1em;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  font-family:Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  border-bottom: 1px solid #dfdede;
+  background: #f7f7f7;
+  width: max-content;
+  overflow: auto;
+  
+}
+
+.sidenavtwo-dropdown-container a{
+  position: relative;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight:lighter;
+  font-size: 0.8em;
+  text-align: left;
+  left: 0em;
+  padding: 0.1em 0.1em 0.1em 0.1em;
+  text-decoration: none;
+  color: #3a0bf7;
+  display: block;
+  line-height: 2em;
+  background: #f7f7f7;
+  border-bottom: 1px solid #dfdede;
+  width: 100%;
+  
+}
+
+.sidenavtwo-dropdown-container a{
+  color: #3a0bf7;
+}
+/*the property below determinses the size of the window that opens when clicked on the hidden links*/
+.opensidenavtwo{
+  width:fit-content;
+  height:100%;
+}
+
+}
+
+@media all and (min-height: 0px) and (max-height: 500px) and (min-width: 1200px) {
+.sidenavtwomenu {
+  top: 0em;
+  padding-left: 0em;
+  margin-left: 0em;
+  text-align:left;
+  z-index: 10;
+  width: 0em;
+  height: 0em;
+  left: 5em;
+  overflow-x: auto;
+
+  }
+
+.sidenavtwomenu a, .sidenavtwomenudropdownbtn{
+  display: block;
+  border: none;
+  left: 0em;
+  color: #474747;
+  text-decoration:none;  
+  position: relative;
+  line-height: 2em;
+  font-weight:lighter;
+  font-size: 0.8em;
+  text-align:left;
+  padding: 0.1em 0.1em 0.1em 0.1em;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  font-family:Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  border-bottom: 1px solid #dfdede;
+  background: #f7f7f7;
+  width: max-content;
+  overflow: auto;
+  background-color: #3a0bf7;
+}
+
+.sidenavtwo-dropdown-container a{
+  position: relative;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight:lighter;
+  font-size: 0.8em;
+  text-align: left;
+  left: 0em;
+  padding: 0.1em 0.1em 0.1em 0.1em;
+  text-decoration: none;
+  color: #3a0bf7;
+  display: block;
+  line-height: 2em;
+  background: #f7f7f7;
+  border-bottom: 1px solid #dfdede;
+  width: 100%;
+  
+}
+
+.sidenavtwo-dropdown-container a{
+  color: #3a0bf7;
+}
+/*the property below determinses the size of the window that opens when clicked on the hidden links*/
+.opensidenavtwo{
+  width:fit-content;
+  height:100%;
+}
+
+}
+
+
+/*............end.....styling of second hiden side nav two menu bar and its content..................*/
+
+
+
+
+
+/*############################################################################################*/
+  
+/*............start.....styling of third hiden side nav two menu bar and its content..................*/
+.sidenavthreemenu {
+position: absolute;
+top: 2.5em;
+margin: 0;
+padding: 0.1em;
+background: #f7f7f7;
+overflow-x:auto;
+overflow-y:auto;
+box-shadow: 2px 0 18px rgba(0, 0, 0, 0.26);
+left: 7em;
+z-index:2;
+width:0; height:0;/*this ensures that the side two menu is only shown on click... is like hiding the menu*/
+overflow: auto;
+  
+}
+
+.sidenavthreemenudropdownbtn,.sidenavthreemenu a{
+  display: block;
+  border: none;
+ 
+  text-align:center;
+  color: #474747;
+  text-decoration:none;  
+  position: relative;
+  line-height: 2em;
+  font-weight:lighter;
+  font-size: 1em;
+  text-align:left;
+  padding: 0.1em 0.1em 0.1em 0.1em;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  font-family:Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  border-bottom: 1px solid #dfdede;
+  background: #f7f7f7;
+  margin-left: 1em;
+  max-width:max-content;
+  max-height:fit-content;
+  padding-left: 0.2em;
+  padding-right: 0.2em;
+  
+}
+.sidenavthreemenu a:hover,.sidenavthreemenudropdownbtn:hover{
+  color: #3a0bf7;
+}
+/**styling side nav two drop down container*/
+  
+.sidenavthree-dropdown-container {
+  display: none;
+  position:absolute;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  z-index: 1;/*drop down will not open without this property....*/
+  float: left;
+  text-align: left;
+  padding: 0.1em 0.1em 0.1em 0.1em;
+  background: #f7f7f7;
+ 
+ 
+  }
+
+.sidenavthree-dropdown-container a{
+  position: relative;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight:lighter;
+  font-size: 1em;
+  text-align: left;
+  padding: 0.1em 0.1em 0.1em 0.1em;
+  text-decoration: none;
+  color: #3a0bf7;
+  display: block;
+  line-height: 2em;
+  background: #f7f7f7;
+  border-bottom: 1px solid #dfdede;
+  width: 100%;
+  
+  }
+  
+  .sidenavthree-dropdown-container a:hover{
+    color: #474747;
+  }
+
+
+.sidenavthree-dropdown-container a{
+  color: #3a0bf7;
+  }
+  
+
+/*this opening window is for the second side nav bar*/
+.opensidenavthree{
+  width:fit-content;
+  height:100%;
+  
+ 
+}
+
+
+
+/*styling for various screen heights*/
+
+@media all and (min-height: 0px) and (max-height: 500px) and (min-width: 0px) and (max-width: 800px) {
+.sidenavthreemenu {
+  top: 0em;
+  padding-left: 0em;
+  margin-left: 0em;
+  text-align:left;
+  z-index: 10;
+  width: 0em;
+  height: 0em;
+  left: 5em;
+  overflow-x: auto;
+
+  }
+
+.sidenavthreemenu a, .sidenavthreemenudropdownbtn{
+  display: block;
+  border: none;
+  left: 0em;
+  color: #474747;
+  text-decoration:none;  
+  position: relative;
+  line-height: 2em;
+  font-weight:lighter;
+  font-size: 0.8em;
+  text-align:left;
+  padding: 0.1em 0.1em 0.1em 0.1em;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  font-family:Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  border-bottom: 1px solid #dfdede;
+  background: #f7f7f7;
+  width: max-content;
+  overflow: auto;
+}
+
+.sidenavthree-dropdown-container a{
+  position: relative;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight:lighter;
+  font-size: 0.8em;
+  text-align: left;
+  left: 0em;
+  padding: 0.1em 0.1em 0.1em 0.1em;
+  text-decoration: none;
+  color: #3a0bf7;
+  display: block;
+  line-height: 2em;
+  background: #f7f7f7;
+  border-bottom: 1px solid #dfdede;
+  width: 100%;
+  
+}
+
+.sidenavthree-dropdown-container a{
+  color: #3a0bf7;
+}
+/*the property below determinses the size of the window that opens when clicked on the hidden links*/
+.opensidenavthree{
+  width:fit-content;
+  height:100%;
+}
+
+}
+
+@media all and (min-height: 0px) and (max-height: 500px) and (min-width: 800px) and (max-width: 1200px) {
+.sidenavthreemenu {
+  top: 0em;
+  padding-left: 0em;
+  margin-left: 0em;
+  text-align:left;
+  z-index: 10;
+  width: 0em;
+  height: 0em;
+  left: 5em;
+  overflow-x: auto;
+
+  }
+
+.sidenavthreemenu a, .sidenavthreemenudropdownbtn{
+  display: block;
+  border: none;
+  left: 0em;
+  color: #474747;
+  text-decoration:none;  
+  position: relative;
+  line-height: 2em;
+  font-weight:lighter;
+  font-size: 0.8em;
+  text-align:left;
+  padding: 0.1em 0.1em 0.1em 0.1em;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  font-family:Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  border-bottom: 1px solid #dfdede;
+  background: #f7f7f7;
+  width: max-content;
+  overflow: auto;
+ 
+}
+
+.sidenavthree-dropdown-container a{
+  position: relative;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight:lighter;
+  font-size: 0.8em;
+  text-align: left;
+  left: 0em;
+  padding: 0.1em 0.1em 0.1em 0.1em;
+  text-decoration: none;
+  color: #3a0bf7;
+  display: block;
+  line-height: 2em;
+  background: #f7f7f7;
+  border-bottom: 1px solid #dfdede;
+  width: 100%;
+  
+}
+
+.sidenavthree-dropdown-container a{
+  color: #3a0bf7;
+}
+/*the property below determinses the size of the window that opens when clicked on the hidden links*/
+.opensidenavthree{
+  width:fit-content;
+  height:100%;
+}
+
+}
+
+@media all and (min-height: 0px) and (max-height: 500px) and (min-width: 1200px) {
+.sidenavthreemenu {
+  top: 0em;
+  padding-left: 0em;
+  margin-left: 0em;
+  text-align:left;
+  z-index: 10;
+  width: 0em;
+  height: 0em;
+  left: 5em;
+  overflow-x: auto;
+
+  }
+
+.sidenavthreemenu a, .sidenavthreemenudropdownbtn{
+  display: block;
+  border: none;
+  left: 0em;
+  color: #474747;
+  text-decoration:none;  
+  position: relative;
+  line-height: 2em;
+  font-weight:lighter;
+  font-size: 0.8em;
+  text-align:left;
+  padding: 0.1em 0.1em 0.1em 0.1em;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  font-family:Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  border-bottom: 1px solid #dfdede;
+  background: #f7f7f7;
+  width: max-content;
+  overflow: auto;
+}
+
+.sidenavthree-dropdown-container a{
+  position: relative;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight:lighter;
+  font-size: 0.8em;
+  text-align: left;
+  left: 0em;
+  padding: 0.1em 0.1em 0.1em 0.1em;
+  text-decoration: none;
+  color: #3a0bf7;
+  display: block;
+  line-height: 2em;
+  background: #f7f7f7;
+  border-bottom: 1px solid #dfdede;
+  width: 100%;
+  
+}
+
+.sidenavthree-dropdown-container a{
+  color: #3a0bf7;
+}
+/*the property below determinses the size of the window that opens when clicked on the hidden links*/
+.opensidenavthree{
+  width:fit-content;
+  height:100%;
+}
+
+}
+
+
+/*............end.....styling of second hiden side nav two menu bar and its content..................*/
+
+
+</style>
+
+  <div class="sidenavonemenu">
+
+   <a href="#" class="opensidemenuonebtn sidenavonemenulinksforminiscreens"
+    id="sidenavoneshwohiddenlinkslink">Menu 1 <i class="fa fa-caret-down"></i></a>
+   <a href="#" class="opensidemenutwobtn"> Menu 2 <i class="fa fa-caret-right"></i></a>
+   <a href="#" class="opensidemenuthreebtn">Menu 3 <i class="fa fa-caret-right"></i></a>
+
+   <a href="" >Search</a>
+   <a href="" class="" >Searching</a>
+   <a href="#" class="" >Financials</a>
+   <a href="#" class="" >testing</a>
+   
+   <button class="sidenavonedropdownbtn" >Quotations <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="sidenavone-dropdown-container">
+    <a href="">Dashboard</a>
+    <a href="#">Suppliers</a>
+    <a href="#">Purchases</a>
+  </div>
+
+  <button class="sidenavonedropdownbtn" >Purchases <i class="fa fa-caret-down"></i>
+   
+  </button>
+  <div class="sidenavone-dropdown-container">
+    <a href="">Logistics</a>
+    <a href="#">Invoices</a>
+    <a href="#">Quotations</a>
+  </div>
+
+  <button class="sidenavonedropdownbtn" >Employees <i class="fa fa-caret-down"></i>
+  
+  </button>
+  <div class="sidenavone-dropdown-container">
+    <a href="">Logistics</a>
+    <a href="#">Invoices</a>
+    <a href="#">Quotations</a>
+  </div>
+  
+
+ 
+  <button class="sidenavonedropdownbtn">Inventory <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="sidenavone-dropdown-container">
+    <a href="">Purchases</a>
+    <a href="#">Suppliers</a>
+    <a href="#">Returns</a>
+  </div>
+
+  <a href="#" class="">Sales</a>
+  <a href="#" class="">Marketing</a>
+  <a href="#" class="">Leads</a>
+  <button class="sidenavonedropdownbtn">Inventory <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="sidenavone-dropdown-container">
+    <a href="">Purchases</a>
+    <a href="#">Suppliers</a>
+    <a href="#">Returns</a>
+  </div>
+  <button class="sidenavonedropdownbtn">Rayxan <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="sidenavone-dropdown-container">
+    <a href="">Purchases</a>
+    <a href="#">Suppliers</a>
+    <a href="#">Returns</a>
+  </div>
+
+
+  </div>
+
+ 
+
+
+  
+  <div class="sidenavtwomenu">
+    
+      <a href="#">Sales</a>
+      <a href="#">About</a>
+      <a href="#">Inventory</a>
+      <a href="#">Quotes</a>
+      <a href="#">Suppliers</a>
+      <a href="#">Customers</a>
+      <a href="#">Invoices</a>
+
+      <button class="sidenavtwomenudropdownbtn">Inventory<strong>+</strong>
+      </button>
+      <div class="sidenavtwo-dropdown-container">
+        <a href="">Purchases</a>
+        <a href="#">Suppliers</a>
+        <a href="#">Returns</a>
+      </div>
+      <a href="#">Customers</a>
+      <a href="#">Invoices</a>
+
+      <button class="sidenavtwomenudropdownbtn">Insurances<strong>+</strong>
+      </button>
+      <div class="sidenavtwo-dropdown-container">
+        <a href="">Purchases</a>
+        <a href="#">Suppliers</a>
+        <a href="#">Returns</a>
+      </div>
+      <button class="sidenavtwomenudropdownbtn">Medicals<strong>+</strong>
+      </button>
+      <div class="sidenavtwo-dropdown-container">
+        <a href="">Purchases</a>
+        <a href="#">Suppliers</a>
+        <a href="#">Returns</a>
+      </div>
+      <button class="sidenavtwomenudropdownbtn">Returns<strong>+</strong>
+      </button>
+      <div class="sidenavtwo-dropdown-container">
+        <a href="">Purchases</a>
+        <a href="#">Suppliers</a>
+        <a href="#">Returns</a>
+      </div>
+      <a href="#" class="">Managers</a>
+
+      
+  </div>
+
+
+
+  <div class="sidenavthreemenu">
+    
+    <a href="#">Axmed</a>
+    <a href="#">Xawa</a>
+    <a href="#">Rayxaan</a>
+    <a href="#">Maxamed</a>
+    <a href="#">Suppliers</a>
+    <a href="#">Customers</a>
+    <a href="#">Invoices</a>
+
+    <button class="sidenavthreemenudropdownbtn">Inventory<strong>+</strong>
+    </button>
+    <div class="sidenavthree-dropdown-container">
+      <a href="">Purchases</a>
+      <a href="#">Suppliers</a>
+      <a href="#">Returns</a>
+    </div>
+    <a href="#">Customers</a>
+    <a href="#">Invoices</a>
+
+    <button class="sidenavthreemenudropdownbtn">Insurances<strong>+</strong>
+    </button>
+    <div class="sidenavthree-dropdown-container">
+      <a href="">Purchases</a>
+      <a href="#">Suppliers</a>
+      <a href="#">Returns</a>
+    </div>
+    <button class="sidenavthreemenudropdownbtn">Medicals<strong>+</strong>
+    </button>
+    <div class="sidenavthree-dropdown-container">
+      <a href="">Purchases</a>
+      <a href="#">Suppliers</a>
+      <a href="#">Returns</a>
+    </div>
+    <button class="sidenavthreemenudropdownbtn">Returns<strong>+</strong>
+    </button>
+    <div class="sidenavthree-dropdown-container">
+      <a href="">Purchases</a>
+      <a href="#">Suppliers</a>
+      <a href="#">Returns</a>
+    </div>
+    <a href="#" class="">Managers</a>
+
+</div>
+

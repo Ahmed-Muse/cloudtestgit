@@ -1,0 +1,459 @@
+{% extends 'allifmaaluiapp/base/uimainbase/allifmaaluibase.html'%}
+
+{% block title %}
+{{title}}
+{% endblock %}
+{% block style %}
+{%endblock%}
+   
+{% block body %}
+ 
+<style>
+  .module-specific-dropdown-links-btn{
+    width: fit-content;
+    height: fit-content;
+    background-color: aqua;
+    display: inline;
+  }
+  .module-specific-dropdown-links-btn a{
+    display: inline;
+    color: red;
+
+  }
+  .module-specific-dropdown-container {
+  display: none;
+  position:fixed;/*.....important......this opens in the absolute position...
+   if you make it relative, it will open within the horizontal nav bar...*/
+  margin-top: 7em;
+  text-align: left;
+  width: fit-content;
+  height: fit-content;
+  overflow: hidden;
+  background-color:#f2f7fc;
+  box-shadow: 0.05em 0.0em 0.05em 0.07em #beb0f8;
+  z-index: 10;
+  border-radius: 0.2em;
+  padding: 0.1em 0.1em 0.1em 0.1em;
+  }
+
+  .module-specific-dropdown-container a{
+  z-index: 10;
+  font-size: 0.9em;
+  overflow: hidden;
+  float: none; 
+  display: inline; 
+  z-index:10;
+  padding: 0.1em 0.1em 0.1em 0.1em;
+
+  }
+</style>
+
+   <div class="allifmaincontainer container-check-if-removing-it-will-help-styling"><!--start of main container of the page--...#17a2b8;  -->
+
+    <!--start of first row-->
+ 
+    
+
+      <!--we can insert the other section here-->
+      
+          <div class="col-md-12" >
+              <div class="card">
+                  <div id="allif-section-headers" class="card-header">
+                      
+                  Main Store Table
+                  
+                  
+                  </div>
+
+                  <button class="module-specific-dropdown-links-btn" >Quotations <i class="fa fa-caret-down"></i>
+                  </button>
+                  <div class="module-specific-dropdown-container">
+                    <a href="">Dashboard</a>
+                    <a href="#">Accounts</a>
+                    <a href="#">Purchases</a>
+                    <a href="#">Suppliers</a>
+                    <a href="#">Purchases</a>
+                    <a href="#">Suppliers</a>
+                    
+                  </div>
+                  <button class="module-specific-dropdown-links-btn" >sales <i class="fa fa-caret-down"></i>
+                  </button>
+                  <div class="module-specific-dropdown-container">
+                    <a href="">Dashboard</a>
+                    <a href="#">Customers</a>
+                    <a href="#">Purchases</a>
+                    <a href="#">Suppliers</a>
+                    <a href="#">Purchases</a>
+                    <a href="#">Suppliers</a>
+                    
+                  </div>
+                  
+                
+              <div class="AllifTableFixedHeader Allifmaal-scroll-table"> 
+                  <table class="table table-layout">
+                    <thead >
+                      <tr class="allif-table-header-row">
+                         
+                          <td>Category</td>
+                          <td>Description</td>
+                          <td>PartNo.</td>
+          
+                          <td>Quantity</td>
+                        
+                          <td>Price</td>
+                          <td>Details</td>
+                         
+                      </tr>
+                    </thead>
+                    <tbody>
+                    
+          <tr>
+          
+      
+              <td >
+                item one
+              </td>
+             
+      
+              <td>
+                 54W3 SOLAR MODULES
+                 
+              </td>
+              <td>do again </td>
+              
+              <td> another one</td>
+              
+            
+              <td>566</td>
+              <td>
+                 compacision
+              </td>
+             
+          </tr>
+          <tr>
+           
+                <td >
+                  item one
+                </td>
+               
+        
+                <td>
+                   two sect
+                   
+                </td>
+                <td>do again</td>
+                
+                <td> another one</td>
+                
+              
+                <td>566</td>
+                <td>
+                   compacision
+                </td>
+               
+            </tr>
+            <tr>
+             
+          
+                  <td >
+                    item one
+                  </td>
+                 
+          
+                  <td>
+                     two sect
+                     
+                  </td>
+                  <td>do again</td>
+                  
+                  <td> another one</td>
+                  
+                
+                  <td>566</td>
+                  <td>
+                     compacision
+                  </td>
+                 
+              </tr>
+              <tr>
+               
+                    <td >
+                      item one
+                    </td>
+                   
+            
+                    <td>
+                       two sect
+                       
+                    </td>
+                    <td>do again</td>
+                    
+                    <td> another one</td>
+                    
+                  
+                    <td>566</td>
+                    <td>
+                       compacision
+                    </td>
+                   
+                </tr>
+                
+         
+      
+                    </tbody>
+                  </table>
+                </div>
+             
+              <!--end of table-->
+                 
+              </div>
+            
+            
+            
+            </div>
+              <!-- end of first row-->
+            
+              <!--start of first row-->
+    <div class="row mt-12" >
+        
+      <div class="col-md-4">
+          <div class="card">
+              <div id="allif-section-headers" class="card-header ">
+                 Add Tax Descriptions
+              </div>
+               <!-- start of on click dropdown Menu-->
+<div class="allif-clikable-dropdown">
+  <button onclick="openOnClickFunction()" id="allif-link-buttons" class="allifmaal-dropbtn btn btn-success mybuttonlinks">
+    Open Module Related Functions 
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div id="allif-clikable-myDropdown" type="button" class="clikable-dropdown-content">
+   
+         
+  </div>
+  </div>
+  
+
+<!----------------------------------------------start of row----------------------------------------------------->
+<div class="col-md-12"><!--start of the first row body-->
+    <div class="col-md-12"><!--start of column 1-->
+      <table class="table table-layout">
+        <thead >
+          <tr class="allif-table-header-row">
+              <td>NO</td>
+              <td>Category</td>
+              <td>Description</td>
+              <td>Part No.</td>
+
+             
+             
+          </tr>
+        </thead>
+        <tbody>
+        
+<tr>
+<td>
+  1
+</td>
+
+  <td >
+    item one
+  </td>
+ 
+
+  <td>
+     two sect
+     
+  </td>
+  <td>do again</td>
+  
+ 
+  
+
+  
+</tr>
+<tr>
+<td>
+    1
+</td>
+
+    <td >
+      item one
+    </td>
+    
+  
+    <td>566</td>
+    <td>
+       compacision
+    </td>
+   
+</tr>
+
+     
+     
+  </tr>
+  
+    
+
+
+        </tbody>
+      </table> 
+    </div><!--end of column 1-->
+</div><!--end of first row body-->
+<!----------------------------------------------end of row----------------------------------------------------->
+   
+          </div>
+      </div>
+      
+
+  <div class="col-md-8">
+      <div class="card" style="left: 1em;">
+          <div id="allif-section-headers" class="card-header">
+         Tax Parameters
+          </div>
+         
+              <div class="col-md-12 AllifTableFixedHeader Allifmaal-scroll-table">
+                
+      <!--start of the table-->
+          
+          <table class="table table-layout">
+          <thead>
+              <tr class="allif-table-header-row">
+              <td>Description</td>
+              <td>Rate</td>
+              <td>Type</td>
+              <td>Edit</td>
+             
+              <td>Delete</td>
+
+      
+          </tr>
+      </thead>
+      <tbody>
+
+          
+
+  <tr>
+      
+   
+      
+      
+      <td>
+        23
+         
+      </td>
+      <td>
+          taxes go here
+         
+      </td>
+      <td>
+          34
+         
+      </td>
+      
+        
+      <td>
+        stocks
+      </td>
+
+      <td>
+         procurement
+      </td>
+      
+  </tr>
+  
+  <tr>
+      
+   
+      
+      
+    <td>
+      23
+       
+    </td>
+    <td>
+        taxes go here
+       
+    </td>
+    <td>
+        34
+       
+    </td>
+    
+      
+    <td>
+      stocks
+    </td>
+
+    <td>
+       procurement
+    </td>
+    
+</tr>
+
+<tr>
+      
+   
+      
+      
+  <td>
+    23
+     
+  </td>
+  <td>
+      taxes go here
+     
+  </td>
+  
+  <td>
+      34
+     
+  </td>
+  
+    
+  <td>
+    stocks
+  </td>
+
+  <td>
+     procurement
+  </td>
+  
+</tr>
+ 
+
+      </tbody>
+      </table>
+      
+      <!--end of table-->
+          </div>
+          <h1>jklklfd sdfdsfd </h1>
+          <br>
+          <h1>jklklfd sdfdsfd </h1>
+          <br>
+          <h1>jklklfd sdfdsfd </h1>
+          <br>
+          <h1>jklklfd sdfdsfd </h1>
+          <br>
+      </div></div></div>
+      <!-- end of first row-->
+   
+</div><!--end of main container of the page-->
+
+<script>
+   var topnavonedropdownbtns= document.getElementsByClassName("module-specific-dropdown-links-btn");
+    var i;
+    for (i = 0; i < topnavonedropdownbtns.length; i++) {
+      topnavonedropdownbtns[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var topnavonedropdownbtnlinks = this.nextElementSibling;
+        if (topnavonedropdownbtnlinks.style.display === "block") {
+          topnavonedropdownbtnlinks.style.display = "none";
+        } else {
+          topnavonedropdownbtnlinks.style.display = "block";
+        }
+      });
+    }
+</script>
+   {% endblock %}
+   

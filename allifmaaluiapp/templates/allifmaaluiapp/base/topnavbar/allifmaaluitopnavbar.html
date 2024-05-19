@@ -1,0 +1,1011 @@
+<style>
+  /*........................ IMPORTANT NOTES ........................*/
+  /*......................... DATE: 17th MAY 2024 ..................*/
+  /*......................... DEVELOPER: AHMED MUSE DIRIYE QOORYARE..................*/
+  /*.THIS IS TWO NAV BARS IN ONE...PRIMARY NAV BAR AND SECONDARY DROP DOWN NAV BAR..................*/
+  /*...PRIMARY NAV BAR HAS TWO SECTIONS..VISIBLE SECTION AND HIDDEN SECTION.........*/
+  /*.....THIS NAV BAR CAN ACCOMMODATE MORE THAN 1,500 LINKS.....*/
+  /*.WE CAN HAVE MORE THAN 30 DROP DOWN BUTTONS EACH HOLDING, SAY, 50 LINKS. THAT IS 30X50 = 1,500 LINKS...*/
+  /*.....Kindly read these notes before making any changes to this file.....*/
+  /*This file contains the links for the top horizontal navigation bar*/
+  /*. The horizontal nav bar contains links and drop down buttons that open up secondary horizontal nav
+  bars with links...
+
+  Important to note that:
+  1. you can add more links to any section of this nav bar but I recommend you leave it the way it is...
+  2. if necessary, you may add more links to the drop down secondary horizontal nav bar as well.
+  3. Also if you want to have more links on the nav bar, you can replace normal "a" links on the 
+    horizontal nav bar with drop down buttons, then add the links on the drop down buttons.
+  4. The links in the primary nav bar inlcuding drop down buttons are 20, so please dont increase this number
+  unless absolutely necessary.
+
+  
+  ....*/
+</style>
+
+<style>
+.allifmaaltopnavone {
+  overflow: auto;
+  background-color:#F6F7F8;
+  margin-left: 6em;
+  box-shadow: 2px 0 18px rgba(0, 0, 0, 0.26);
+  position:fixed;
+  right: 0em;
+  left: 0em;
+  top: 0;
+  z-index: 10;
+}
+
+/* Style the links inside the navigation bar */
+.allifmaaltopnavone a, button.topnavonedropdownbtn {
+  float: left;
+  display: block;
+  color: #474747;
+  text-align: center;
+  padding: 0.5em 0.5em;
+  text-decoration: none;
+  font-size: 1em;
+  font-family: Arial, Helvetica, sans-serif;
+  border: none;
+  background-color:#F6F7F8;
+}
+
+.allifmaaltopnavone a:hover,.allifmaaltopnavone .topnavone-dropdown-container a:hover {
+  color: #3a0bf7;
+  
+}
+
+/*top nav one drop down */
+.topnavone-dropdown-container {
+  display: none;
+  position:absolute;/*.....important......this opens in the absolute position...
+   if you make it relative, it will open within the horizontal nav bar...*/
+  margin-top: 1.5em;
+  top: 1.5em;
+  text-align: left;
+  width: fit-content;
+  height: fit-content;
+  overflow: auto;
+  max-height: 3em;
+  
+  background-color:#F6F7F8;
+  box-shadow: 0.05em 0.0em 0.05em 0.07em #beb0f8;
+  z-index: 10;
+  border-radius: 0.2em;
+  padding: 0.2em 0.5em 0.1em 0.5em;
+  }
+  .allifmaaltopnavone .topnavone-dropdown-container a{
+  z-index: 10;
+  font-size: 1.9em;
+  overflow:auto;
+  color: #474747;
+  display: inline; 
+  z-index:10;
+  padding: 0.1em 0.1em 0.1em 0.1em;
+  margin-top: auto;
+  }
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. */
+/* therefore we need to style for different horizontal widths...*/
+/*style for mini and  mobile devices */
+
+@media screen and (min-width: 0px) and (max-width: 600px){
+
+  /*.............................PRIMARY NAV BAR SECTION..........................................*/
+  .allifmaaltopnavone {
+    left: 0.3em;
+    padding-left: 1em;
+  }
+ 
+ .allifmaaltopnavone a { 
+  /* hide all links and buttons with above class names...*/
+   display: none;
+ }
+ /*show only the links for mobile phones size screens with class name below....*/
+ .allifmaaltopnavone a.topnavmobilelinks {
+   /*we can also use a.topnavmobilelinks only and will work*/
+  display: inline-block;
+  left: 4em;
+  font-size: 0.8em;
+ }
+ 
+ /*show the icon for the hidden links*/
+ .allifmaaltopnavone a.allifmaaltopnavoneicon {
+   float: right;
+   display: block;
+ }
+ 
+ /*style for the hidden links for the primary nav bar*/
+ /*show the items that have two class names which match below class names....*/
+ .allifmaaltopnavone.opentopnavhiddenlinks a {/*this opens up the hidden item links in the primary nav bar*/
+  /*.allifmaaltopnavone.opentopnavhiddenlinks means an item with two classes...
+  the class name opentopnavhiddenlinks is appended to the elements through javascript code...*/
+    float: none;
+    display: inline-block;/*this is important...block will not look good... so inline-block is better*/
+    text-align: center;
+     font-size: 0.8em;
+  }
+  .allifmaaltopnavone.opentopnavhiddenlinks .allifmaaltopnavoneicon {/*this ensures that the icon stays in its position after opening links*/
+    position: relative;
+    display: inline-block;
+  }
+  
+
+/*.............................SECONDARY NAV BAR SECTION..........................................*/
+  /*style the secondary hidden nav bar and its buttons...
+  ..........Hide all drop down buttons in the primary nav bar*/
+  .allifmaaltopnavone button.topnavonedropdownbtn{
+    /*this means that get the element with class name allifmaaltopnavone and inside it there is
+    a button with class name topnavonedropdownbtn, so set its display to none. */
+    display: none;
+  }
+
+  /*since we hid all the drop down buttons in the primary nav bar, we exclude and show 
+  buttons with class name topnavmobilelinks... so any drop down button with this class name will be shown here.*/
+  .allifmaaltopnavone > button.topnavmobilelinks{/*this is an exception of the above where all drop down
+    button's display set to none*/
+  display: inline-block;
+  left: 4em;
+  font-size: 0.8em;
+  }
+
+  /*style drop down buttons for the secondary nav bar after opening of the hidden links for the primary nav bar...
+  in other words, these styles are only applied after we open the primary nav bar... this is
+  achieved through the application of the class name opentopnavhiddenlinks applied through javascript code*/
+  .allifmaaltopnavone.opentopnavhiddenlinks button.topnavonedropdownbtn {
+    float: none;
+    display: inline-block;/*this is important...block will not look good... so inline-block is better*/
+    text-align: center;
+    font-size: 0.8em;
+  }
+
+/*. Style for the secondary nav bar drop down container of the primary top nav...*/
+.allifmaaltopnavone .topnavone-dropdown-container {
+  position: inherit;
+  margin-top: auto;
+  top: 4em;
+  left: 5em;
+  right: 0.3em;
+  margin-right: 0.3em;
+  margin-left: 0.3em;
+  overflow: auto;
+  z-index: 10;
+  
+ 
+  }
+  .allifmaaltopnavone .topnavone-dropdown-container a{
+  z-index: 10;
+  font-size: 0.8em;
+  overflow: auto;
+  margin-top: auto;
+  display: inline; 
+  z-index:10;
+  padding: 0.1em 0.1em 0.4em 0.4em;
+  
+  }
+
+  /*style the drop down when the open links in the main nav bar is open*/
+.allifmaaltopnavone.opentopnavhiddenlinks .topnavone-dropdown-container{
+margin-top: 4.5em;
+top:4em;
+height: fit-content;
+width: fit-content;
+overflow: auto;
+}
+
+.allifmaaltopnavone.opentopnavhiddenlinks .topnavone-dropdown-container a{
+  z-index: 10;
+  font-size: 0.8em;
+  overflow: auto;
+  margin-top: auto;
+  display: inline; 
+  z-index:10;
+  padding: 0.1em 0.1em 0.4em 0.4em;
+}
+
+}
+
+
+/*then style for tablets*/
+
+@media screen and (min-width: 600px) and (max-width: 800px){
+  
+ .allifmaaltopnavone a {
+   display: none;
+ }
+ .allifmaaltopnavone a.topnavmobilelinks,.allifmaaltopnavone a.topnavtabletlinks {
+  display: inline-block;
+  font-size: 0.8em;
+ 
+  
+ }
+ 
+ 
+ .allifmaaltopnavone a.allifmaaltopnavoneicon {
+   float: right;
+   display: block;
+   
+ }
+ .allifmaaltopnavone.opentopnavhiddenlinks a{
+    float: none;
+    display: inline-block;
+    font-size: 0.8em;
+    
+    
+  }
+  .allifmaaltopnavone.opentopnavhiddenlinks .allifmaaltopnavoneicon {
+    position: relative;
+    display: inline-block;
+  }
+
+  /*.............................SECONDARY NAV BAR SECTION..........................................*/
+  /*style the secondary hidden nav bar and its buttons...
+  ..........Hide all drop down buttons in the primary nav bar*/
+  .allifmaaltopnavone button.topnavonedropdownbtn{
+    /*this means that get the element with class name allifmaaltopnavone and inside it there is
+    a button with class name topnavonedropdownbtn, so set its display to none. */
+    display: none;
+  }
+
+  /*since we hid all the drop down buttons in the primary nav bar, we exclude and show 
+  buttons with class name topnavmobilelinks... so any drop down button with this class name will be shown here.*/
+  .allifmaaltopnavone > button.topnavmobilelinks{/*this is an exception of the above where all drop down
+    button's display set to none*/
+  display: inline-block;
+  left: 4em;
+  font-size: 0.8em;
+  }
+
+  /*style drop down buttons for the secondary nav bar after opening of the hidden links for the primary nav bar...
+  in other words, these styles are only applied after we open the primary nav bar... this is
+  achieved through the application of the class name opentopnavhiddenlinks applied through javascript code*/
+  .allifmaaltopnavone.opentopnavhiddenlinks button.topnavonedropdownbtn {
+    float: none;
+    display: inline-block;/*this is important...block will not look good... so inline-block is better*/
+    text-align: center;
+    font-size: 0.8em;
+  }
+
+/*. Style for the secondary nav bar drop down container of the primary top nav...*/
+.allifmaaltopnavone .topnavone-dropdown-container {
+  position: inherit;
+  margin-top: auto;
+  top: 4em;
+  left: 5em;
+  right: 0.3em;
+  margin-right: 0.3em;
+  margin-left: 0.3em;
+  overflow: auto;
+  z-index: 10;
+  
+ 
+  }
+  .allifmaaltopnavone .topnavone-dropdown-container a{
+  z-index: 10;
+  font-size: 0.8em;
+  overflow: auto;
+  margin-top: auto;
+  display: inline; 
+  z-index:10;
+  padding: 0.1em 0.1em 0.4em 0.4em;
+  
+  }
+
+  /*style the drop down when the open links in the main nav bar is open*/
+.allifmaaltopnavone.opentopnavhiddenlinks .topnavone-dropdown-container{
+margin-top: 2em;
+top:4em;
+height: fit-content;
+width: fit-content;
+overflow: auto;
+}
+
+.allifmaaltopnavone.opentopnavhiddenlinks .topnavone-dropdown-container a{
+  z-index: 10;
+  font-size: 0.8em;
+  overflow: auto;
+  margin-top: auto;
+  display: inline; 
+  z-index:10;
+  padding: 0.1em 0.1em 0.4em 0.4em;
+}
+
+}
+
+/*then style for minilaptop*/
+
+@media screen and (min-width: 800px) and (max-width: 1000px){
+  
+ .allifmaaltopnavone a:not(:first-child) {
+   display: none;
+ }
+ .allifmaaltopnavone a.topnavmobilelinks,.allifmaaltopnavone a.topnavtabletlinks,.allifmaaltopnavone a.topnavminilaptoplinks {
+  display: block;
+  font-size: 0.8em;
+  padding-left: 1em;
+  
+ 
+ }
+ 
+ .allifmaaltopnavone a.allifmaaltopnavoneicon {
+   float: right;
+   display: block;
+ }
+ .allifmaaltopnavone.opentopnavhiddenlinks a {
+    float: none;
+    display: inline-block;
+    font-size: 0.8em;
+    
+  }
+  .allifmaaltopnavone.opentopnavhiddenlinks .allifmaaltopnavoneicon {
+    position: relative;
+    display: inline-block;
+  }
+  
+ 
+  
+  /*.............................SECONDARY NAV BAR SECTION..........................................*/
+  /*style the secondary hidden nav bar and its buttons...
+  ..........Hide all drop down buttons in the primary nav bar*/
+  .allifmaaltopnavone button.topnavonedropdownbtn{
+    /*this means that get the element with class name allifmaaltopnavone and inside it there is
+    a button with class name topnavonedropdownbtn, so set its display to none. */
+    display: none;
+  }
+
+  /*since we hid all the drop down buttons in the primary nav bar, we exclude and show 
+  buttons with class name topnavmobilelinks... so any drop down button with this class name will be shown here.*/
+  .allifmaaltopnavone > button.topnavmobilelinks{/*this is an exception of the above where all drop down
+    button's display set to none*/
+  display: inline-block;
+  left: 4em;
+  font-size: 0.8em;
+  }
+
+  /*style drop down buttons for the secondary nav bar after opening of the hidden links for the primary nav bar...
+  in other words, these styles are only applied after we open the primary nav bar... this is
+  achieved through the application of the class name opentopnavhiddenlinks applied through javascript code*/
+  .allifmaaltopnavone.opentopnavhiddenlinks button.topnavonedropdownbtn {
+    float: none;
+    display: inline-block;/*this is important...block will not look good... so inline-block is better*/
+    text-align: center;
+    font-size: 0.8em;
+  }
+
+/*. Style for the secondary nav bar drop down container of the primary top nav...*/
+.allifmaaltopnavone .topnavone-dropdown-container {
+  position: inherit;
+  margin-top: auto;
+  top: 4em;
+  left: 7.5em;
+  right: 0.3em;
+  margin-right: 0.3em;
+  margin-left: 0.3em;
+  overflow: auto;
+  z-index: 10;
+  
+ 
+  }
+  .allifmaaltopnavone .topnavone-dropdown-container a{
+  z-index: 10;
+  font-size: 0.8em;
+  overflow: auto;
+  margin-top: auto;
+  display: inline; 
+  z-index:10;
+  padding: 0.1em 0.1em 0.4em 0.4em;
+  
+  }
+
+  /*style the drop down when the open links in the main nav bar is open*/
+.allifmaaltopnavone.opentopnavhiddenlinks .topnavone-dropdown-container{
+margin-top: 1.5em;
+top:3em;
+height: fit-content;
+width: fit-content;
+overflow: auto;
+}
+
+.allifmaaltopnavone.opentopnavhiddenlinks .topnavone-dropdown-container a{
+  z-index: 10;
+  font-size: 0.8em;
+  overflow: auto;
+  margin-top: auto;
+  display: inline; 
+  z-index:10;
+  padding: 0.1em 0.1em 0.4em 0.4em;
+}
+
+}
+
+/*then style for normal laptop*/
+
+@media screen and (min-width: 1000px) and  (max-width: 1200px) {
+  .allifmaaltopnavone{
+    left: 0em;
+    padding-left: 1em;
+    border-radius: 0.1em;
+    margin-left: 5em;
+   
+  }
+  .allifmaaltopnavone a:not(:first-child){
+   display: none;
+ }
+ .allifmaaltopnavone a.topnavmobilelinks,.allifmaaltopnavone a.topnavtabletlinks,.allifmaaltopnavone a.topnavminilaptoplinks,
+ .allifmaaltopnavone a.topnavlaptoplinks{
+  display: block;
+  font-size: 0.9em;
+  padding-left: 1em;
+
+ }
+ 
+ 
+ .allifmaaltopnavone a.allifmaaltopnavoneicon {
+   float: right;
+   display: block;
+ }
+ .allifmaaltopnavone.opentopnavhiddenlinks a {
+    float: none;
+    display: inline-block;
+    
+  font-size: 0.9em;
+    
+  }
+  .allifmaaltopnavone.opentopnavhiddenlinks .allifmaaltopnavoneicon {
+    position: relative;
+    display: inline-block;
+  }
+   /*style the content*/
+  
+
+/*.............................SECONDARY NAV BAR SECTION..........................................*/
+  /*style the secondary hidden nav bar and its buttons...
+  ..........Hide all drop down buttons in the primary nav bar*/
+  .allifmaaltopnavone button.topnavonedropdownbtn{
+    /*this means that get the element with class name allifmaaltopnavone and inside it there is
+    a button with class name topnavonedropdownbtn, so set its display to none. */
+    display: none;
+  }
+
+  /*since we hid all the drop down buttons in the primary nav bar, we exclude and show 
+  buttons with class name topnavmobilelinks... so any drop down button with this class name will be shown here.*/
+  .allifmaaltopnavone > button.topnavmobilelinks{/*this is an exception of the above where all drop down
+    button's display set to none*/
+  display: inline-block;
+  left: 4em;
+  font-size: 0.9em;
+  }
+
+  /*style drop down buttons for the secondary nav bar after opening of the hidden links for the primary nav bar...
+  in other words, these styles are only applied after we open the primary nav bar... this is
+  achieved through the application of the class name opentopnavhiddenlinks applied through javascript code*/
+  .allifmaaltopnavone.opentopnavhiddenlinks button.topnavonedropdownbtn {
+    float: none;
+    display: inline-block;/*this is important...block will not look good... so inline-block is better*/
+    text-align: center;
+    font-size: 0.9em;
+  }
+
+/*. Style for the secondary nav bar drop down container of the primary top nav...*/
+.allifmaaltopnavone .topnavone-dropdown-container {
+  position: inherit;
+  margin-top: auto;
+  top: 4em;
+  left: 7.5em;
+  right: 0.3em;
+  margin-right: 0.3em;
+  margin-left: 0.3em;
+  overflow: auto;
+  z-index: 10;
+  
+ 
+  }
+  .allifmaaltopnavone .topnavone-dropdown-container a{
+  z-index: 10;
+  font-size: 0.9em;
+  overflow: auto;
+  margin-top: auto;
+  display: inline; 
+  z-index:10;
+  padding: 0.1em 0.1em 0.4em 0.4em;
+  
+  }
+
+  /*style the drop down when the open links in the main nav bar is open*/
+.allifmaaltopnavone.opentopnavhiddenlinks .topnavone-dropdown-container{
+margin-top: 1.5em;
+top:3em;
+height: fit-content;
+width: fit-content;
+overflow: auto;
+}
+
+.allifmaaltopnavone.opentopnavhiddenlinks .topnavone-dropdown-container a{
+  z-index: 10;
+  font-size: 0.9em;
+  overflow: auto;
+  margin-top: auto;
+  display: inline; 
+  z-index:10;
+  padding: 0.1em 0.1em 0.4em 0.4em;
+}
+
+
+
+}
+
+
+/*then style for normal laptop*/
+
+@media screen and (min-width: 1200px) and  (max-width: 1400px) {
+  .allifmaaltopnavone{
+    left: 0em;
+    padding-left: 2em;
+    border-radius: 0.1em;
+    margin-left: 5em;
+   
+  }
+  .allifmaaltopnavone a:not(:first-child){
+   display: none;
+ }
+ .allifmaaltopnavone a.topnavmobilelinks,.allifmaaltopnavone a.topnavtabletlinks,.allifmaaltopnavone a.topnavminilaptoplinks,
+ .allifmaaltopnavone a.topnavlaptoplinks{
+  display: block;
+  font-size: 1em;
+  padding-left: 1em;
+ 
+ }
+ 
+ 
+ .allifmaaltopnavone a.allifmaaltopnavoneicon {
+   float: right;
+   display: block;
+ }
+ .allifmaaltopnavone.opentopnavhiddenlinks a {
+    float: none;
+    display: inline-block;
+    
+  font-size: 1em;
+    
+  }
+  .allifmaaltopnavone.opentopnavhiddenlinks .allifmaaltopnavoneicon {
+    position: relative;
+    display: inline-block;
+  }
+   /*style the content*/
+  
+/*.............................SECONDARY NAV BAR SECTION..........................................*/
+  /*style the secondary hidden nav bar and its buttons...
+  ..........Hide all drop down buttons in the primary nav bar*/
+  .allifmaaltopnavone button.topnavonedropdownbtn{
+    /*this means that get the element with class name allifmaaltopnavone and inside it there is
+    a button with class name topnavonedropdownbtn, so set its display to none. */
+    display: none;
+  }
+
+  /*since we hid all the drop down buttons in the primary nav bar, we exclude and show 
+  buttons with class name topnavmobilelinks... so any drop down button with this class name will be shown here.*/
+  .allifmaaltopnavone > button.topnavmobilelinks, .allifmaaltopnavone > button.topnavlaptoplinks{/*this is an exception of the above where all drop down
+    button's display set to none*/
+  display: inline-block;
+  left: 4em;
+  font-size: 1em;
+  }
+
+  /*style drop down buttons for the secondary nav bar after opening of the hidden links for the primary nav bar...
+  in other words, these styles are only applied after we open the primary nav bar... this is
+  achieved through the application of the class name opentopnavhiddenlinks applied through javascript code*/
+  .allifmaaltopnavone.opentopnavhiddenlinks button.topnavonedropdownbtn {
+    float: none;
+    display: inline-block;/*this is important...block will not look good... so inline-block is better*/
+    text-align: center;
+    font-size: 1em;
+  }
+
+/*. Style for the secondary nav bar drop down container of the primary top nav...*/
+.allifmaaltopnavone .topnavone-dropdown-container {
+  position: inherit;
+  margin-top: auto;
+  top: 4em;
+  left: 7.5em;
+  right: 0.3em;
+  margin-right: 0.3em;
+  margin-left: 0.3em;
+  overflow: auto;
+  z-index: 10;
+  
+  }
+  .allifmaaltopnavone .topnavone-dropdown-container a{
+  z-index: 10;
+  font-size: 1em;
+  overflow: auto;
+  margin-top: auto;
+  display: inline; 
+  z-index:10;
+  padding: 0.1em 0.1em 0.4em 0.4em;
+  
+  }
+
+  /*style the drop down when the open links in the main nav bar is open*/
+.allifmaaltopnavone.opentopnavhiddenlinks .topnavone-dropdown-container{
+margin-top: 2em;
+top:3em;
+height: fit-content;
+width: fit-content;
+overflow-y: hidden;
+}
+
+.allifmaaltopnavone.opentopnavhiddenlinks .topnavone-dropdown-container a{
+  z-index: 10;
+  font-size: 1em;
+  
+  margin-top: auto;
+  display: inline; 
+  z-index:10;
+  padding: 0.1em 0.1em 0.4em 0.4em;
+}
+
+
+}
+
+
+@media screen and (min-width: 1400px) and  (max-width: 1600px) {
+  .allifmaaltopnavone{
+    left: 0.3em;
+    padding-left: 1em;
+  }
+  .allifmaaltopnavone a:not(:first-child){
+   display: none;
+   
+ }
+ .allifmaaltopnavone a.topnavmobilelinks,.allifmaaltopnavone a.topnavtabletlinks,.allifmaaltopnavone a.topnavminilaptoplinks,
+ .allifmaaltopnavone a.topnavlaptoplinks,.allifmaaltopnavone a.topnavdesktoplinks{
+  display: block;
+  font-size: 1em;
+  
+ }
+ 
+ 
+ .allifmaaltopnavone a.allifmaaltopnavoneicon {
+   float: right;
+   display: block;
+ }
+ .allifmaaltopnavone.opentopnavhiddenlinks a {
+    float: none;
+    display: inline-block;
+    font-size: 1.2em;
+    
+  }
+  .allifmaaltopnavone.opentopnavhiddenlinks .allifmaaltopnavoneicon {
+    position: relative;
+    display: inline-block;
+  }
+  
+
+  /*.............................SECONDARY NAV BAR SECTION..........................................*/
+  /*style the secondary hidden nav bar and its buttons...
+  ..........Hide all drop down buttons in the primary nav bar*/
+  .allifmaaltopnavone button.topnavonedropdownbtn{
+    /*this means that get the element with class name allifmaaltopnavone and inside it there is
+    a button with class name topnavonedropdownbtn, so set its display to none. */
+    display: none;
+  }
+
+  /*since we hid all the drop down buttons in the primary nav bar, we exclude and show 
+  buttons with class name topnavmobilelinks... so any drop down button with this class name will be shown here.*/
+  .allifmaaltopnavone > button.topnavmobilelinks{/*this is an exception of the above where all drop down
+    button's display set to none*/
+  display: inline-block;
+  left: 4em;
+  font-size: 1em;
+  }
+
+  /*style drop down buttons for the secondary nav bar after opening of the hidden links for the primary nav bar...
+  in other words, these styles are only applied after we open the primary nav bar... this is
+  achieved through the application of the class name opentopnavhiddenlinks applied through javascript code*/
+  .allifmaaltopnavone.opentopnavhiddenlinks button.topnavonedropdownbtn {
+    float: none;
+    display: inline-block;/*this is important...block will not look good... so inline-block is better*/
+    text-align: center;
+    font-size: 1em;
+  }
+
+/*. Style for the secondary nav bar drop down container of the primary top nav...*/
+.allifmaaltopnavone .topnavone-dropdown-container {
+  position: inherit;
+  margin-top: auto;
+  top: 4em;
+  left: 7.5em;
+  right: 0.3em;
+  margin-right: 0.3em;
+  margin-left: 0.3em;
+  overflow: auto;
+  z-index: 10;
+  
+ 
+  }
+  .allifmaaltopnavone .topnavone-dropdown-container a{
+  z-index: 10;
+  font-size: 1em;
+  overflow: auto;
+  margin-top: auto;
+  display: inline; 
+  z-index:10;
+  padding: 0.1em 0.1em 0.4em 0.4em;
+  
+  }
+
+  /*style the drop down when the open links in the main nav bar is open*/
+.allifmaaltopnavone.opentopnavhiddenlinks .topnavone-dropdown-container{
+margin-top: 2em;
+top:3em;
+height: fit-content;
+width: fit-content;
+overflow-y: hidden;
+}
+
+.allifmaaltopnavone.opentopnavhiddenlinks .topnavone-dropdown-container a{
+  z-index: 10;
+  font-size: 1em;
+  
+  margin-top: auto;
+  display: inline; 
+  z-index:10;
+  padding: 0.1em 0.1em 0.4em 0.4em;
+}
+
+  
+}
+
+@media screen and (min-width: 1600px) {
+  .allifmaaltopnavone {
+    left: 0.3em;
+    padding-left: 1em;
+  }
+  .allifmaaltopnavone a{
+  display: inline-block;
+  left: 4em;
+  font-size: 1.5em;
+ }
+ /*.............................SECONDARY NAV BAR SECTION..........................................*/
+  /*style the secondary hidden nav bar and its buttons...
+  ..........Hide all drop down buttons in the primary nav bar*/
+  .allifmaaltopnavone button.topnavonedropdownbtn{
+    /*this means that get the element with class name allifmaaltopnavone and inside it there is
+    a button with class name topnavonedropdownbtn, so set its display to none. */
+    display: none;
+  }
+
+  /*since we hid all the drop down buttons in the primary nav bar, we exclude and show 
+  buttons with class name topnavmobilelinks... so any drop down button with this class name will be shown here.*/
+  .allifmaaltopnavone > button.topnavmobilelinks{/*this is an exception of the above where all drop down
+    button's display set to none*/
+  display: inline-block;
+  left: 4em;
+  font-size: 1em;
+  }
+
+  /*style drop down buttons for the secondary nav bar after opening of the hidden links for the primary nav bar...
+  in other words, these styles are only applied after we open the primary nav bar... this is
+  achieved through the application of the class name opentopnavhiddenlinks applied through javascript code*/
+  .allifmaaltopnavone.opentopnavhiddenlinks button.topnavonedropdownbtn {
+    float: none;
+    display: inline-block;/*this is important...block will not look good... so inline-block is better*/
+    text-align: center;
+    font-size: 1em;
+  }
+
+/*. Style for the secondary nav bar drop down container of the primary top nav...*/
+.allifmaaltopnavone .topnavone-dropdown-container {
+  position: inherit;
+  margin-top: auto;
+  top: 4em;
+  left: 7.5em;
+  right: 0.3em;
+  margin-right: 0.3em;
+  margin-left: 0.3em;
+  overflow: auto;
+  z-index: 10;
+  
+ 
+  }
+  .allifmaaltopnavone .topnavone-dropdown-container a{
+  z-index: 10;
+  font-size: 1em;
+  overflow: auto;
+  margin-top: auto;
+  display: inline; 
+  z-index:10;
+  padding: 0.1em 0.1em 0.4em 0.4em;
+  
+  }
+
+  /*style the drop down when the open links in the main nav bar is open*/
+.allifmaaltopnavone.opentopnavhiddenlinks .topnavone-dropdown-container{
+margin-top: 2em;
+top:3em;
+height: fit-content;
+width: fit-content;
+overflow-y: hidden;
+}
+
+.allifmaaltopnavone.opentopnavhiddenlinks .topnavone-dropdown-container a{
+  z-index: 10;
+  font-size: 1em;
+  
+  margin-top: auto;
+  display: inline; 
+  z-index:10;
+  padding: 0.1em 0.1em 0.4em 0.4em;
+}
+
+ 
+}
+
+/*if the height of screen is less than 500px, then style the top nav bar as below*/
+@media all and (min-height: 0px) and (max-height: 500px) {
+  .allifmaaltopnavone {
+    top: 0;
+    right: 0;
+    padding: 0.1em 0.1em 0.1em 0.1em;
+    left: 0em;
+    margin-left: 5em;
+    padding-left: 1em;
+  }
+}
+
+/*###########################....end.... top nav one drop down section #########################3*/
+
+</style>
+
+
+<div class="allifmaaltopnavone" id="allifmaaltopnavoneid">
+  <a href="#about" class="topnavmobilelinks">Mobile</a>
+
+  <button class="topnavonedropdownbtn topnavlargescreenlinks topnavmobilelinks" >Mobile <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="topnavone-dropdown-container">
+    <a href="">Xawa</a>
+    <a href="#">Suppliers</a>
+    <a href="#">Purchases</a>
+    <a href="#">Suppliers</a>
+    <a href="#">Purchases</a>
+    <a href="#">Suppliers</a>
+    <a href="#">Suppliers</a>
+    <a href="#">Purchases</a>
+    <a href="#">Suppliers</a>
+    <a href="#">Purchases</a>
+    <a href="#">Suppliers</a>
+    <a href="#">Suppliers</a>
+    <a href="#">Purchases</a>
+    <a href="#">Suppliers</a>
+    <a href="#">Purchases</a>
+    <a href="#">Suppliers</a>
+    <a href="#">Suppliers</a>
+    <a href="#">Purchases</a>
+    <a href="#">Suppliers</a>
+    <a href="#">Purchases</a>
+    <a href="#">Suppliers</a>
+    <a href="#">Suppliers</a>
+    <a href="#">Purchases</a>
+    <a href="#">Suppliers</a>
+    <a href="#">Purchases</a>
+    <a href="#">Suppliers</a>
+    <a href="#">Suppliers</a>
+    <a href="#">Purchases</a>
+    <a href="#">Suppliers</a>
+    <a href="#">Purchases</a>
+    <a href="#">Suppliers</a>
+    <a href="#">Suppliers</a>
+    <a href="#">Purchases</a>
+    <a href="#">Suppliers</a>
+    <a href="#">Purchases</a>
+    <a href="#">Suppliers</a>
+    <a href="#">Suppliers</a>
+    <a href="#">Purchases</a>
+    <a href="#">Suppliers</a>
+    <a href="#">Purchases</a>
+    <a href="#">Suppliers</a>
+    <a href="#">Suppliers</a>
+    <a href="#">Purchases</a>
+    <a href="#">Suppliers</a>
+    <a href="#">Purchases</a>
+    <a href="#">Suppliers</a>
+    <a href="#">Suppliers</a>
+    <a href="#">Rayxaan</a>
+    <a href="#">Suppliers</a>
+    <a href="#">Suppliers</a>
+    <a href="#">Rayxaan</a>
+    
+  </div>
+
+  <button class="topnavonedropdownbtn topnavlargescreenlinks topnavmobilelinks" >Mobile <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="topnavone-dropdown-container">
+    <a href="">Ahmed</a>
+    <a href="#">Suppliers</a>
+    <a href="#">Purchases</a>
+    <a href="#">Suppliers</a>
+    <a href="#">Purchases</a>
+    <a href="#">Suppliers</a>
+    <a href="#">Suppliers</a>
+    <a href="#">Purchases</a>
+    <a href="#">Suppliers</a>
+    <a href="#">Purchases</a>
+    <a href="#">Suppliers</a>
+    <a href="#">Suppliers</a>
+    <a href="#">Purchases</a>
+    <a href="#">Suppliers</a>
+    <a href="#">Purchases</a>
+    <a href="#">Suppliers</a>
+    <a href="#">Suppliers</a>
+    <a href="#">Purchases</a>
+    
+    
+    
+  </div>
+ 
+  <a href="{% url 'allifmaaluiapp:allifmaalUIFullTable' %}" class="topnavtabletlinks">Table1</a>
+  <a href="{% url 'allifmaaluiapp:allifmaalUISmallTable' %}" class="topnavtabletlinks">Table2</a>
+  <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}" class="topnavtabletlinks">Table3</a>
+ 
+  
+  
+  
+  <a href="#about" class="topnavminilaptoplinks topnavlaptoplinks">Minilap</a>
+  <a href="#about" class="topnavminilaptoplinks topnavlaptoplinks">Minilap</a>
+  <a href="#about" class="topnavlaptoplinks">Laptop</a>
+  <a href="#about" class="topnavlaptoplinks">Laptop</a>
+
+  <button class="topnavonedropdownbtn topnavlaptoplinks" >sales <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="topnavone-dropdown-container">
+    <a href="">Invoice</a>
+    <a href="">Customer</a>
+    <a href="#">Returns</a>
+  </div>
+  
+  <a href="#about" class="topnavlaptoplinks">Laptop</a>
+  <a href="#about" class="topnavdesktoplinks">Desktop</a>
+  <a href="#about" class="topnavdesktoplinks">Desktop</a>
+  
+ 
+  
+  
+
+  <a href="#about" class="topnavlargescreenlinks">screen</a>
+  <a href="#about" class="topnavlargescreenlinks">Screen</a>
+  <a href="#about" class="topnavlargescreenlinks">screen</a>
+  <a href="#about" class="topnavlargescreenlinks">Screen</a>
+  
+
+  <button class="topnavonedropdownbtn topnavlargescreenlinks topnavlaptoplinks" >Quotations <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="topnavone-dropdown-container">
+    <a href="">Dashboard</a>
+    <a href="#">Suppliers</a>
+    <a href="#">Purchases</a>
+    <a href="#">Suppliers</a>
+    <a href="#">Purchases</a>
+    <a href="#">Suppliers</a>
+  </div>
+  
+  
+
+  <a href="javascript:void(0);" class="allifmaaltopnavoneicon" onclick="opentopnavonehiddenlinks()">
+    <i class="fa fa-bars"></i>
+  </a>
+    <!--the only work of javascript:void(0) is to makes the cursor pointer like hand...
+      ...normally used when you want to add a link that has an "onclick" function(and no href)
+      if you remove it, the opening of the links will work but the cursor pointer will be like normal pointer...
+    howerver, generally, Usually, when you click on a link, the browser will either reload or open a new page.
+     However, if you just want to call JavaScript through that link, you would not want the entire page to refresh.
+      This is where the JavaScript:void(0) will come in handy.
+    -->
+    
+
+   
+</div>
+
+
+

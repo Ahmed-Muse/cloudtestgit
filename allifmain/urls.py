@@ -16,6 +16,8 @@ urlpatterns = [
     path('', include('allifmaalusersapp.urls')),
     path('Allifmaal/Application/Users/Login/App/Managers/', include('allifmaalloginapp.urls')),
     
+     path('Allifmaal/responsive/nav/bars/', include('allifmaaluiapp.urls')),
+    
     
    
 ]

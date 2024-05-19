@@ -553,15 +553,14 @@ def deleteCustomer(request,slug):
     
 @login_required(login_url='login:loginpage')
 def CustomerDetails(request,slug): # when someone logs in, they are directed to this page to create company details.
-    try:
+    #try:
         if request.user.is_authenticated:
             customer=CustomersModel.objects.filter(slug=slug).first()
             context={"customer":customer,}
             return render(request,'allifapp/customers/customer-details.html',context)
-        else:
-            return login_required(login_url='login:loginpage')    
-    except:
-        return render(request,'allifapp/error.html')
+        
+    #except:
+        #return render(request,'allifapp/error/error.html')
     
 
 def CustomerCommonDynamicsearch(request):

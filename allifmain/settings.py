@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     #'django_select2',
     "allifmaalusersapp",
     "allifmaalloginapp",
+    "allifmaaluiapp",
     
    
     

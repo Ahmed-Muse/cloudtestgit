@@ -1,0 +1,55 @@
+{% load static %}
+{% load humanize %}
+<link rel="shortcut icon" href='{% static "allifmaaluiapp/css/images/allifmaal-icon.png" %}' type="png/ico">
+<!DOCTYPE html>
+<html>
+<head> 
+      
+<title>
+  {% block title %}
+  <!--the title of each page will be displayed here.....-->
+  {% endblock %}
+</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--the lib below is very important for the top nav bar opening and closing icon... so keep it there.-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!--any styles loaded from the static files are to be included here...-->
+
+{% block style %}
+
+<!--add any custom styling here....-->
+
+{% endblock %}
+
+</head>
+<body>
+<!--below includes the side and top nav bars and their styles...-->
+{% include 'allifmaaluiapp/base/topnavbar/allifmaaluitopnavbar.html' %}
+{% include 'allifmaaluiapp/base/sidenavbar/allifmaaluisidenavbar.html' %}
+
+<!--these files below are html files that mainly hold css content... this is to avoid using/loading static content...-->
+
+<!--the styling below allifmaaluistyling.css contains the main styling of the page body excluding the side and top nav bars-->
+{% include 'allifmaaluiapp/base/cssinhtml/allifmaaluistyle.html' %}
+
+<!--the styling below allifmaalmainbootstrap.html is very important... so keep it there.-->
+{% include 'allifmaaluiapp/base/cssinhtml/allifmaalmainbootstrap.html' %}
+
+<!--these files below are html files that mainly hold js content... this is to avoid using/loading static content...-->
+{% include 'allifmaaluiapp/base/jsinhtml/allifmaaluijs.html' %}
+
+{% block body %}
+
+<!--the page content will come here....-->
+
+{% endblock %}
+
+{% block scripts %}
+<!-- some js script files here... -->
+{% endblock %}
+
+</body>
+</html>
