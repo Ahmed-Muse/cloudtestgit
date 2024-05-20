@@ -958,7 +958,7 @@ font-size: 1em;
 }
 
 
-@media all and (min-width: 0px) and (max-width: 1300px) {
+@media all and (min-width: 0px) and (max-width: 350px) {
   /*
   for mobile - 
   100 -shown
@@ -992,14 +992,18 @@ for tablet
 
 for laptop
 1000 - shown
-1200 - shown
-1300 -
+1200 - shown################## use as the max width for laptop
+1300 -not shown
 1400 -not shown 
 1500 - not shown
 
   */
   .sidenavonemenu {
-    display: none;
+    display: block;
+  }
+  .sidenavonemenu a {
+    font-size: 1em;
+    color: black;
   }
 }
 
