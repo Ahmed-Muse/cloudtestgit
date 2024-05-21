@@ -86,7 +86,7 @@
 
 
 /* .............styling side nav bar one for various screen heights................*/
-@media all and (min-height: 0px) and (max-height: 50px) and (min-width: 0px) and (max-width: 2px) {
+@media all and (min-height: 0px) and (max-height: 500px) and (min-width: 0px) and (max-width: 200px) {
   .sidenavonemenu {
     width: max-content;
     height: 2.2em;
@@ -161,7 +161,7 @@
 
 
 /* .............styling side nav bar one for various screen heights................*/
-@media all and (min-height: 0px) and (max-height: 5px) and (min-width: 2px) and (max-width: 5px) {
+@media all and (min-height: 0px) and (max-height: 500px) and (min-width: 200px) and (max-width: 500px) {
   .sidenavonemenu {
     width: max-content;
     height: 100%;
@@ -237,7 +237,7 @@
 
 
 /* .............styling side nav bar one for various screen heights................*/
-@media all and (min-height: 0px) and (max-height: 0px) and (min-width: 500px) {
+@media all and (min-height: 0px) and (max-height: 500px) and (min-width: 500px) {
   .sidenavonemenu {
     width: max-content;
     height: 100%;
@@ -997,12 +997,17 @@ for laptop
 1400 -not shown 
 1500 - not shown
 
+just three device sizes...mobiles, tablets and laptops/desktops
+min 0 max 500 - mobile - no side nav dropdown
+min 500 max 1000 - show
+min 1000 no max - show all
+
   */
   .sidenavonemenu {
     display: block;
   }
   .sidenavonemenu a {
-    font-size: 20px;
+    font-size: 1em;
     color: black;
   }
 }
@@ -1019,10 +1024,7 @@ for laptop
    <a href="#" class="opensidemenutwobtn"> Menu 2 <i class="fa fa-caret-right"></i></a>
    <a href="#" class="opensidemenuthreebtn">Menu 3 <i class="fa fa-caret-right"></i></a>
 
-   <a href="" >Search</a>
-   <a href="" class="" >Searching</a>
-   <a href="#" class="" >Financials</a>
-   <a href="#" class="" >testing</a>
+  
    
    <button class="sidenavonedropdownbtn" >Quotations <i class="fa fa-caret-down"></i>
   </button>
