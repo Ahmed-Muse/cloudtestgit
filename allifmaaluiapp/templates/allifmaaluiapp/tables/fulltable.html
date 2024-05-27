@@ -424,6 +424,8 @@
 
       </tbody>
       </table>
+      <button onclick="openWin()">Opewindow</button>
+      <button onclick="closeWin()">Close</button>
       
       <!--end of table-->
           </div>
@@ -437,6 +439,7 @@
           <br>
       </div></div></div>
       <!-- end of first row-->
+
    
 </div><!--end of main container of the page-->
 
@@ -454,6 +457,22 @@
         }
       });
     }
+</script>
+
+ 
+
+<script>
+let myWindow;
+
+function openWin() {
+  myWindow = window.open("", "_blank", "width=500, height=500");
+}
+
+function closeWin() {
+  myWindow.close();
+}
+
+
 </script>
    {% endblock %}
    
