@@ -68,7 +68,7 @@
                   <button class="module-specific-dropdown-links-btn" >Quotations <i class="fa fa-caret-down"></i>
                   </button>
                   <div class="module-specific-dropdown-container">
-                    <a href="">Dashboard</a>
+                    <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Dashboard</a>
                     <a href="#">Accounts</a>
                     <a href="#">Purchases</a>
                     <a href="#">Suppliers</a>
@@ -79,7 +79,7 @@
                   <button class="module-specific-dropdown-links-btn" >sales <i class="fa fa-caret-down"></i>
                   </button>
                   <div class="module-specific-dropdown-container">
-                    <a href="">Dashboard</a>
+                    <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Dashboard</a>
                     <a href="#">Customers</a>
                     <a href="#">Purchases</a>
                     <a href="#">Suppliers</a>
@@ -465,7 +465,7 @@
 let myWindow;
 
 function openWin() {
-  myWindow = window.open("", "_blank", "width=500, height=500");
+  myWindow = window.open("http://localhost:8000/quotation/alldashboard", "_blank", "width=500, height=500");
 }
 
 function closeWin() {
