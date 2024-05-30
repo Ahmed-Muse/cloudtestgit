@@ -7,8 +7,10 @@ def allifmaalUIHome(request):
 
 def allifmaalUIFullTable(request):
     title="Full Table"
+    
     context={
         "title":title,
+       
     }
     return render(request,'allifmaaluiapp/tables/fulltable.html',context)
 def allifmaalUISmallTable(request):

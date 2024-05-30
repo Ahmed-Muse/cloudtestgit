@@ -1,4 +1,11 @@
-
+<style>
+  /*........................ IMPORTANT NOTES ........................*/
+  /*......................... DATE: 17th MAY 2024 ..................*/
+  /*......................... DEVELOPER: AHMED MUSE DIRIYE QOORYARE..................*/
+   /*.....Kindly read these notes before making any changes to this file.....*/
+   /*this file contains three hidden side nav bars with dropdown links...*/
+   /*we can add as many links as we wish...*/
+</style>
 <style>
 
 /*............start of styling of side nav one bar menu and its content.............................*/
@@ -195,9 +202,6 @@
 /*............end.....styling of second hiden side nav two menu bar and its content..................*/
 
 
-
-
-
 /*############################################################################################*/
   
 /*............start.....styling of third hiden side nav two menu bar and its content..................*/
@@ -295,103 +299,53 @@ max-width: 7em;
 /*this opening window is for the second side nav bar*/
 .opensidenavthree{
   width:fit-content;
-  height:100%;
+  height:fit-content;
   
- 
 }
-
-
-  /*
-  for mobile - 
-  100 -shown
-  200 - shown - 
-  250 - shown
-  300 - shown
-  350 - shown ########### use as the max
-  380 - shown
-  382 - shown
-  385 - not shown
-  390 - not shown
-  400 - not shown
-  500 - not shown
-
-
-  400 - not shown
-  600 - not shown
-  650 - not shown
-  750 -not shown
-  780 -not shown
-  795-not shown
-800 - not shown
-1000 - not shown
-
-for tablet
-700 - shown
-750 - shown ##############3 use as max sizze for tablet
-770 - not shown
-780 - not shown
-800 - not shown
-
-for laptop
-1000 - shown
-1200 - shown################## use as the max width for laptop
-1300 -not shown
-1400 -not shown 
-1500 - not shown
-
-
+/*
 just three device sizes...mobiles, tablets and laptops/desktops
 min 0 max 500 - mobile - no side nav dropdown
 min 500 max 1000 - tablets, no side nav
 min 1000 no max - laptops and bigger screens, no side nav...
-
-
+*/
 
 /*............end.....styling of second hiden side nav two menu bar and its content..................*/
 
 
 </style>
 
-  <div class="sidenavonemenu">
 
+<div> <!--this div is not necessary but just added so as to have all links under one div-->
+
+  <!--start of side menu one-->
+  <div class="sidenavonemenu">
    <a href="#" class="opensidemenuonebtn sidenavonemenulinksforminiscreens"
     id="sidenavoneshwohiddenlinkslink">Close <i class="fa fa-close"></i></a>
    <a href="#" class="opensidemenutwobtn"> Menu 2 <i class="fa fa-caret-right"></i></a>
    <a href="#" class="opensidemenuthreebtn">Menu 3 <i class="fa fa-caret-right"></i></a>
+   <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}" >Search</a>
 
-   <a href="" >Search</a>
-   
-   <button class="sidenavonedropdownbtn" >Quotations<i class="fa fa-caret-down"></i>
-  </button>
+   <button class="sidenavonedropdownbtn" >Quotations<i class="fa fa-caret-down"></i></button>
   <div class="sidenavone-dropdown-container">
-    
     <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Dashboard</a>
     <a href="#">Suppliers</a>
-    
   </div>
 
-  <button class="sidenavonedropdownbtn" >Purchases<i class="fa fa-caret-down"></i>
-   
-  </button>
+  <button class="sidenavonedropdownbtn" >Purchases<i class="fa fa-caret-down"></i></button>
   <div class="sidenavone-dropdown-container">
     <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Logistics</a>
     <a href="#">Invoices</a>
     <a href="#">Quotations</a>
   </div>
 
-  <button class="sidenavonedropdownbtn" >Employees<i class="fa fa-caret-down"></i>
-  
-  </button>
+  <button class="sidenavonedropdownbtn" >Employees<i class="fa fa-caret-down"></i></button>
   <div class="sidenavone-dropdown-container">
     <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Logistics</a>
     <a href="#">Invoices</a>
     <a href="#">Quotations</a>
   </div>
   
-
- 
-  <button class="sidenavonedropdownbtn">Inventory<i class="fa fa-caret-down"></i>
-  </button>
+  <button class="sidenavonedropdownbtn">Inventory<i class="fa fa-caret-down"></i></button>
   <div class="sidenavone-dropdown-container">
     <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Purchases</a>
     <a href="#">Suppliers</a>
@@ -401,15 +355,15 @@ min 1000 no max - laptops and bigger screens, no side nav...
   <a href="#" class="">Sales</a>
   <a href="#" class="">Marketing</a>
   <a href="#" class="">Leads</a>
-  <button class="sidenavonedropdownbtn">Inventory<i class="fa fa-caret-down"></i>
-  </button>
+
+  <button class="sidenavonedropdownbtn">Inventory<i class="fa fa-caret-down"></i></button>
   <div class="sidenavone-dropdown-container">
     <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Purchases</a>
     <a href="#">Suppliers</a>
     <a href="#">Returns</a>
   </div>
-  <button class="sidenavonedropdownbtn">Rayxan<i class="fa fa-caret-down"></i>
-  </button>
+
+  <button class="sidenavonedropdownbtn">Rayxan<i class="fa fa-caret-down"></i></button>
   <div class="sidenavone-dropdown-container">
     <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Purchases</a>
     <a href="#">Suppliers</a>
@@ -420,113 +374,90 @@ min 1000 no max - laptops and bigger screens, no side nav...
   <a href="#" class="">Sales</a>
  
   </div>
+  <!--end of side menu one-->
 
- 
+<!--start of side menu two-->
+<div class="sidenavtwomenu">
+  <a href="#" class="opensidemenutwobtn">Close <i class="fa fa-close"></i></a>
+    <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Sales</a>
+    <a href="#">About</a>
+   
+    <button class="sidenavtwomenudropdownbtn">Inventory <i class="fa fa-caret-down"></i></button>
+    <div class="sidenavtwo-dropdown-container">
+      <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Purchases</a>
+      <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Suppliers</a>
+      <a href="#">Returns</a>
+    </div>
 
+    <a href="#">Customers</a>
+    <a href="#">Invoices</a>
 
+    <button class="sidenavtwomenudropdownbtn">Insurances <i class="fa fa-caret-down"></i></button>
+    <div class="sidenavtwo-dropdown-container">
+      <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Purchases</a>
+      <a href="#">Suppliers</a>
+      <a href="#">Returns</a>
+    </div>
+
+    <button class="sidenavtwomenudropdownbtn">Medicals <i class="fa fa-caret-down"></i></button>
+    <div class="sidenavtwo-dropdown-container">
+      <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Purchases</a>
+      <a href="#">Suppliers</a>
+      <a href="#">Returns</a>
+    </div>
+
+    <button class="sidenavtwomenudropdownbtn">Returns <i class="fa fa-caret-down"></i></button>
+    <div class="sidenavtwo-dropdown-container">
+      <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Purchases</a>
+      <a href="#">Suppliers</a>
+      <a href="#">Returns</a>
+    </div>
+
+    <a href="#" class="">Managers</a>
+
+  </div>
+<!--end of side menu two-->
+
+<!--start of side menu three-->
+<div class="sidenavthreemenu">
+  <a href="#" class="opensidemenuthreebtn">Close <i class="fa fa-close"></i></a>
+  <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Sales</a>
+  <a href="#">Inventory</a>
   
-  <div class="sidenavtwomenu">
-   
-    
-      <a href="#">Sales</a>
-      <a href="#">About</a>
-      <a href="#">Sales</a>
-      <a href="#">About</a>
-      <a href="#">Sales</a>
-      <a href="#">About</a>
-      <a href="#">Sales</a>
-      <a href="#">About</a>
-      <a href="#">Sales</a>
-      <a href="#">About</a>
-      <a href="#">Sales</a>
-      <a href="#">About</a>
-      <a href="#">Sales</a>
-      <a href="#">last</a>
-      
-      <button class="sidenavtwomenudropdownbtn">Inventory<strong>+</strong>
-      </button>
-      <div class="sidenavtwo-dropdown-container">
-        <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Purchases</a>
-        <a href="#">Suppliers</a>
-        <a href="#">Returns</a>
-      </div>
-      <a href="#">Customers</a>
-      <a href="#">Invoices</a>
-
-      <button class="sidenavtwomenudropdownbtn">Insurances<strong>+</strong>
-      </button>
-      <div class="sidenavtwo-dropdown-container">
-        <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Purchases</a>
-        <a href="#">Suppliers</a>
-        <a href="#">Returns</a>
-      </div>
-      <button class="sidenavtwomenudropdownbtn">Medicals<strong>+</strong>
-      </button>
-      <div class="sidenavtwo-dropdown-container">
-        <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Purchases</a>
-        <a href="#">Suppliers</a>
-        <a href="#">Returns</a>
-      </div>
-      <button class="sidenavtwomenudropdownbtn">Returns<strong>+</strong>
-      </button>
-      <div class="sidenavtwo-dropdown-container">
-        <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Purchases</a>
-        <a href="#">Suppliers</a>
-        <a href="#">Returns</a>
-      </div>
-      <a href="#" class="">Managers</a>
-
-      
+  <button class="sidenavthreemenudropdownbtn">Inventory <i class="fa fa-caret-down"></i></button>
+  <div class="sidenavthree-dropdown-container">
+    <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Purchases</a>
+    <a href="#">Suppliers</a>
+    <a href="#">Returns</a>
   </div>
 
+  <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Customers</a>
+  <a href="#">Invoices</a>
 
-
-  <div class="sidenavthreemenu">
-   
-    
-    <a href="#">Axmed</a>
-    <a href="#">Xawa</a>
-    <a href="#">Rayxaan</a>
-    <a href="#">Maxamed</a>
+  <button class="sidenavthreemenudropdownbtn">Insurances <i class="fa fa-caret-down"></i></button>
+  <div class="sidenavthree-dropdown-container">
+    <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Purchases</a>
     <a href="#">Suppliers</a>
-    <a href="#">Customers</a>
-    <a href="#">Invoices</a>
+    <a href="#">Returns</a>
+  </div>
 
-    <button class="sidenavthreemenudropdownbtn">Inventory<strong>+</strong>
-    </button>
-    <div class="sidenavthree-dropdown-container">
-      <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Purchases</a>
-      <a href="#">Suppliers</a>
-      <a href="#">Returns</a>
-    </div>
-    <a href="#">Customers</a>
-    <a href="#">Invoices</a>
+  <button class="sidenavthreemenudropdownbtn">Medicals <i class="fa fa-caret-down"></i></button>
+  <div class="sidenavthree-dropdown-container">
+    <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Purchases</a>
+    <a href="#">Suppliers</a>
+    <a href="#">Returns</a>
+  </div>
 
-    <button class="sidenavthreemenudropdownbtn">Insurances<strong>+</strong>
-    </button>
-    <div class="sidenavthree-dropdown-container">
-      <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Purchases</a>
-      <a href="#">Suppliers</a>
-      <a href="#">Returns</a>
-    </div>
-    <button class="sidenavthreemenudropdownbtn">Medicals<strong>+</strong>
-    </button>
-    <div class="sidenavthree-dropdown-container">
-      <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Purchases</a>
-      <a href="#">Suppliers</a>
-      <a href="#">Returns</a>
-    </div>
-    <button class="sidenavthreemenudropdownbtn">Returns<strong>+</strong>
-    </button>
-    <div class="sidenavthree-dropdown-container">
-      <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Purchases</a>
-      <a href="#">Suppliers</a>
-      <a href="#">Returns</a>
-    </div>
-    <a href="#" class="">Managers</a>
-    <a href="#" class="">Managers</a>
-    <a href="#" class="">Managers</a>
-    <a href="#" class="">Managers</a>
-    <a href="#" class="">Managers</a>
+  <button class="sidenavthreemenudropdownbtn">Returns <i class="fa fa-caret-down"></i></button>
+  <div class="sidenavthree-dropdown-container">
+    <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Purchases</a>
+    <a href="#">Suppliers</a>
+    <a href="#">Returns</a>
+  </div>
+
+  <a href="#" class="">Managers</a>
+
+</div>
+<!--end of side menu three-->
 
 </div>

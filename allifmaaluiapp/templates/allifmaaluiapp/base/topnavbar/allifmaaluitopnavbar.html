@@ -2,36 +2,32 @@
   /*........................ IMPORTANT NOTES ........................*/
   /*......................... DATE: 17th MAY 2024 ..................*/
   /*......................... DEVELOPER: AHMED MUSE DIRIYE QOORYARE..................*/
-  /*.THIS IS TWO NAV BARS IN ONE...PRIMARY NAV BAR AND SECONDARY DROP DOWN NAV BAR..................*/
-  /*...PRIMARY NAV BAR HAS TWO SECTIONS..VISIBLE SECTION AND HIDDEN SECTION.........*/
-  /*.....THIS NAV BAR CAN ACCOMMODATE MORE THAN 1,500 LINKS.....*/
-  /*.WE CAN HAVE MORE THAN 30 DROP DOWN BUTTONS EACH HOLDING, SAY, 50 LINKS. THAT IS 30X50 = 1,500 LINKS...*/
-  /*.....Kindly read these notes before making any changes to this file.....*/
+   /*.....Kindly read these notes before making any changes to this file.....*/
   /*This file contains the links for the top horizontal navigation bar*/
-  /*. The horizontal nav bar contains links and drop down buttons that open up secondary horizontal nav
-  bars with links...
-
+  /*. The horizontal nav bar contains links and drop down buttons and links that open up secondary horizontal nav bars with links...
+  /*.This is two nav bars in one...The primary nav bar and the secondary dropdown nav bars..................*/
+  /*...The primary nav bar has two sections... the visible section and hidden section which is open when you click on the right most icon.........*/
+  /*.The dropdown contains two parts... part which uses buttons to open and part which uses links to open.*/
+  /*.The secondary drop down nav bar that uses buttons has no closing link while the other drop down secondary nav bar is closable with the same link....*/
+  /*.....The nav bar has 30 no primary links including the secondary dropdown links........*/
+  /*.The drop down nav bar with buttons is limited to the first two links.. this should not change to avoid overlaping of content.*/
+  /*.the four drop down links can have as many as 100 links which means minimum of 400 links and more.*/
+  
+ 
+/*
   Important to note that:
   1. you can add more links to any section of this nav bar but I recommend you leave it the way it is...
   2. if necessary, you may add more links to the drop down secondary horizontal nav bar as well.
   3. Also if you want to have more links on the nav bar, you can replace normal "a" links on the 
     horizontal nav bar with drop down buttons, then add the links on the drop down buttons.
-  4. The links in the primary nav bar inlcuding drop down buttons are 20, so please dont increase this number
+  4. The links in the primary nav bar inlcuding drop down buttons are 30, so please dont increase this number
   unless absolutely necessary.
-
-  
   ....*/
+
 </style>
 
 <style>
-  body,html {
-  background-color:#F6F7F8;
-  font-family:Arial, Helvetica, sans-serif;
-  font-weight:normal;
-  font-size: 1em;
-  text-align: left;
-  color: #0a0a0a;
-  }
+ 
 .allifmaaltopnavone {
   overflow: auto;
   background-color:#F6F7F8;
@@ -403,39 +399,132 @@ height: fit-content;
 
 }
 
+@media screen and (min-width: 1000px) and (max-width: 1400px){
+
+/*.............................PRIMARY NAV BAR SECTION..........................................*/
+
+.allifmaaltopnavone a:not(:first-child)/*first child is left out to show the side menus*/
+{ 
+/* hide all links and buttons with above class names...*/
+ display: none;
+
+}
+.allifmaaltopnavone a.topnavmobilelinks,.allifmaaltopnavone a.topnavtabletlinks,.allifmaaltopnavone a.topnavminilaptoplinks,
+.allifmaaltopnavone a.topnavlaptoplinks,.allifmaaltopnavone button.topnavonedropdownbtn {
+  display: inline-block;
+ 
+ }
+/*show the icon for the hidden links..........................style...*/
+.allifmaaltopnavone a.allifmaaltopnavoneicon {
+ float: right;
+ display: block;
+}
+
+/*style for the hidden links for the primary nav bar*/
+/*show the items that have two class names which match below class names....*/
+.allifmaaltopnavone.opentopnavhiddenlinks a {/*this opens up the hidden item links in the primary nav bar*/
+/*.allifmaaltopnavone.opentopnavhiddenlinks means an item with two classes...
+the class name opentopnavhiddenlinks is appended to the elements through javascript code...*/
+  float: none;
+  display: inline-block;/*this is important...block will not look good... so inline-block is better*/
+  text-align: center;
+   font-size: 1em;
+}
+.allifmaaltopnavone.opentopnavhiddenlinks .allifmaaltopnavoneicon {/*this ensures that the icon stays in its position after opening links*/
+  position: relative;
+  display: inline-block;
+}
+
+
+/*.............................SECONDARY NAV BAR SECTION..........................................*/
+
+/*style drop down buttons for the secondary nav bar after opening of the hidden links for the primary nav bar...
+in other words, these styles are only applied after we open the primary nav bar... this is
+achieved through the application of the class name opentopnavhiddenlinks applied through javascript code*/
+
+/*. Style for the secondary nav bar drop down container of the primary top nav...*/
+.allifmaaltopnavone .topnavone-dropdown-container {
+display: none;
+position:fixed;/*.....important......this opens in the absolute position...
+ if you make it relative, it will open within the horizontal nav bar...*/
+margin-top: 1.5em;
+top: 1.5em;
+left: 0em;
+text-align: left;
+overflow: auto;
+background-color:#F6F7F8;
+box-shadow: 0.03em 0.0em 0.03em 0.03em #beb0f8;
+z-index: 10;
+border-radius: 0.2em;
+
+max-height: 7em;
+
+
+}
+.allifmaaltopnavone .topnavone-dropdown-container a{
+font-size: 1em;
+overflow:auto;
+display: inline-block; 
+z-index:10;
+padding: 0.3em 0.3em 0.3em 0.3em;
+margin-top: auto;
+width: fit-content;
+height: fit-content;
+
+}
+
+/*style the drop down when the open links in the main nav bar is open*/
+.allifmaaltopnavone.opentopnavhiddenlinks .topnavone-dropdown-container{
+display: none;
+position:fixed;/*.....important......this opens in the absolute position...
+ if you make it relative, it will open within the horizontal nav bar...*/
+margin-top: 1.5em;
+top: 1.5em;
+left: 0em;
+text-align: left;
+overflow: auto;
+background-color:#F6F7F8;
+box-shadow: 0.03em 0.0em 0.03em 0.03em #beb0f8;
+z-index: 10;
+border-radius: 0.2em;
+
+max-height: 7em;
+}
+
+.allifmaaltopnavone.opentopnavhiddenlinks .topnavone-dropdown-container a{
+font-size: 1em;
+overflow:auto;
+display: inline-block; 
+z-index:10;
+padding: 0.3em 0.3em 0.3em 0.3em;
+margin-top: auto;
+width: fit-content;
+height: fit-content;
+}
+
+}
+
 
 /*###########################....end.... top nav one drop down section #########################3*/
 
 </style>
 
 
+<div> <!--this div is not necessary but just added so as to have all links under one div-->
 
-<style>
-  
-
-/*just get the button up that opens up the menu to be part of the drop down menu*/
-
-
-</style>
-
-<div>
 <div class="allifmaaltopnavone" id="allifmaaltopnavoneid">
-  
   <a href="#" class="opensidemenuonebtn sidenavonemenulinksforminiscreens topnavmobilelinks">Menu 1 <i class="fa fa-caret-down"></i></a>
  
-  <button class="topnavonedropdownbtn topnavlargescreenlinks topnavmobilelinks" >Mobile <i class="fa fa-caret-down"></i>
-  </button>
+  <button class="topnavonedropdownbtn topnavlargescreenlinks topnavmobilelinks" >Mobile <i class="fa fa-caret-down"></i></button>
   <div class="topnavone-dropdown-container">
     <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Xawa</a>
     <a href="#">Suppliers</a>
     <a href="#">Purchases</a>
     <a href="#">Suppliers</a>
     <a href="#">Purchases</a>
-    
   </div>
 
-  <button class="topnavonedropdownbtn topnavlargescreenlinks topnavmobilelinks" >Mobile <i class="fa fa-caret-down"></i>
-  </button>
+  <button class="topnavonedropdownbtn topnavlargescreenlinks topnavmobilelinks" >Mobile <i class="fa fa-caret-down"></i></button>
   <div class="topnavone-dropdown-container">
     <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Ahmed</a>
     <a href="#">Suppliers</a>
@@ -450,24 +539,29 @@ height: fit-content;
   <a href="#" class="opentopnavdropdownmenulinkone topnavminilaptoplinks">Minilap <i class="fa fa-caret-down"></i></a>
   <a href="#" class="opentopnavdropdownmenulinktwo topnavminilaptoplinks">Minilap <i class="fa fa-caret-down"></i>
   <a href="#about" class="topnavlaptoplinks">Laptop</a>
+  <a href="#about" class="topnavlaptoplinks">Laptop</a>
+  <a href="#about" class="topnavlaptoplinks">Laptop</a>
+  <a href="#about" class="topnavlaptoplinks">Laptop</a>
+  <a href="#about" class="topnavlaptoplinks">Laptop</a>
   <a href="#about" class="topnavdesktoplinks">Desktop</a>
- 
   <a href="#about" class="topnavdesktoplinks">Desktop</a>
-  
   <a href="#about" class="topnavlargescreenlinks">screen</a>
   <a href="#about" class="topnavlargescreenlinks">Screen</a>
   <a href="#about" class="topnavlargescreenlinks">screen</a>
   <a href="#about" class="topnavlargescreenlinks">Screen</a>
-
+  <a href="#about" class="topnavlargescreenlinks">screen</a>
+  <a href="#about" class="topnavlargescreenlinks">Screen</a>
+  <a href="#about" class="topnavlargescreenlinks">screen</a>
+  <a href="#about" class="topnavlargescreenlinks">Screen</a>
+  <a href="#about" class="topnavlargescreenlinks">screen</a>
+  <a href="#about" class="topnavlargescreenlinks">Screen</a>
+  <a href="#about" class="topnavlargescreenlinks">screen</a>
+  <a href="#about" class="topnavlargescreenlinks">Screen</a>
+  <a href="#about" class="topnavlargescreenlinks">screen</a>
+  <a href="#about" class="topnavlargescreenlinks">Screen</a>
+  <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}" class="topnavlargescreenlinks">screen</a>
   
-   <!--...some explanation for the below link......;
-  the only work of javascript:void(0) is to makes the cursor pointer like hand...
-      ...normally used when you want to add a link that has an "onclick" function(and no href)
-      if you remove it, the opening of the links will work but the cursor pointer will be like normal pointer...
-    howerver, generally, Usually, when you click on a link, the browser will either reload or open a new page.
-     However, if you just want to call JavaScript through that link, you would not want the entire page to refresh.
-      This is where the JavaScript:void(0) will come in handy.
-    -->
+   <!--the only work of javascript:void(0) is to makes the cursor pointer like hand...-->
   <a href="javascript:void(0);" class="allifmaaltopnavoneicon" onclick="opentopnavonehiddenlinks()"><i class="fa fa-bars"></i> </a>
 </div>
 
@@ -475,11 +569,10 @@ height: fit-content;
 <!-- links one ....-->
 <div class="topnavmenudropdownmenuonewithclose">
   <a href="#" class="opentopnavdropdownmenulinkone topnavminilaptoplinks"><span style="color: red;">X</span> </a>
-  <a href="#">Axmed</a>
-  <a href="#">Xawa</a>
-  <a href="#" class="">Rayxaan</a>
-  <a href="#" class="">Maxamed</a>
- 
+  <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Test</a>
+  <a href="#">Market</a>
+  <a href="#" class="">Sales</a>
+  <a href="#" class="">Sales</a>
 </div>
 
 <!-- links two ....-->

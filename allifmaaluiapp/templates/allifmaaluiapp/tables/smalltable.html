@@ -6,6 +6,135 @@
 {{title}}
 {% endblock %}
 {% block style %}
+<style>
+   .module-specific-dropdown-links-btn{
+    width: fit-content;
+    height: fit-content;
+    background-color: aqua;
+    display: inline;
+  }
+  .module-specific-dropdown-links-btn a{
+    display: inline;
+    color: red;
+
+  }
+  .module-specific-dropdown-container {
+  display: none;
+  position:fixed;/*.....important......this opens in the absolute position...
+   if you make it relative, it will open within the horizontal nav bar...*/
+  margin-top: 7em;
+  text-align: left;
+  width: fit-content;
+  height: fit-content;
+  overflow: hidden;
+  background-color:#f2f7fc;
+  box-shadow: 0.05em 0.0em 0.05em 0.07em #beb0f8;
+  z-index: 10;
+  border-radius: 0.2em;
+  padding: 0.1em 0.1em 0.1em 0.1em;
+  }
+
+  .module-specific-dropdown-container a{
+  z-index: 10;
+  font-size: 0.9em;
+  overflow: hidden;
+  float: none; 
+  display: inline; 
+  z-index:10;
+  padding: 0.1em 0.1em 0.1em 0.1em;
+
+  }
+</style>
+<style>
+  /*below is for the module links side nav*/
+  
+/*............start of styling of side nav one bar menu and its content.............................*/
+.sidenavonemodulelinksmenu {
+  position: fixed;
+  top: 7em;
+  left: 0;
+  background: #f7f7f7;
+  z-index:10;  
+  box-shadow: 0em 0em 0.5em #858585;
+  overflow-y:auto;
+  overflow-x: hidden;
+  width: 0;
+  height: 0;
+  min-height: fit-content;
+  max-height: 100%;/*very important... if you dont put this it will not show the over*/
+  min-width: min-content;
+  max-width: 7em;
+  }
+
+.sidenavonemodulelinksmenu a, .sidenavonemodulelinksmenu button.sidenavonemodulelinksmenudropdownbtn {
+  position: relative;
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight:normal;
+  font-size: 1em;
+  text-align: left;
+  left: 0.1em;
+  padding: 0.1em 0.1em 0.1em 0.1em;
+  text-decoration: none;
+  color: #0a0a0a;
+  display: block;
+  width: 100%;
+  height: fit-content;
+  line-height: 2em;
+  border: none;
+  background: #f7f7f7;
+  border-bottom: 1px solid #dfdede;
+  
+}
+
+.sidenavonemodulelinksmenu a:hover,.sidenavonemodulelinksmenu button.sidenavonemodulelinksmenudropdownbtn:hover{
+  color: #3a0bf7;
+}
+.opensidenavonemodulelinks {
+  width:fit-content;
+  height:fit-content;
+}
+/*style the clicked active buttons in the side nav dropdown buttons*/
+
+  /*style the side nav one drop down menu and its content*/
+.sidenavone-module-links-dropdown-container {
+  
+  display: none;
+  position:absolute;
+  left: 0.1em;
+  z-index: 1;/*drop down will not open without this property....*/
+  float: left;
+  text-align: left;
+  padding: 0.1em 0.1em 0.1em 0.1em;
+  background: #f7f7f7;
+  
+  }
+
+.sidenavone-module-links-dropdown-container a {
+  position: relative;
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight:normal;
+  font-size: 1em;
+  text-align: left;
+  left: 0.1em;
+  padding: 0.1em 0.1em 0.1em 0.1em;
+  text-decoration: none;
+  color: #3a0bf7;
+  display: block;
+  line-height: 2em;
+  background: #f7f7f7;
+  border-bottom: 1px solid #dfdede;
+  width: 100%;
+  
+  }
+  
+  .sidenavone-module-links-dropdown-container a:hover{
+    color: #0a0a0a;
+  }
+
+  
+
+</style>
+
 {%endblock%}
    
    {% block body %}
@@ -23,12 +152,72 @@
           <div class="col-md-12" >
               <div class="card">
                   <div id="allif-section-headers" class="card-header">
+                    <hr>
+                    <button class="module-specific-dropdown-links-btn" >Quotations <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="module-specific-dropdown-container">
+                      <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Dashboard</a>
+                      <a href="#">Accounts</a>
+                      <a href="#">Purchases</a>
+                      <a href="#">Suppliers</a>
+                      <a href="#">Purchases</a>
+                      <a href="#">Suppliers</a>
+                      
+                    </div>
+                    <button class="module-specific-dropdown-links-btn" >sales <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="module-specific-dropdown-container">
+                      <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Dashboard</a>
+                      <a href="#">Customers</a>
+                      <a href="#">Purchases</a>
+                      <a href="#">Suppliers</a>
+                      <a href="#">Purchases</a>
+                      <a href="#">Suppliers</a>
+                      
+                    </div>
+                    <hr>
+                    <a href="#" class="opensidemenuonemodulelinksbtn" style="float: left;
+                  margin-left: 1em; margin-right: 2em;">Menu <i class="fa fa-caret-down"></i></a>
+
+                  <a href="#" class="opensidemenutwomodulelinksbtn " style="float: left;
+                  margin-left: 1em; margin-right: 2em;">Menu <i class="fa fa-caret-down"></i></a>
+
+                  <a href="#" class="opensidemenuthreemodulelinksbtn " style="float: left;
+                  margin-left: 1em; margin-right: 2em;">Menu <i class="fa fa-caret-down"></i></a>
+
+
+<!--start....below is the hidden links section-->
+ <!--start of side menu one-->
+ <div class="sidenavonemodulelinksmenu">
+  <a href="#" class="opensidemenuonemodulelinksbtn ">Close <i class="fa fa-close"></i></a>
+  <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}" >table tw</a>
+
+  <button class="sidenavonemodulelinksmenudropdownbtn" >Diriye<i class="fa fa-caret-down"></i></button>
+ <div class="sidenavone-module-links-dropdown-container">
+   <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Dashboard</a>
+   <a href="#">Suppliers</a>
+ </div>
+
+ <button class="sidenavonemodulelinksmenudropdownbtn" >Gadid<i class="fa fa-caret-down"></i></button>
+ <div class="sidenavone-module-links-dropdown-container">
+   <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Logistics</a>
+   <a href="#">Invoices</a>
+   <a href="#">Quotations</a>
+ </div>
+
+ 
+
+ <a href="#" class="">Sales</a>
+ <a href="#" class="">Sales</a>
+
+ </div>
+ <!--end of side menu one-->
                       
                   Main Store Table
                   
                   
                   </div>
-                  
+                 
                 
               <div class="AllifTableFixedHeader Allifmaal-scroll-table"> 
                   <table class="table table-layout">
@@ -157,6 +346,60 @@
               
    
 </div><!--end of main container of the page-->
+<script>
+   var topnavonedropdownbtns= document.getElementsByClassName("module-specific-dropdown-links-btn");
+    var i;
+    for (i = 0; i < topnavonedropdownbtns.length; i++) {
+      topnavonedropdownbtns[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var topnavonedropdownbtnlinks = this.nextElementSibling;
+        if (topnavonedropdownbtnlinks.style.display === "block") {
+          topnavonedropdownbtnlinks.style.display = "none";
+        } else {
+          topnavonedropdownbtnlinks.style.display = "block";
+        }
+      });
+    }
+</script>
 
+ 
+
+<script>
+let myWindow;
+
+function openWin() {
+  myWindow = window.open("http://localhost:8000/quotation/alldashboard", "_blank", "width=500, height=500");
+}
+
+function closeWin() {
+  myWindow.close();
+}
+
+
+</script>
+<script>
+  
+  $(document).ready(function(){
+$(".opensidemenuonemodulelinksbtn").click(function(){
+$(".sidenavonemodulelinksmenu").toggleClass( "opensidenavonemodulelinks" );
+})
+})
+    
+var sidenavtwodropdownbtns= document.getElementsByClassName("sidenavonemodulelinksmenudropdownbtn");
+    var i;
+    for (i = 0; i < sidenavtwodropdownbtns.length; i++) {
+      sidenavtwodropdownbtns[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var sidenavtwodropdownbtnlinks= this.nextElementSibling;
+        if (sidenavtwodropdownbtnlinks.style.display === "block") {
+          sidenavtwodropdownbtnlinks.style.display = "none";
+        } else {
+          sidenavtwodropdownbtnlinks.style.display = "block";
+        }
+      });
+    }
+   
+
+</script>
    
    {% endblock %}

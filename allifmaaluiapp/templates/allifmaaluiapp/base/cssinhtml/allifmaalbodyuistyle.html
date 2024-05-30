@@ -1,149 +1,19 @@
 <style>
-    
 
+  body,html {
+  background-color:#F6F7F8;
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight:normal;
+  font-size: 1em;
+  text-align: left;
+  color: #0a0a0a;
+  }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #F6F7F8;
-  margin: 0;
-  padding: 0;
-}
 
 * {
   box-sizing:border-box;
 }
-.allifmaincontainer{
-  overflow-x: auto;/*this is responsible for the main scroll bar at bottom of the content */
-  overflow-y: hidden;
-  width: 100%;
-}
 
-
-/*style for mini and  mobile devices*/
-@media screen and (min-width: 0px) and (max-width: 800px){
-  /*style the card class that contains the main content of the pages...*/
-  .card{
-    top: 4em;
-    font-size: 0.8em;
-    left: 0em;
-    overflow: auto;
-    width: 100%;
-    padding: 0.1em 0.1em 0.1em 0.1em;
-    background-color: red;
-  }
-  
-}
-
-/*then style for tablets*/
-
-@media screen and (min-width: 600px) and (max-width: 800px){
-  .card{
-    top: 4em;
-    font-size: 0.8em;
-    overflow: auto;
-    width: 100%;
-   margin-left: 0em;
-   padding: 0.1em 0.1em 0.1em 0.1em;
-   left: 0em;
-  }
-}
-
-/*then style for minilaptop*/
-
-@media screen and (min-width: 800px) and (max-width: 1000px){
-  
-  .card{
-    top: 4em;
-    font-size: 0.8em;
-    overflow: auto;
-   
-
-    font-size: 0.8em;
-    overflow: auto;
-   
-   padding: 0.1em 0.1em 0.1em 0.1em;
-   left: 8em;
-   width: calc(100% - 8em);
-   background-color: red;
-   
-  }
-}
-
-/*then style for normal laptop*/
-
-@media screen and (min-width: 1000px) and  (max-width: 1400px) {
-  
-.card{
-  top: 7em;
-  margin-top: 1em;
-  font-size: 0.9em;
-  left: 0em;
-  
- 
-  display: inline-block;
-  position: relative;
- 
-  width: 100%;
- 
-  overflow: auto;
-  
-  text-align: left;
- 
-  }
- 
-}
-@media screen and (min-width: 1400px) and  (max-width: 1800px) {
-  .card{
-    background-color:  #f7f7f7;
-  }
-  
-}
-
-@media screen and (min-width: 1800px) {
-  .card{
-    background-color:  #f7f7f7;
-  }
-}
-
-
-
-
-/*styling for various screen heights*/
-
-/*my own styling....
-Design from 360×640 through 1920×1080.
-Design for desktop displays from 1280×720 through 1920×1080
-Design for mobile displays from 360×640 through 414×896
-Design for tablet displays from 601×962 through 1280×800
-....
-Value	         Description
-orientation	   Orientation of the viewport. Landscape or portrait
-max-height	   Maximum height of the viewport
-min-height	   Minimum height of the viewport
-height	       Height of the viewport (including scrollbar)
-max-width	     Maximum width of the viewport
-min-width	     Minimum width of the viewport
-width	         Width of the viewport (including scrollbar)
-....
-.... syntax is as below
-@media not|only mediatype and (media feature) and (media feature) {
-  CSS-Code;
-}
-..
-min-width rules will be applied for each resolution higher than the pixels set, 
-and max-width rules will be applied for each resolution below the pixels set.
-The mediatype is optional (if omitted, it will be set to all). 
-However, if you use not or only, you must also specify a mediatype.
-*/
-/* CSS Sizes..............
-....PX, EM, REM,%, VW and VH?
-px...fixed and absolute...does not change depending on any other element..he use of PX can be problematic for responsive websites, but they are useful for maintaining a consistent size for some elements. If you have elements that should not be resized, then using PX is a good option.
-EM: relative to the parent element
-REM: relative to the root element (HTML tag and, failing that, the size configured by the browser).
-%: relative to the parent element
-VW: relative to the graphic window width
-VH: relative to the height of the graphics window..
-*/
 
 table{
       background-color: #F6F7F8;
