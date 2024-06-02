@@ -530,12 +530,12 @@ height: fit-content;
     <a href="#">Suppliers</a>
     <a href="#">Purchases</a>
   </div>
- 
+  
   <a href="{% url 'allifmaaluiapp:allifmaalUIFullTable' %}" class="topnavtabletlinks">Table1</a>
   <a href="{% url 'allifmaaluiapp:allifmaalUISmallTable' %}" class="topnavtabletlinks">Table2</a>
-  <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}" class="topnavtabletlinks">Table3</a>
+  <a href="{% url 'allifmaaluiapp:allifmaalUIHome' %}" class="topnavtabletlinks">Home</a>
 
-  <a href="#about" class="topnavminilaptoplinks topnavlaptoplinks">Minilap</a>
+  <a href="{% url 'allifmaaluiapp:allifmaalUIFullSingleTable' %}" class="topnavminilaptoplinks topnavlaptoplinks">Full Table</a>
   <a href="#" class="opentopnavdropdownmenulinkone topnavminilaptoplinks">Minilap <i class="fa fa-caret-down"></i></a>
   <a href="#" class="opentopnavdropdownmenulinktwo topnavminilaptoplinks">Minilap <i class="fa fa-caret-down"></i>
   <a href="#about" class="topnavlaptoplinks">Laptop</a>

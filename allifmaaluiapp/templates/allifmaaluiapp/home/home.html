@@ -1,0 +1,440 @@
+{% extends 'allifmaaluiapp/base/uimainbase/allifmaaluibase.html'%}
+{% load humanize %}
+{% block title %}
+{{title}}
+{% endblock %}
+{% block style %}
+{%endblock%}
+   
+{% block body %}
+ 
+<style>
+  /*
+  
+  
+  */
+  body{
+   
+    background-color: #F6F7F8;
+  }
+  
+  .allifmaincontainer {
+    margin-top: 3em;
+    background-color: #F6F7F8;
+    
+    margin-right: 1em;
+    margin-left: 1em;
+   
+    
+   
+  }
+  
+.allifmaincontainer .allifmaalcard table {
+  
+  overflow: auto;
+  background-color:#F6F7F8;
+ 
+ 
+  
+  
+  width: 100%;
+  
+
+  
+  
+ 
+}
+
+
+
+  
+</style>
+
+<style>
+  /*below is for the module links side nav*/
+  
+/*............start of styling of side nav one bar menu and its content.............................*/
+.sidenavonemodulelinksmenu {
+  position: fixed;
+  top: 7em;
+  left: 0;
+  background: #f7f7f7;
+  z-index:10;  
+  box-shadow: 0em 0em 0.5em #858585;
+  overflow-y:auto;
+  overflow-x: hidden;
+  width: 0;
+  height: 0;
+  min-height: fit-content;
+  max-height: 100%;/*very important... if you dont put this it will not show the over*/
+  min-width: min-content;
+  max-width: 7em;
+  }
+
+.sidenavonemodulelinksmenu a, .sidenavonemodulelinksmenu button.sidenavonemodulelinksmenudropdownbtn {
+  position: relative;
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight:normal;
+  font-size: 1em;
+  text-align: left;
+  left: 0.1em;
+  padding: 0.1em 0.1em 0.1em 0.1em;
+  text-decoration: none;
+  color: #0a0a0a;
+  display: block;
+  width: 100%;
+  height: fit-content;
+  line-height: 2em;
+  border: none;
+  background: #f7f7f7;
+  border-bottom: 1px solid #dfdede;
+  
+}
+
+.sidenavonemodulelinksmenu a:hover,.sidenavonemodulelinksmenu button.sidenavonemodulelinksmenudropdownbtn:hover{
+  color: #3a0bf7;
+}
+.opensidenavonemodulelinks {
+  width:fit-content;
+  height:fit-content;
+}
+/*style the clicked active buttons in the side nav dropdown buttons*/
+
+  /*style the side nav one drop down menu and its content*/
+.sidenavone-module-links-dropdown-container {
+  
+  display: none;
+  position:absolute;
+  left: 0.1em;
+  z-index: 1;/*drop down will not open without this property....*/
+  float: left;
+  text-align: left;
+  padding: 0.1em 0.1em 0.1em 0.1em;
+  background: #f7f7f7;
+  
+  }
+
+.sidenavone-module-links-dropdown-container a {
+  position: relative;
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight:normal;
+  font-size: 1em;
+  text-align: left;
+  left: 0.1em;
+  padding: 0.1em 0.1em 0.1em 0.1em;
+  text-decoration: none;
+  color: #3a0bf7;
+  display: block;
+  line-height: 2em;
+  background: #f7f7f7;
+  border-bottom: 1px solid #dfdede;
+  width: 100%;
+  
+  }
+  
+  .sidenavone-module-links-dropdown-container a:hover{
+    color: #0a0a0a;
+  }
+
+  
+
+</style>
+
+  
+      <!--we can insert the other section here-->
+      <div class="allifmaincontainer">
+          <div class="allifmaalcard">
+            <div class="col-md-12" >
+             
+                  <div id="allif-section-headers" class="card-header">
+                     
+                  <a href="#" class="opensidemenuonemodulelinksbtn" style="float: left;
+                  margin-left: 1em; margin-right: 2em;">Menu <i class="fa fa-caret-down"></i></a>
+
+                  <a href="#" class="opensidemenutwomodulelinksbtn " style="float: left;
+                  margin-left: 1em; margin-right: 2em;">Menu <i class="fa fa-caret-down"></i></a>
+
+                  <a href="#" class="opensidemenuthreemodulelinksbtn " style="float: left;
+                  margin-left: 1em; margin-right: 2em;">Menu <i class="fa fa-caret-down"></i></a>
+
+<a href="" class="opensidemenuthreemodulelinksbtn " style="float: left;
+margin-left: 1em; margin-right: 2em;">Completed Tasks </a>
+
+ 
+<!--start....below is the hidden links section-->
+ <!--start of side menu one-->
+ <div class="sidenavonemodulelinksmenu">
+  <a href="#" class="opensidemenuonemodulelinksbtn ">Close <i class="fa fa-close"></i></a>
+  <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}" >Search</a>
+
+  <button class="sidenavonemodulelinksmenudropdownbtn" >Quotations<i class="fa fa-caret-down"></i></button>
+ <div class="sidenavone-module-links-dropdown-container">
+   <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Dashboard</a>
+   <a href="#">Suppliers</a>
+ </div>
+
+ <button class="sidenavonemodulelinksmenudropdownbtn" >Purchases<i class="fa fa-caret-down"></i></button>
+ <div class="sidenavone-module-links-dropdown-container">
+   <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Logistics</a>
+   <a href="#">Invoices</a>
+   <a href="#">Quotations</a>
+ </div>
+
+ 
+ <a href="#" class="">Sales</a>
+ <a href="#" class="">Sales</a>
+ 
+ </div>
+ <!--end of side menu one-->
+
+<!--end of hidden links section-->
+
+                  <span>This is landing page showwing tasks</span>
+
+                  </div>
+                 
+              <div class="AllifTableFixedHeader Allifmaal-scroll-table"> 
+                
+                
+                </div>
+             
+              <!--end of table-->
+               
+            
+           </div>
+
+           
+                       
+                    </div>
+                      
+                          <table style="background-color: rgb(253, 213, 213); width: 100%;">
+                              <form class="form-horizontal" method="POST" action="">
+                                  {% csrf_token %}
+                                  <tr>
+                                    <th>Task</th>
+                                    <th>Status</th> 
+                                    <th>Assign</th>
+                                   
+                                    <th>Due Date</th>
+                                    <th>Day</th>
+                                    
+                                  </tr>
+                              <tr>
+                                <th>{{form.task}}</th>
+                                <th>{{form.status}}</th> 
+                                <th>{{form.assignedto}}</th>
+                               
+                                <th> {{form.dueDate}}</th>
+                                <th> {{form.taskDay}}</th>
+                                <th>
+                                  <input type="submit" value='Save' id="allif-link-buttons" class="btn btn-success mybuttonlinks" style="width:auto;">
+                 
+                                </th>
+                              </tr>
+                             
+                              <tr>
+                              </form>
+                            </table>
+                            <hr>
+                           
+                            
+                  <div class="col-md-12 AllifTableFixedHeader Allifmaal-scroll-table-small-tasks-table">
+                      <table  class="table table-layout">
+                       <thead>
+                          <tr class="allif-table-header-row">   
+                            <td scope="col">Task</td>
+                            <td scope="col">Status</td>
+                           
+                            <td scope="col">Due</td>
+                            <td scope="col">Remaining Time</td>
+                            <td scope="col">Assigned</td>
+                            <td scope="col" >Action</td>
+                            <td scope="col">Action</td>
+                          <td >Mon</td> 
+                          <td>Tue</td>
+                          <td>Wed</td>
+                          <td >Thu</td>
+                          <td >Fri</td>
+                          <td >Sat</td>
+                          <td >Sun</td>
+                         
+                        </tr>
+                        </thead>
+                       
+                        
+                          
+                          
+                        {% for task in tasks %}
+                      
+                        
+                        <tr>
+                         
+                          <td>{{task.task}}</td>
+                          <td>{{task.status}}</td>
+                         
+                          <td>{{task.dueDate|date:'d/m/Y'}}</td>
+                          <td>{{task.dueDate|timeuntil}}</td>
+                          <td>{{task.assignedto}}</td>
+                           
+                  <td> <a href="" data-toggle="tooltip" title="Delete this record">
+                   Finish
+                    
+                  </a></td>
+                          
+                        
+                  <td> <a href="" 
+                    data-toggle="tooltip" title="Delete this record" 
+                    class="allif-delete-link">
+                     X
+                   
+                  </a></td>
+                  
+                  {% if task.taskDay == 'Monday' %}
+                  <td> 
+                   
+                 
+                 X
+                 
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  {% elif task.taskDay == 'Tuesday' %}
+                  <td></td>
+                  
+                  <td>
+                   
+                X
+                 
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  
+                  {% elif task.taskDay == 'Wednesday' %}
+                  <td></td>
+                  <td></td>
+                  <td>
+                 X
+                </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  
+                  
+                  {% elif task.taskDay == 'Thursday' %}
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  
+                  <td>
+                  X
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  
+                  
+                  {% elif task.taskDay == 'Friday' %}
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  
+                  <td>
+                X
+                 </td>
+                  <td></td>
+                  <td></td>
+                  
+                  
+                  {% elif task.taskDay == 'Saturday' %}
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  
+                  <td>
+                 X
+              </td>
+                  <td></td>
+                  
+                  
+                     
+                  {% elif task.taskDay == 'Sunday' %}
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  
+                  <td>
+                 X
+                 </td>
+                  
+                  {% endif %}
+                  
+                            
+                        </tr>
+                  
+                       {% endfor %}
+                      </table>
+                      
+        
+        
+
+
+    </div>
+</div><!--end of main container of the page-->
+
+<script>
+  
+  $(document).ready(function(){
+$(".opensidemenuonemodulelinksbtn").click(function(){
+$(".sidenavonemodulelinksmenu").toggleClass( "opensidenavonemodulelinks" );
+})
+})
+    
+var sidenavtwodropdownbtns= document.getElementsByClassName("sidenavonemodulelinksmenudropdownbtn");
+    var i;
+    for (i = 0; i < sidenavtwodropdownbtns.length; i++) {
+      sidenavtwodropdownbtns[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var sidenavtwodropdownbtnlinks= this.nextElementSibling;
+        if (sidenavtwodropdownbtnlinks.style.display === "block") {
+          sidenavtwodropdownbtnlinks.style.display = "none";
+        } else {
+          sidenavtwodropdownbtnlinks.style.display = "block";
+        }
+      });
+    }
+   
+
+</script>
+<script>
+            
+    $(document).ready(function () {
+      $('#id_assignedto').select2({
+          dropdownCssClass: "allifSelect2DropdownContent",
+          
+          placeholder: "Select Person",
+          theme: "classic",
+          width: 'element',
+          closeOnSelect: true,
+          disabled:false,
+          customClass: "form-control",
+          })
+      });
+      
+     
+  </script>
+   {% endblock %}
+   
