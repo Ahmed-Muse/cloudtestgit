@@ -328,7 +328,7 @@ font-style: italic;
   
 <!--we can insert the other section here-->
 <div class="allifmaincontainer">
-  <div class="card">
+  
     <div id="allif-section-headers" class="card-header">
         <div class="row mt-12" >
         <div class="col-md-12">
@@ -851,7 +851,7 @@ font-style: italic;
 <!--end of table-->
 
 
-</div>
+
 
  
 </div><!--end of main container of the page-->
@@ -947,7 +947,7 @@ var sidenavtwodropdownbtns= document.getElementsByClassName("module-menu-dropdow
      function allifmaal_search() {
      allifmaaldata={search_result_key:allifdata,};//data to be sent to backend
      $.ajax({
-             url:"", //behind the scenes run this url
+             url:"{% url 'allifmaalapp:CustomerCommonDynamicsearch' %}", //behind the scenes run this url
              method:"GET",
              data:allifmaaldata,//this is the collected data sent to the backend
              dataType:"json",

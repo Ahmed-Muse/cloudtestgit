@@ -5,6 +5,12 @@ urlpatterns = [
     
 path('UI/Home/', views.allifmaalUIHome, name="allifmaalUIHome"),
 path('UI/Full/Single/Table/', views.allifmaalUIFullSingleTable, name="allifmaalUIFullSingleTable"),
+path('UI/Full/Single/Full/Tables/Many/', views.allifmaalUIFullTables, name="allifmaalUIFullTables"),
+path('UI/Half/Table/', views.allifmaalUIHalfTable, name="allifmaalUIHalfTable"),
+path('UI/Half/Table/s/', views.allifmaalUIHalfTables, name="allifmaalUIHalfTables"),
+
+path('UI/Details/Table/', views.allifmaalUIDetailsTable, name="allifmaalUIDetailsTable"),
+
 
 
 

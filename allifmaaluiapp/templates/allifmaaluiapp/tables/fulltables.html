@@ -1,0 +1,1544 @@
+{% extends 'allifmaaluiapp/base/uimainbase/allifmaaluibase.html'%}
+{% load humanize %}
+{% block title %}
+{{title}}
+{% endblock %}
+{% block style %}
+{%endblock%}
+   
+{% block body %}
+ 
+
+  
+<!--we can insert the other section here-->
+
+<div class="allifmaincontainer">
+  <div id="allif-section-headers" class="card-header">
+    <div class="row mt-12" >
+    <div class="col-md-12">
+          
+    <a href="#" class="module-menu-one-open-link module-menu-links">Menu <i class="fa fa-caret-down"></i></a>
+    <a href="#" class="module-menu-two-open-link module-menu-links">Menu2 <i class="fa fa-caret-down"></i></a>
+    <a href="#" class="module-menu-three-open-link module-menu-links">Search <i class="fa fa-caret-down"></i></a>
+    <a href="{% url 'allifmaaluiapp:allifmaalUIFullTable' %}" class="module-menu-links">Sales </a>
+    <a href="#" class="module-menu-links">Sales Returns </a>
+
+    <a href="#" class="module-menu-links"> <span>Allifmaal Customers List </span> </a>
+
+
+<!--start....module side nav one menu-->
+ <div class="module-menu-one">
+  <a href="#" class="module-menu-one-open-link module-menu-close-link">Close The Menu <i class="fa fa-close"></i> </a>
+  <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}" >Search</a>
+
+  <button class="module-menu-dropdown-btn" >Quotations<i class="fa fa-caret-down"></i></button>
+ <div class="module-menu-dropdown-container">
+   <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Customer Returns</a>
+   <a href="#">Suppliers</a>
+ </div>
+
+ <button class="module-menu-dropdown-btn" >Purchases<i class="fa fa-caret-down"></i></button>
+ <div class="module-menu-dropdown-container">
+   <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Logistics</a>
+   <a href="#">Invoices</a>
+   <a href="#">Quotations</a>
+   <a href="#">Invoices</a>
+   <a href="#">Quotations</a>
+   
+ </div>
+
+    <a href="#" class="">Sales</a>
+    <a href="#" class="">Sales</a>
+    <a href="#" class="">Sales</a>
+ </div>
+ <!--end....module side nav one menu-->
+
+ <!--start....module side nav two menu-->
+ <div class="module-menu-two">
+  <a href="#" class="module-menu-two-open-link module-menu-close-link">Close The Menu <i class="fa fa-close"></i> </a>
+  <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}" >menu 2</a>
+
+  <button class="module-menu-dropdown-btn" >Menu2<i class="fa fa-caret-down"></i></button>
+ <div class="module-menu-dropdown-container">
+   <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Customer Returns</a>
+   <a href="#">Suppliers</a>
+ </div>
+
+ <button class="module-menu-dropdown-btn" >Purchases<i class="fa fa-caret-down"></i></button>
+ <div class="module-menu-dropdown-container">
+   <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Logistics</a>
+   <a href="#">Invoices</a>
+  
+ </div>
+
+    <a href="#" class="">Sales</a>
+    <a href="#" class="">Sales</a>
+   
+ </div>
+ <!--end....module side nav two menu-->
+
+
+ <!--start....module side nav two menu-->
+ <div class="module-menu-three">
+  
+    <table class="table allif-search-table">
+      <tr>
+        <a href="#" class="module-menu-three-open-link module-menu-close-link">Close The Menu <i class="fa fa-close"></i> </a>
+      </tr>
+      <tr>
+      <form method='POST' action=''>{% csrf_token %}
+        <label id="numofitems"> </label>
+        <input type="text" id="allifsearchcommonfield" class="form-control allifsearchcommonfieldclass"placeholder="Search for something " >
+          </form>
+        </tr>
+      <tr>
+        <td>
+      <a href=""> New Customer </a>
+        </td>
+
+        <td> 
+          <a href="">Customer Payments</a>
+        </td>
+
+        </tr>
+
+        <tr>
+        <td>
+      <a href=""> Customer Statements </a>
+        </td>
+        <td>     
+          <a href="">Customer Transactions</a>
+        </td>
+
+        </tr>
+        <tr>
+          <td>
+        <a href=""> Customer Statements </a>
+          </td>
+          <td>     
+            <a href="">Customer Transactions</a>
+          </td>
+  
+          </tr>
+       
+        <tr>
+          <thead></thead>
+          <thead></thead>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+        </table>
+      
+        <hr style="color: #714b67;">
+
+        <table class="table allif-search-table">
+          <tbody>
+           
+     
+      <tr>
+          
+      <td scope="col">Customer</td>
+      <td scope="col">Balance</td>
+      
+      </tr>
+
+     
+        <tbody id="tbody">
+        </tbody>
+          </table>
+   
+ </div>
+ <!--end....module side nav two menu-->
+ 
+    </div></div></div>
+
+
+  <div class="row mt-12" >
+    <div class="col-md-12">
+    <div class="AllifTableFixedHeader Allifmaal-scroll-table"> 
+      <table class="table table-layout">
+      <thead >
+        <tr class="allif-table-header-row">
+          <td>Category</td>
+          <td>Description</td>
+          <td>PartNo.</td>
+          <td>Quantity</td>
+          <td>Price</td>
+          <td>Details</td>
+        </tr>
+        </thead>
+        <tbody>
+                    
+        <tr>
+          <td >
+            <a href="">
+            first cat
+            </a>
+          </td>
+          <td>
+            Allifmaal ERP Application V3.4
+          </td>
+          <td>AllifERPV4.3</td>
+          
+          <td>34556</td>
+          
+          <td>15,667</td>
+          <td>
+            Latest version on Subscription bases
+          </td>
+        </tr>
+
+        <tr>
+          <td >
+            Software Applications
+          </td>
+          <td>
+            Allifmaal ERP Application V3.4
+          </td>
+          <td>AllifERPV4.3</td>
+          
+          <td>34556</td>
+          
+          <td>15,667</td>
+          <td>
+            Latest version on Subscription bases
+          </td>
+        </tr>
+
+        <tr>
+          <td >
+            Software Applications
+          </td>
+          <td>
+            Allifmaal ERP Application V3.4
+          </td>
+          <td>AllifERPV4.3</td>
+          
+          <td>34556</td>
+          
+          <td>15,667</td>
+          <td>
+            Latest version on Subscription bases
+          </td>
+        </tr>
+        <tr>
+          <td >
+            Software Applications
+          </td>
+          <td>
+            Allifmaal ERP Application V3.4
+          </td>
+          <td>AllifERPV4.3</td>
+          
+          <td>34556</td>
+          
+          <td>15,667</td>
+          <td>
+            Latest version on Subscription bases
+          </td>
+        </tr>
+        <tr>
+          <td >
+            Software Applications
+          </td>
+          <td>
+            Allifmaal ERP Application V3.4
+          </td>
+          <td>AllifERPV4.3</td>
+          
+          <td>34556</td>
+          
+          <td>15,667</td>
+          <td>
+            Latest version on Subscription bases
+          </td>
+        </tr>
+        <tr>
+          <td >
+            Software Applications
+          </td>
+          <td>
+            Allifmaal ERP Application V3.4
+          </td>
+          <td>AllifERPV4.3</td>
+          
+          <td>34556</td>
+          
+          <td>15,667</td>
+          <td>
+            Latest version on Subscription bases
+          </td>
+        </tr>
+        <tr>
+          <td >
+            Software Applications
+          </td>
+          <td>
+            Allifmaal ERP Application V3.4
+          </td>
+          <td>AllifERPV4.3</td>
+          
+          <td>34556</td>
+          
+          <td>15,667</td>
+          <td>
+            Latest version on Subscription bases
+          </td>
+        </tr>
+        <tr>
+          <td >
+            Software Applications
+          </td>
+          <td>
+            Allifmaal ERP Application V3.4
+          </td>
+          <td>AllifERPV4.3</td>
+          
+          <td>34556</td>
+          
+          <td>15,667</td>
+          <td>
+            Latest version on Subscription bases
+          </td>
+        </tr>
+        <tr>
+          <td >
+            Software Applications
+          </td>
+          <td>
+            Allifmaal ERP Application V3.4
+          </td>
+          <td>AllifERPV4.3</td>
+          
+          <td>34556</td>
+          
+          <td>15,667</td>
+          <td>
+            Latest version on Subscription bases
+          </td>
+        </tr>
+        <tr>
+          <td >
+            Software Applications
+          </td>
+          <td>
+            Allifmaal ERP Application V3.4
+          </td>
+          <td>AllifERPV4.3</td>
+          
+          <td>34556</td>
+          
+          <td>15,667</td>
+          <td>
+            Latest version on Subscription bases
+          </td>
+        </tr>
+        <tr>
+          <td >
+            Software Applications
+          </td>
+          <td>
+            Allifmaal ERP Application V3.4
+          </td>
+          <td>AllifERPV4.3</td>
+          
+          <td>34556</td>
+          
+          <td>15,667</td>
+          <td>
+            Latest version on Subscription bases
+          </td>
+        </tr>
+        <tr>
+          <td >
+            Software Applications
+          </td>
+          <td>
+            Allifmaal ERP Application V3.4
+          </td>
+          <td>AllifERPV4.3</td>
+          
+          <td>34556</td>
+          
+          <td>15,667</td>
+          <td>
+            last item here 
+          </td>
+        </tr>
+        <tr>
+          <td >
+            Software Applications
+          </td>
+          <td>
+            Allifmaal ERP Application V3.4
+          </td>
+          <td>AllifERPV4.3</td>
+          
+          <td>34556</td>
+          
+          <td>15,667</td>
+          <td>
+            Latest version on Subscription bases
+          </td>
+        </tr>
+        <tr>
+          <td >
+            Software Applications
+          </td>
+          <td>
+            Allifmaal ERP Application V3.4
+          </td>
+          <td>AllifERPV4.3</td>
+          
+          <td>34556</td>
+          
+          <td>15,667</td>
+          <td>
+            Latest version on Subscription bases
+          </td>
+        </tr>
+        <tr>
+          <td >
+            Software Applications
+          </td>
+          <td>
+            Allifmaal ERP Application V3.4
+          </td>
+          <td>AllifERPV4.3</td>
+          
+          <td>34556</td>
+          
+          <td>15,667</td>
+          <td>
+            Latest version on Subscription bases
+          </td>
+        </tr>
+        <tr>
+          <td >
+            Software Applications
+          </td>
+          <td>
+            Allifmaal ERP Application V3.4
+          </td>
+          <td>AllifERPV4.3</td>
+          
+          <td>34556</td>
+          
+          <td>15,667</td>
+          <td>
+            Latest version on Subscription bases
+          </td>
+        </tr>
+        <tr>
+          <td >
+            Software Applications
+          </td>
+          <td>
+            Allifmaal ERP Application V3.4
+          </td>
+          <td>AllifERPV4.3</td>
+          
+          <td>34556</td>
+          
+          <td>15,667</td>
+          <td>
+            Latest version on Subscription bases
+          </td>
+        </tr>
+        <tr>
+          <td >
+            Software Applications
+          </td>
+          <td>
+            Allifmaal ERP Application V3.4
+          </td>
+          <td>AllifERPV4.3</td>
+          
+          <td>34556</td>
+          
+          <td>15,667</td>
+          <td>
+            Last teble item
+            </td>
+        </tr>
+
+      
+      </tbody>
+    </table>
+  
+  </div>
+  </div></div>
+
+<!--end of table-->
+
+
+
+
+
+
+<div id="allif-section-headers" class="card-header">
+    <div class="row mt-12" >
+    <div class="col-md-12">
+          
+    <a href="#" class="module-menu-one-open-link module-menu-links">Menu <i class="fa fa-caret-down"></i></a>
+    <a href="#" class="module-menu-two-open-link module-menu-links">Menu2 <i class="fa fa-caret-down"></i></a>
+    <a href="#" class="module-menu-three-open-link module-menu-links">Search <i class="fa fa-caret-down"></i></a>
+    <a href="{% url 'allifmaaluiapp:allifmaalUIFullTable' %}" class="module-menu-links">Sales </a>
+    <a href="#" class="module-menu-links">Sales Returns </a>
+
+    <a href="#" class="module-menu-links"> <span>Allifmaal Customers List </span> </a>
+
+
+<!--start....module side nav one menu-->
+ <div class="module-menu-one">
+  <a href="#" class="module-menu-one-open-link module-menu-close-link">Close The Menu <i class="fa fa-close"></i> </a>
+  <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}" >Search</a>
+
+  <button class="module-menu-dropdown-btn" >Quotations<i class="fa fa-caret-down"></i></button>
+ <div class="module-menu-dropdown-container">
+   <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Customer Returns</a>
+   <a href="#">Suppliers</a>
+ </div>
+
+ <button class="module-menu-dropdown-btn" >Purchases<i class="fa fa-caret-down"></i></button>
+ <div class="module-menu-dropdown-container">
+   <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Logistics</a>
+   <a href="#">Invoices</a>
+   <a href="#">Quotations</a>
+   <a href="#">Invoices</a>
+   <a href="#">Quotations</a>
+   
+ </div>
+
+    <a href="#" class="">Sales</a>
+    <a href="#" class="">Sales</a>
+    <a href="#" class="">Sales</a>
+ </div>
+ <!--end....module side nav one menu-->
+
+ <!--start....module side nav two menu-->
+ <div class="module-menu-two">
+  <a href="#" class="module-menu-two-open-link module-menu-close-link">Close The Menu <i class="fa fa-close"></i> </a>
+  <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}" >menu 2</a>
+
+  <button class="module-menu-dropdown-btn" >Menu2<i class="fa fa-caret-down"></i></button>
+ <div class="module-menu-dropdown-container">
+   <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Customer Returns</a>
+   <a href="#">Suppliers</a>
+ </div>
+
+ <button class="module-menu-dropdown-btn" >Purchases<i class="fa fa-caret-down"></i></button>
+ <div class="module-menu-dropdown-container">
+   <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Logistics</a>
+   <a href="#">Invoices</a>
+  
+ </div>
+
+    <a href="#" class="">Sales</a>
+    <a href="#" class="">Sales</a>
+   
+ </div>
+ <!--end....module side nav two menu-->
+
+
+ <!--start....module side nav two menu-->
+ <div class="module-menu-three">
+  
+    <table class="table allif-search-table">
+      <tr>
+        <a href="#" class="module-menu-three-open-link module-menu-close-link">Close The Menu <i class="fa fa-close"></i> </a>
+      </tr>
+      <tr>
+      <form method='POST' action=''>{% csrf_token %}
+        <label id="numofitems"> </label>
+        <input type="text" id="allifsearchcommonfield" class="form-control allifsearchcommonfieldclass"placeholder="Search for something " >
+          </form>
+        </tr>
+      <tr>
+        <td>
+      <a href=""> New Customer </a>
+        </td>
+
+        <td> 
+          <a href="">Customer Payments</a>
+        </td>
+
+        </tr>
+
+        <tr>
+        <td>
+      <a href=""> Customer Statements </a>
+        </td>
+        <td>     
+          <a href="">Customer Transactions</a>
+        </td>
+
+        </tr>
+        <tr>
+          <td>
+        <a href=""> Customer Statements </a>
+          </td>
+          <td>     
+            <a href="">Customer Transactions</a>
+          </td>
+  
+          </tr>
+       
+        <tr>
+          <thead></thead>
+          <thead></thead>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+        </table>
+      
+        <hr style="color: #714b67;">
+
+        <table class="table allif-search-table">
+          <tbody>
+           
+     
+      <tr>
+          
+      <td scope="col">Customer</td>
+      <td scope="col">Balance</td>
+      
+      </tr>
+
+     
+        <tbody id="tbody">
+        </tbody>
+          </table>
+   
+ </div>
+ <!--end....module side nav two menu-->
+ 
+    </div></div></div>
+
+
+  <div class="row mt-12" >
+    <div class="col-md-12">
+    <div class="AllifTableFixedHeader Allifmaal-scroll-table"> 
+      <table class="table table-layout">
+      <thead >
+        <tr class="allif-table-header-row">
+          <td>Category</td>
+          <td>Description</td>
+          <td>PartNo.</td>
+          <td>Quantity</td>
+          <td>Price</td>
+          <td>Details</td>
+        </tr>
+        </thead>
+        <tbody>
+                    
+        <tr>
+          <td >
+            <a href="">
+            first cat
+            </a>
+          </td>
+          <td>
+            Allifmaal ERP Application V3.4
+          </td>
+          <td>AllifERPV4.3</td>
+          
+          <td>34556</td>
+          
+          <td>15,667</td>
+          <td>
+            Latest version on Subscription bases
+          </td>
+        </tr>
+
+        <tr>
+          <td >
+            Software Applications
+          </td>
+          <td>
+            Allifmaal ERP Application V3.4
+          </td>
+          <td>AllifERPV4.3</td>
+          
+          <td>34556</td>
+          
+          <td>15,667</td>
+          <td>
+            Latest version on Subscription bases
+          </td>
+        </tr>
+
+        <tr>
+          <td >
+            Software Applications
+          </td>
+          <td>
+            Allifmaal ERP Application V3.4
+          </td>
+          <td>AllifERPV4.3</td>
+          
+          <td>34556</td>
+          
+          <td>15,667</td>
+          <td>
+            Latest version on Subscription bases
+          </td>
+        </tr>
+        <tr>
+          <td >
+            Software Applications
+          </td>
+          <td>
+            Allifmaal ERP Application V3.4
+          </td>
+          <td>AllifERPV4.3</td>
+          
+          <td>34556</td>
+          
+          <td>15,667</td>
+          <td>
+            Latest version on Subscription bases
+          </td>
+        </tr>
+        <tr>
+          <td >
+            Software Applications
+          </td>
+          <td>
+            Allifmaal ERP Application V3.4
+          </td>
+          <td>AllifERPV4.3</td>
+          
+          <td>34556</td>
+          
+          <td>15,667</td>
+          <td>
+            Latest version on Subscription bases
+          </td>
+        </tr>
+        <tr>
+          <td >
+            Software Applications
+          </td>
+          <td>
+            Allifmaal ERP Application V3.4
+          </td>
+          <td>AllifERPV4.3</td>
+          
+          <td>34556</td>
+          
+          <td>15,667</td>
+          <td>
+            Latest version on Subscription bases
+          </td>
+        </tr>
+        <tr>
+          <td >
+            Software Applications
+          </td>
+          <td>
+            Allifmaal ERP Application V3.4
+          </td>
+          <td>AllifERPV4.3</td>
+          
+          <td>34556</td>
+          
+          <td>15,667</td>
+          <td>
+            Latest version on Subscription bases
+          </td>
+        </tr>
+        <tr>
+          <td >
+            Software Applications
+          </td>
+          <td>
+            Allifmaal ERP Application V3.4
+          </td>
+          <td>AllifERPV4.3</td>
+          
+          <td>34556</td>
+          
+          <td>15,667</td>
+          <td>
+            Latest version on Subscription bases
+          </td>
+        </tr>
+        <tr>
+          <td >
+            Software Applications
+          </td>
+          <td>
+            Allifmaal ERP Application V3.4
+          </td>
+          <td>AllifERPV4.3</td>
+          
+          <td>34556</td>
+          
+          <td>15,667</td>
+          <td>
+            Latest version on Subscription bases
+          </td>
+        </tr>
+        <tr>
+          <td >
+            Software Applications
+          </td>
+          <td>
+            Allifmaal ERP Application V3.4
+          </td>
+          <td>AllifERPV4.3</td>
+          
+          <td>34556</td>
+          
+          <td>15,667</td>
+          <td>
+            Latest version on Subscription bases
+          </td>
+        </tr>
+        <tr>
+          <td >
+            Software Applications
+          </td>
+          <td>
+            Allifmaal ERP Application V3.4
+          </td>
+          <td>AllifERPV4.3</td>
+          
+          <td>34556</td>
+          
+          <td>15,667</td>
+          <td>
+            Latest version on Subscription bases
+          </td>
+        </tr>
+        <tr>
+          <td >
+            Software Applications
+          </td>
+          <td>
+            Allifmaal ERP Application V3.4
+          </td>
+          <td>AllifERPV4.3</td>
+          
+          <td>34556</td>
+          
+          <td>15,667</td>
+          <td>
+            last item here 
+          </td>
+        </tr>
+        <tr>
+          <td >
+            Software Applications
+          </td>
+          <td>
+            Allifmaal ERP Application V3.4
+          </td>
+          <td>AllifERPV4.3</td>
+          
+          <td>34556</td>
+          
+          <td>15,667</td>
+          <td>
+            Latest version on Subscription bases
+          </td>
+        </tr>
+        <tr>
+          <td >
+            Software Applications
+          </td>
+          <td>
+            Allifmaal ERP Application V3.4
+          </td>
+          <td>AllifERPV4.3</td>
+          
+          <td>34556</td>
+          
+          <td>15,667</td>
+          <td>
+            Latest version on Subscription bases
+          </td>
+        </tr>
+        <tr>
+          <td >
+            Software Applications
+          </td>
+          <td>
+            Allifmaal ERP Application V3.4
+          </td>
+          <td>AllifERPV4.3</td>
+          
+          <td>34556</td>
+          
+          <td>15,667</td>
+          <td>
+            Latest version on Subscription bases
+          </td>
+        </tr>
+        <tr>
+          <td >
+            Software Applications
+          </td>
+          <td>
+            Allifmaal ERP Application V3.4
+          </td>
+          <td>AllifERPV4.3</td>
+          
+          <td>34556</td>
+          
+          <td>15,667</td>
+          <td>
+            Latest version on Subscription bases
+          </td>
+        </tr>
+        <tr>
+          <td >
+            Software Applications
+          </td>
+          <td>
+            Allifmaal ERP Application V3.4
+          </td>
+          <td>AllifERPV4.3</td>
+          
+          <td>34556</td>
+          
+          <td>15,667</td>
+          <td>
+            Latest version on Subscription bases
+          </td>
+        </tr>
+        <tr>
+          <td >
+            Software Applications
+          </td>
+          <td>
+            Allifmaal ERP Application V3.4
+          </td>
+          <td>AllifERPV4.3</td>
+          
+          <td>34556</td>
+          
+          <td>15,667</td>
+          <td>
+            Last teble item
+            </td>
+        </tr>
+
+      
+      </tbody>
+    </table>
+  
+  </div>
+  </div></div>
+
+<!--end of table-->
+
+
+
+
+
+<div id="allif-section-headers" class="card-header">
+    <div class="row mt-12" >
+    <div class="col-md-12">
+          
+    <a href="#" class="module-menu-one-open-link module-menu-links">Menu <i class="fa fa-caret-down"></i></a>
+    <a href="#" class="module-menu-two-open-link module-menu-links">Menu2 <i class="fa fa-caret-down"></i></a>
+    <a href="#" class="module-menu-three-open-link module-menu-links">Search <i class="fa fa-caret-down"></i></a>
+    <a href="{% url 'allifmaaluiapp:allifmaalUIFullTable' %}" class="module-menu-links">Sales </a>
+    <a href="#" class="module-menu-links">Sales Returns </a>
+
+    <a href="#" class="module-menu-links"> <span>Allifmaal Customers List </span> </a>
+
+
+<!--start....module side nav one menu-->
+ <div class="module-menu-one">
+  <a href="#" class="module-menu-one-open-link module-menu-close-link">Close The Menu <i class="fa fa-close"></i> </a>
+  <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}" >Search</a>
+
+  <button class="module-menu-dropdown-btn" >Quotations<i class="fa fa-caret-down"></i></button>
+ <div class="module-menu-dropdown-container">
+   <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Customer Returns</a>
+   <a href="#">Suppliers</a>
+ </div>
+
+ <button class="module-menu-dropdown-btn" >Purchases<i class="fa fa-caret-down"></i></button>
+ <div class="module-menu-dropdown-container">
+   <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Logistics</a>
+   <a href="#">Invoices</a>
+   <a href="#">Quotations</a>
+   <a href="#">Invoices</a>
+   <a href="#">Quotations</a>
+   
+ </div>
+
+    <a href="#" class="">Sales</a>
+    <a href="#" class="">Sales</a>
+    <a href="#" class="">Sales</a>
+ </div>
+ <!--end....module side nav one menu-->
+
+ <!--start....module side nav two menu-->
+ <div class="module-menu-two">
+  <a href="#" class="module-menu-two-open-link module-menu-close-link">Close The Menu <i class="fa fa-close"></i> </a>
+  <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}" >menu 2</a>
+
+  <button class="module-menu-dropdown-btn" >Menu2<i class="fa fa-caret-down"></i></button>
+ <div class="module-menu-dropdown-container">
+   <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Customer Returns</a>
+   <a href="#">Suppliers</a>
+ </div>
+
+ <button class="module-menu-dropdown-btn" >Purchases<i class="fa fa-caret-down"></i></button>
+ <div class="module-menu-dropdown-container">
+   <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Logistics</a>
+   <a href="#">Invoices</a>
+  
+ </div>
+
+    <a href="#" class="">Sales</a>
+    <a href="#" class="">Sales</a>
+   
+ </div>
+ <!--end....module side nav two menu-->
+
+
+ <!--start....module side nav two menu-->
+ <div class="module-menu-three">
+  
+    <table class="table allif-search-table">
+      <tr>
+        <a href="#" class="module-menu-three-open-link module-menu-close-link">Close The Menu <i class="fa fa-close"></i> </a>
+      </tr>
+      <tr>
+      <form method='POST' action=''>{% csrf_token %}
+        <label id="numofitems"> </label>
+        <input type="text" id="allifsearchcommonfield" class="form-control allifsearchcommonfieldclass"placeholder="Search for something " >
+          </form>
+        </tr>
+      <tr>
+        <td>
+      <a href=""> New Customer </a>
+        </td>
+
+        <td> 
+          <a href="">Customer Payments</a>
+        </td>
+
+        </tr>
+
+        <tr>
+        <td>
+      <a href=""> Customer Statements </a>
+        </td>
+        <td>     
+          <a href="">Customer Transactions</a>
+        </td>
+
+        </tr>
+        <tr>
+          <td>
+        <a href=""> Customer Statements </a>
+          </td>
+          <td>     
+            <a href="">Customer Transactions</a>
+          </td>
+  
+          </tr>
+       
+        <tr>
+          <thead></thead>
+          <thead></thead>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+        </table>
+      
+        <hr style="color: #714b67;">
+
+        <table class="table allif-search-table">
+          <tbody>
+           
+     
+      <tr>
+          
+      <td scope="col">Customer</td>
+      <td scope="col">Balance</td>
+      
+      </tr>
+
+     
+        <tbody id="tbody">
+        </tbody>
+          </table>
+   
+ </div>
+ <!--end....module side nav two menu-->
+ 
+    </div></div></div>
+
+
+  <div class="row mt-12" >
+    <div class="col-md-12">
+    <div class="AllifTableFixedHeader Allifmaal-scroll-table"> 
+      <table class="table table-layout">
+      <thead >
+        <tr class="allif-table-header-row">
+          <td>Category</td>
+          <td>Description</td>
+          <td>PartNo.</td>
+          <td>Quantity</td>
+          <td>Price</td>
+          <td>Details</td>
+        </tr>
+        </thead>
+        <tbody>
+                    
+        <tr>
+          <td >
+            <a href="">
+            first cat
+            </a>
+          </td>
+          <td>
+            Allifmaal ERP Application V3.4
+          </td>
+          <td>AllifERPV4.3</td>
+          
+          <td>34556</td>
+          
+          <td>15,667</td>
+          <td>
+            Latest version on Subscription bases
+          </td>
+        </tr>
+
+        <tr>
+          <td >
+            Software Applications
+          </td>
+          <td>
+            Allifmaal ERP Application V3.4
+          </td>
+          <td>AllifERPV4.3</td>
+          
+          <td>34556</td>
+          
+          <td>15,667</td>
+          <td>
+            Latest version on Subscription bases
+          </td>
+        </tr>
+
+        <tr>
+          <td >
+            Software Applications
+          </td>
+          <td>
+            Allifmaal ERP Application V3.4
+          </td>
+          <td>AllifERPV4.3</td>
+          
+          <td>34556</td>
+          
+          <td>15,667</td>
+          <td>
+            Latest version on Subscription bases
+          </td>
+        </tr>
+        <tr>
+          <td >
+            Software Applications
+          </td>
+          <td>
+            Allifmaal ERP Application V3.4
+          </td>
+          <td>AllifERPV4.3</td>
+          
+          <td>34556</td>
+          
+          <td>15,667</td>
+          <td>
+            Latest version on Subscription bases
+          </td>
+        </tr>
+        <tr>
+          <td >
+            Software Applications
+          </td>
+          <td>
+            Allifmaal ERP Application V3.4
+          </td>
+          <td>AllifERPV4.3</td>
+          
+          <td>34556</td>
+          
+          <td>15,667</td>
+          <td>
+            Latest version on Subscription bases
+          </td>
+        </tr>
+        <tr>
+          <td >
+            Software Applications
+          </td>
+          <td>
+            Allifmaal ERP Application V3.4
+          </td>
+          <td>AllifERPV4.3</td>
+          
+          <td>34556</td>
+          
+          <td>15,667</td>
+          <td>
+            Latest version on Subscription bases
+          </td>
+        </tr>
+        <tr>
+          <td >
+            Software Applications
+          </td>
+          <td>
+            Allifmaal ERP Application V3.4
+          </td>
+          <td>AllifERPV4.3</td>
+          
+          <td>34556</td>
+          
+          <td>15,667</td>
+          <td>
+            Latest version on Subscription bases
+          </td>
+        </tr>
+        <tr>
+          <td >
+            Software Applications
+          </td>
+          <td>
+            Allifmaal ERP Application V3.4
+          </td>
+          <td>AllifERPV4.3</td>
+          
+          <td>34556</td>
+          
+          <td>15,667</td>
+          <td>
+            Latest version on Subscription bases
+          </td>
+        </tr>
+        <tr>
+          <td >
+            Software Applications
+          </td>
+          <td>
+            Allifmaal ERP Application V3.4
+          </td>
+          <td>AllifERPV4.3</td>
+          
+          <td>34556</td>
+          
+          <td>15,667</td>
+          <td>
+            Latest version on Subscription bases
+          </td>
+        </tr>
+        <tr>
+          <td >
+            Software Applications
+          </td>
+          <td>
+            Allifmaal ERP Application V3.4
+          </td>
+          <td>AllifERPV4.3</td>
+          
+          <td>34556</td>
+          
+          <td>15,667</td>
+          <td>
+            Latest version on Subscription bases
+          </td>
+        </tr>
+        <tr>
+          <td >
+            Software Applications
+          </td>
+          <td>
+            Allifmaal ERP Application V3.4
+          </td>
+          <td>AllifERPV4.3</td>
+          
+          <td>34556</td>
+          
+          <td>15,667</td>
+          <td>
+            Latest version on Subscription bases
+          </td>
+        </tr>
+        <tr>
+          <td >
+            Software Applications
+          </td>
+          <td>
+            Allifmaal ERP Application V3.4
+          </td>
+          <td>AllifERPV4.3</td>
+          
+          <td>34556</td>
+          
+          <td>15,667</td>
+          <td>
+            last item here 
+          </td>
+        </tr>
+        <tr>
+          <td >
+            Software Applications
+          </td>
+          <td>
+            Allifmaal ERP Application V3.4
+          </td>
+          <td>AllifERPV4.3</td>
+          
+          <td>34556</td>
+          
+          <td>15,667</td>
+          <td>
+            Latest version on Subscription bases
+          </td>
+        </tr>
+        <tr>
+          <td >
+            Software Applications
+          </td>
+          <td>
+            Allifmaal ERP Application V3.4
+          </td>
+          <td>AllifERPV4.3</td>
+          
+          <td>34556</td>
+          
+          <td>15,667</td>
+          <td>
+            Latest version on Subscription bases
+          </td>
+        </tr>
+        <tr>
+          <td >
+            Software Applications
+          </td>
+          <td>
+            Allifmaal ERP Application V3.4
+          </td>
+          <td>AllifERPV4.3</td>
+          
+          <td>34556</td>
+          
+          <td>15,667</td>
+          <td>
+            Latest version on Subscription bases
+          </td>
+        </tr>
+        <tr>
+          <td >
+            Software Applications
+          </td>
+          <td>
+            Allifmaal ERP Application V3.4
+          </td>
+          <td>AllifERPV4.3</td>
+          
+          <td>34556</td>
+          
+          <td>15,667</td>
+          <td>
+            Latest version on Subscription bases
+          </td>
+        </tr>
+        <tr>
+          <td >
+            Software Applications
+          </td>
+          <td>
+            Allifmaal ERP Application V3.4
+          </td>
+          <td>AllifERPV4.3</td>
+          
+          <td>34556</td>
+          
+          <td>15,667</td>
+          <td>
+            Latest version on Subscription bases
+          </td>
+        </tr>
+        <tr>
+          <td >
+            Software Applications
+          </td>
+          <td>
+            Allifmaal ERP Application V3.4
+          </td>
+          <td>AllifERPV4.3</td>
+          
+          <td>34556</td>
+          
+          <td>15,667</td>
+          <td>
+            Last teble item
+            </td>
+        </tr>
+
+      
+      </tbody>
+    </table>
+  
+  </div>
+  </div>
+
+<br>
+<hr>
+
+</div>
+
+<!--end of table-->
+
+
+</div><!--end of main container of the page-->
+
+<script>
+
+  /* .... Start.....Module menus ..... containing hidden module links...... */
+
+  /* .... Menu one...... */
+  $(document).ready(function(){
+$(".module-menu-one-open-link").click(function(){
+$(".module-menu-one").toggleClass("module-menu-window");
+})
+})
+
+/* .... Menu two...... */
+$(document).ready(function(){
+$(".module-menu-two-open-link").click(function(){
+$(".module-menu-two").toggleClass("module-menu-window");
+})
+})
+
+/* .... Menu two...... */
+$(document).ready(function(){
+$(".module-menu-three-open-link").click(function(){
+$(".module-menu-three").toggleClass("module-menu-window");
+})
+})
+
+/* .... Module drop down container section..... containing hidden module links...... */
+var sidenavtwodropdownbtns= document.getElementsByClassName("module-menu-dropdown-btn");
+    var i;
+    for (i = 0; i < sidenavtwodropdownbtns.length; i++) {
+      sidenavtwodropdownbtns[i].addEventListener("click", function() {
+        var sidenavtwodropdownbtnlinks= this.nextElementSibling;
+        if (sidenavtwodropdownbtnlinks.style.display === "block") {
+          sidenavtwodropdownbtnlinks.style.display = "none";
+        } else {
+          sidenavtwodropdownbtnlinks.style.display = "block";
+        }
+      });
+    }
+    /* .... Start.....Module menu one ..... containing hidden module links...... */
+    /* .... End.....Module menu one ..... containing hidden module links...... */
+
+    <!-- start --below is for turning the color of the clicked row-->
+    
+      $(document).ready(function() {
+
+    //Highlight clicked row
+    $('.table-layout td').on('click', function() {
+
+      // Remove previous highlight class
+      $(this).closest('table').find('tr.clickedrow').removeClass('clickedrow');
+      
+      // add highlight to the parent tr of the clicked td
+      $(this).parent('tr').addClass("clickedrow");
+    });
+    });
+    </script>
+    <!-- end --below is for turning the color of the clicked row-->
+
+</script>
+
+
+<script>
+
+  const waitTime = 2000;
+  
+ const allif_input_value = $("#allifsearchcommonfield").val()
+ const allif_input = document.getElementById('allifsearchcommonfield');
+ allif_input.addEventListener('keyup', function allifmaal(event){
+     
+ 
+ event.preventDefault();
+ output=""
+ allifdata=$(this).val();
+
+ 
+ // chek if the field is emtpy
+ if (allifdata.length>3){
+ const allif_input_val= document.getElementById('allifsearchcommonfield').value;
+ allifmaal_search();
+ }
+ else{
+     console.log("required length not reached")
+ }
+
+ //timer=setTimeout(() => {allifmaal_search();}, waitTime);
+ })
+
+     function allifmaal_search() {
+     allifmaaldata={search_result_key:allifdata,};//data to be sent to backend
+     $.ajax({
+             url:"", //behind the scenes run this url
+             method:"GET",
+             data:allifmaaldata,//this is the collected data sent to the backend
+             dataType:"json",
+     
+     // start of section that ensures that the data appears on the client side immediately the user adds a record
+     success:function(allifmaalengdata){
+         const datafrombackend=allifmaalengdata
+         const mydata=JSON.stringify(datafrombackend)
+         const ourdata=JSON.parse(mydata)
+         
+
+         var number_of_items=0
+         for (i=0; i<ourdata.length; i++){
+             myitemnames=ourdata[i].number//this is working and gives all the item names
+             allifproductid=ourdata[i].id
+
+             output+=`<tr><td> <a href='/Customer-Details/${allifproductid}/'</a>`
+                 +ourdata[i].name+`</td>`+
+                 `<td>`
+                     + ourdata[i].balance +`</td>`+
+                     
+                      `</tr>`;
+
+                 number_of_items++;
+         };
+         
+         
+         //document.getElementById("numofitems").innerHTML = number_of_items+" "+'items';
+         $("#tbody").html(output);
+
+             //artists_div.fadeTo('slow',2)
+             //artists_div.html(allifmaalengdata)
+             
+}
+}
+
+)};
+
+
+
+ 
+</script>
+   {% endblock %}
+   
