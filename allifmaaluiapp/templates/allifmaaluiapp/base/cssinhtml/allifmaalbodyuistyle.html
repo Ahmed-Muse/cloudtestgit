@@ -3,8 +3,14 @@
     
     
     */
-  body{
-    background-color: #F6F7F8;
+:root {
+  --main-background-color: #F6F7F8;
+  --main-text-color: #ffffff;
+  --main-text-font-size:1em;
+}
+
+  html,body{
+    background-color: var(--main-background-color);
     opacity: 1;
     position:sticky;
     overflow: auto;
@@ -14,6 +20,7 @@
     margin: auto;
     padding: auto;
     overflow-y: hidden;
+    font-size: var(--main-text-font-size);
     }
     a:link{
         text-decoration: none;
@@ -30,9 +37,35 @@
       min-width: min-content;
       max-width: 100%;
       min-height: min-content;
-      max-height: 100%;
+      max-height: 95vh;
+      margin-bottom: 1em;
+      
     }
-    
+  
+    .allifmaincontainer .allif-form-container {
+      background-color:#F6F7F8;
+      margin-bottom: 2em;
+      margin-top: 1em;
+      
+    }
+    .allif-form-container .allif-form-card {
+      background-color: #F6F7F8;
+    }
+    .allifmaincontainer {
+    .allifmaal-submit-btn {
+        background-color: #e0e3e3;
+        color: #3a0bf7;
+      }
+    }
+
+    .allif-details-container .allif-details-card {
+     border: 0.05em solid #ddddfa;
+    border-radius: 0.3em;
+    }
+    .allifmaincontainer .allif-details-container{
+      margin-bottom: 2em;
+      margin-top: 1em;
+    }
   table.allifmaincontainer {
     background-color:#F6F7F8;
     width: 100%;
@@ -43,7 +76,7 @@
     width: auto;
     max-width: 100%;
     height: auto;
-    max-height: 27em;
+    max-height: 90vh;
     overflow-x: scroll;
     overflow-y: scroll;
     margin-left: 0px;
@@ -53,6 +86,10 @@
     border-left: 0.05em solid #ddddfa;
     
     border-radius: 0.1em;
+    background-color: var(--main-background-color);
+    margin-bottom: 3em;
+   
+   
     }
   
   /* make the table heads sticky and fixed ...*/

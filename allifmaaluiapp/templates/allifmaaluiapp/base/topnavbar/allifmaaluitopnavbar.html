@@ -27,7 +27,9 @@
 </style>
 
 <style>
- 
+ *{
+  font-family: Helvetica, sans-serif, Arial;
+ }
 .allifmaaltopnavone {
   overflow: auto;
   background-color:#F6F7F8;
@@ -49,7 +51,7 @@
   padding: 0.3em 0.3em 0.3em 0.3em;
   text-decoration: none;
   font-size: 16px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Helvetica, sans-serif, Arial;
   border: none;
   background-color:#F6F7F8;
   font-weight:normal;
@@ -80,7 +82,7 @@
   padding: 0.3em 0.3em 0.3em 0.3em;
   text-decoration: none;
   font-size: 1em;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Helvetica, sans-serif, Arial;
   border: none;
   background-color:#F6F7F8;
   font-weight:normal;
@@ -399,7 +401,7 @@ height: fit-content;
 
 }
 
-@media screen and (min-width: 1000px) and (max-width: 1400px){
+@media screen and (min-width: 1000px) and (max-width: 10000px){
 
 /*.............................PRIMARY NAV BAR SECTION..........................................*/
 
@@ -544,7 +546,7 @@ height: fit-content;
 
   
   <a href="{% url 'allifmaaluiapp:allifmaalUIDetailsTable' %}" class="topnavlaptoplinks">Detailstable</a>
-  <a href="#about" class="topnavlaptoplinks">Laptop</a>
+  <a href="{% url 'allifmaaluiapp:allifmaalUIFormsTable' %}" class="topnavlaptoplinks">Forms</a>
   <a href="#about" class="topnavdesktoplinks">Desktop</a>
   <a href="#about" class="topnavdesktoplinks">Desktop</a>
   <a href="#about" class="topnavlargescreenlinks">screen</a>

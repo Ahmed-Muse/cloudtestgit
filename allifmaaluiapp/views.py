@@ -3,12 +3,13 @@ from django.shortcuts import render
 
 # Create your views here.
 def allifmaalUIHome(request):
-  
+   
     title="Home - Pending Tasks"
-  
+   
     context={
         "title":title,
        
+      
     }
     return render(request,'allifmaaluiapp/home/home.html',context)
 
@@ -17,15 +18,15 @@ def allifmaalUIFullSingleTable(request):
    
     context={
         "title":title,
-       
+        
     }
     return render(request,'allifmaaluiapp/tables/fullsingletable.html',context)
 def allifmaalUIFullTables(request):
     title="Full Single Table"
-   
+ 
     context={
         "title":title,
-      
+       
     }
     return render(request,'allifmaaluiapp/tables/fulltables.html',context)
 
@@ -39,22 +40,37 @@ def allifmaalUIHalfTable(request):
     return render(request,'allifmaaluiapp/tables/halftable.html',context)
 def allifmaalUIHalfTables(request):
     title="Full Single Table"
-    
+  
     context={
         "title":title,
-       
+        
     }
     return render(request,'allifmaaluiapp/tables/halftables.html',context)
 
 
 def allifmaalUIDetailsTable(request):
     title="Full Single Table"
-   
+    
     context={
         "title":title,
        
     }
     return render(request,'allifmaaluiapp/tables/details-table.html',context)
+
+def allifmaalUIFormsTable(request):
+    title="Full Single Table"
+   
+    context={
+        "title":title,
+      
+    }
+    return render(request,'allifmaaluiapp/tables/forms-table.html',context)
+
+
+
+
+
+
 
 def allifmaalUIHomeFull(request):
     context={}
