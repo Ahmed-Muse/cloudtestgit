@@ -8,7 +8,8 @@
 </style>
 <style>
 * {
-  font-family: Helvetica, sans-serif, Arial;
+  
+  font-family: var(--main-font-type);
 }
 /*............start of styling of side nav one bar menu and its content.............................*/
 .sidenavonemenu {
@@ -26,11 +27,15 @@
   max-height: 100%;/*very important... if you dont put this it will not show the over*/
   min-width: min-content;
   max-width: 7em;
+  transition: 0.3s;
+  transition: all 0.3s ease-in;
+  
+ 
   }
 
 .sidenavonemenu a, .sidenavonemenu button.sidenavonedropdownbtn {
   position: relative;
-  font-family: Helvetica, sans-serif, Arial;
+  
   font-weight:normal;
   font-size: 1em;
   text-align: left;
@@ -45,6 +50,7 @@
   border: none;
   background: #f7f7f7;
   border-bottom: 1px solid #dfdede;
+  
   
 }
 
@@ -73,7 +79,7 @@
 
 .sidenavone-dropdown-container a{
   position: relative;
-  font-family: Helvetica, sans-serif, Arial;
+  
   font-weight:normal;
   font-size: 1em;
   text-align: left;
@@ -133,7 +139,7 @@
   padding: 0.1em 0.1em 0.1em 0.1em;
   margin-top: 0em;
   margin-bottom: 0em;
-  font-family: Helvetica, sans-serif, Arial;
+ 
   text-decoration: none;
   border-bottom: 1px solid #dfdede;
   background: #f7f7f7;
@@ -167,7 +173,7 @@
   position: relative;
   margin-top: 0em;
   margin-bottom: 0em;
-  font-family: Helvetica, sans-serif, Arial;
+  
   font-weight:normal;
   font-size: 1em;
   text-align: left;
@@ -238,7 +244,7 @@ max-width: 7em;
   padding: 0.1em 0.1em 0.1em 0.1em;
   margin-top: 0em;
   margin-bottom: 0em;
-  font-family: Helvetica, sans-serif, Arial;
+  
   text-decoration: none;
   border-bottom: 1px solid #dfdede;
   background: #f7f7f7;
@@ -273,7 +279,7 @@ max-width: 7em;
   position: relative;
   margin-top: 0em;
   margin-bottom: 0em;
-  font-family: Helvetica, sans-serif, Arial;
+  
   font-weight:normal;
   font-size: 1em;
   text-align: left;
@@ -325,14 +331,15 @@ min 1000 no max - laptops and bigger screens, no side nav...
     id="sidenavoneshwohiddenlinkslink">Close <i class="fa fa-close"></i></a>
    <a href="#" class="opensidemenutwobtn"> Menu 2 <i class="fa fa-caret-right"></i></a>
    <a href="#" class="opensidemenuthreebtn">Menu 3 <i class="fa fa-caret-right"></i></a>
-   <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}" >Search</a>
+   <a href="{% url 'allifmaaluiapp:allifmaalUIMainDashboard' %}" >Dashboard</a>
 
    <button class="sidenavonedropdownbtn" >Quotations<i class="fa fa-caret-down"></i></button>
   <div class="sidenavone-dropdown-container">
     <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Dashboard</a>
-    <a href="#">Suppliers</a>
+    <a href="{% url 'allifmaaluiapp:allifmaalUITabs' %}">Tabs</a>
+    <a href="{% url 'allifmaaluiapp:allifmaalUISearch' %}">Search</a>
   </div>
-
+  
   <button class="sidenavonedropdownbtn" >Purchases<i class="fa fa-caret-down"></i></button>
   <div class="sidenavone-dropdown-container">
     <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Logistics</a>
@@ -365,7 +372,7 @@ min 1000 no max - laptops and bigger screens, no side nav...
     <a href="#">Returns</a>
   </div>
 
-  <button class="sidenavonedropdownbtn">Rayxan<i class="fa fa-caret-down"></i></button>
+  <button class="sidenavonedropdownbtn">Sales<i class="fa fa-caret-down"></i></button>
   <div class="sidenavone-dropdown-container">
     <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Purchases</a>
     <a href="#">Suppliers</a>

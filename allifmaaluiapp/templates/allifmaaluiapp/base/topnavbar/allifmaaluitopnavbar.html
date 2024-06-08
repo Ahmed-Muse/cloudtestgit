@@ -28,7 +28,7 @@
 
 <style>
  *{
-  font-family: Helvetica, sans-serif, Arial;
+  font-family: var(--main-font-type);
  }
 .allifmaaltopnavone {
   overflow: auto;
@@ -40,6 +40,7 @@
   left: 0em;
   top: 0;
   z-index: 10;
+
 }
 
 /* Style the links inside the navigation bar */
@@ -50,8 +51,8 @@
   text-align: center;
   padding: 0.3em 0.3em 0.3em 0.3em;
   text-decoration: none;
-  font-size: 16px;
-  font-family: Helvetica, sans-serif, Arial;
+  font-size: 1em;
+  
   border: none;
   background-color:#F6F7F8;
   font-weight:normal;
@@ -82,7 +83,7 @@
   padding: 0.3em 0.3em 0.3em 0.3em;
   text-decoration: none;
   font-size: 1em;
-  font-family: Helvetica, sans-serif, Arial;
+  
   border: none;
   background-color:#F6F7F8;
   font-weight:normal;
@@ -519,7 +520,7 @@ height: fit-content;
  
   <button class="topnavonedropdownbtn topnavlargescreenlinks topnavmobilelinks" >Mobile <i class="fa fa-caret-down"></i></button>
   <div class="topnavone-dropdown-container">
-    <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Xawa</a>
+    <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">sales</a>
     <a href="#">Suppliers</a>
     <a href="#">Purchases</a>
     <a href="#">Suppliers</a>
@@ -528,16 +529,15 @@ height: fit-content;
 
   <button class="topnavonedropdownbtn topnavlargescreenlinks topnavmobilelinks" >Mobile <i class="fa fa-caret-down"></i></button>
   <div class="topnavone-dropdown-container">
-    <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Ahmed</a>
+    <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Inventory</a>
     <a href="#">Suppliers</a>
     <a href="#">Purchases</a>
   </div>
-  
-  <a href="{% url 'allifmaaluiapp:allifmaalUIFullTable' %}" class="topnavtabletlinks">Table1</a>
-  <a href="{% url 'allifmaaluiapp:allifmaalUISmallTable' %}" class="topnavtabletlinks">Table2</a>
   <a href="{% url 'allifmaaluiapp:allifmaalUIHome' %}" class="topnavtabletlinks">Home</a>
-
-  <a href="{% url 'allifmaaluiapp:allifmaalUIFullSingleTable' %}" class="topnavminilaptoplinks topnavlaptoplinks">Full Table</a>
+  <a href="{% url 'allifmaaluiapp:allifmaalUIFullSingleTable' %}" class="topnavminilaptoplinks topnavlaptoplinks">Singfulltab</a>
+  <a href="" class="topnavtabletlinks">Sales</a>
+  <a href="" class="topnavtabletlinks">Sales</a>
+  
   <a href="#" class="opentopnavdropdownmenulinkone topnavminilaptoplinks">Minilap <i class="fa fa-caret-down"></i></a>
   <a href="#" class="opentopnavdropdownmenulinktwo topnavminilaptoplinks">Minilap <i class="fa fa-caret-down"></i>
   <a href="{% url 'allifmaaluiapp:allifmaalUIFullTables' %}" class="topnavlaptoplinks">Fulltables</a>
@@ -563,8 +563,8 @@ height: fit-content;
   <a href="#about" class="topnavlargescreenlinks">Screen</a>
   <a href="#about" class="topnavlargescreenlinks">screen</a>
   <a href="#about" class="topnavlargescreenlinks">Screen</a>
-  <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}" class="topnavlargescreenlinks">screen</a>
-  
+  <a href="{% url 'allifmaalusersapp:userLogoutPage' %}"  class="topnavlargescreenlinks">Logout</a>
+ 
    <!--the only work of javascript:void(0) is to makes the cursor pointer like hand...-->
   <a href="javascript:void(0);" class="allifmaaltopnavoneicon" onclick="opentopnavonehiddenlinks()"><i class="fa fa-bars"></i> </a>
 </div>
@@ -572,7 +572,7 @@ height: fit-content;
 <!-- below are the drop down links....3-->
 <!-- links one ....-->
 <div class="topnavmenudropdownmenuonewithclose">
-  <a href="#" class="opentopnavdropdownmenulinkone topnavminilaptoplinks"><span style="color: red;">X</span> </a>
+  <a href="#" class="opentopnavdropdownmenulinkone topnavminilaptoplinks"> Close <i class="fa fa-close"></i> </a>
   <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Test</a>
   <a href="#">Market</a>
   <a href="#" class="">Sales</a>
@@ -581,10 +581,10 @@ height: fit-content;
 
 <!-- links two ....-->
 <div class="topnavmenudropdownmenutwowithclose">
-  <a href="#" class="opentopnavdropdownmenulinktwo topnavminilaptoplinks"><span style="color: red;">X</span> </a>
+  <a href="#" class="opentopnavdropdownmenulinktwo topnavminilaptoplinks"> Close <i class="fa fa-close"></i> </a>
   <a href="#">Sales</a>
   <a href="#">Xawa</a>
-  <a href="#" class="">Rayxaan</a>
+  <a href="#" class="">Rents</a>
   <a href="#" class="">Marketing</a>
 </div>
 

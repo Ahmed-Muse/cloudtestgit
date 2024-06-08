@@ -32,7 +32,7 @@
   <button class="module-menu-dropdown-btn" >Quotations<i class="fa fa-caret-down"></i></button>
  <div class="module-menu-dropdown-container">
    <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}">Module 1</a>
-   <a href="#">Details</a>
+   <a href="#">Suppliers</a>
  </div>
 
  <button class="module-menu-dropdown-btn" >Purchases<i class="fa fa-caret-down"></i></button>
@@ -54,7 +54,7 @@
  <!--start....module side nav two menu-->
  <div class="module-menu-two">
   <a href="#" class="module-menu-two-open-link module-menu-close-link">Close The Menu <i class="fa fa-close"></i> </a>
-  <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}" >Details</a>
+  <a href="{% url 'allifmaaluiapp:allifmaalUI2Tables' %}" >menu 2</a>
 
   <button class="module-menu-dropdown-btn" >Menu2<i class="fa fa-caret-down"></i></button>
  <div class="module-menu-dropdown-container">
@@ -141,195 +141,60 @@
     
 
   <div class="row mt-12"> <!--start....table row-->
-    <div class="allif-details-container">
-      <div class="row"><!--start of row div --->
+    <div class="col-md-12"> <!--start....table column-->
+    <div class="allif-scroll-table">
+      <input class="form-control" id="myInput" type="text" placeholder="Search..">
       
-        <!--start of column two-->
-        <div class="col-md-4">
-          <div class="allif-details-card ">
-            <!--start of the table here-->
-          <table class="table allif-details-table">
-            <tbody>
-          <tr>
-            <td>Quote Value</td>
-            <td>tabless done heresdfd</td>
-            
-          </tr>
-          <tr>
-            <td>Discount Amount</td>
-            <td>man tables donessdfdsf expaected </td>
-        
-            </tr>
-          
-          </tbody>
-          </table>
-        
-          </div>
-              </div>
-      
-      
-       <!--start of column two-->
-       <div class="col-md-4">
-        <div class="allif-details-card ">
-          <!--start of the table here-->
-        <table class="table allif-details-table">
-          <tbody>
-        <tr>
-          <td>Quote Value</td>
-          <td>{{Quote_id.total|floatformat:2|intcomma}}</td>
-          
+      <table class="table table-layout">
+      <thead>
+        <tr class="allif-table-header-row" >
+          <td>Name</td>
+          <td>Phone</td>
+         
         </tr>
-        <tr>
-          <td>Discount Amount</td>
-          <td>this is the middle tables done</td>
-      
-          </tr>
-          <tr>
-            <td>Value After Discount</td>
-            <td>{{Quote_id.valueafterdiscount|floatformat:2|intcomma}}</td>
-      
-            </tr>
-      
-        </tbody>
-        </table>
-      
-        </div>
-            </div>
-      
-      
-       <!--start of column two-->
-       <div class="col-md-4">
-        <div class="allif-details-card ">
-          <!--start of the table here-->
-        <table class="table allif-details-table">
-          <tbody>
-        <tr>
-          <td>Quote Value</td>
-          <td>first for this value tal staabdles </td>
-        
-        </tbody>
-        </table>
-      
-      </div>
-    </div>
-      
-      </div><!--end of row div --->
-        
-          </div>
-
-</div><!--end....table row-->
-
-<!--end of table-->
-
-
-
-  <!--start....main headere-->
-  <div class="card-header">
-
-    <div class="row mt-12" ><!--start....header row-->
-
-    <div class="col-md-12"><!--start....header column-->
-
-    <a href="{% url 'allifmaaluiapp:allifmaalUIFullTable' %}" class="module-menu-links">Sales </a>
-    <a href="#" class="module-menu-links">Sales Returns </a>
-    <a href="#" class="module-menu-links"> <span>Customers</span> </a>
-
-    </div><!--end....header column-->
+        </thead>
+        <tbody class="allif-table-body">
+                    
+        <tr id="myList">
+          {% for cust in customers %}
+          <td>
+            <a href="">
+            {{cust.name}}
+            </a>
+          </td>
+          <td>
+            {{cust.address}}
+          </td>
+         
+          {% endfor %}
+        </tr>
+       
+        <hr>
+       
+      </tbody>
+    </table>
   
-  </div><!--end....header row-->
-
-</div><!--end....main headere-->
-    
-
-  <div class="row mt-12"> <!--start....table row-->
-    <div class="allif-details-container">
-      <div class="row"><!--start of row div --->
-      
-        <!--start of column two-->
-        <div class="col-md-4">
-          <div class="allif-details-card ">
-            <!--start of the table here-->
-          <table class="table allif-details-table">
-            <tbody>
-          <tr>
-            <td>Quote Value</td>
-            <td>tabless done heresdfd</td>
-            
-          </tr>
-          <tr>
-            <td>Discount Amount</td>
-            <td>man tables donessdfdsf expaected </td>
-        
-            </tr>
-          
-          </tbody>
-          </table>
-        
-          </div>
-              </div>
-      
-      
-       <!--start of column two-->
-       <div class="col-md-4">
-        <div class="allif-details-card ">
-          <!--start of the table here-->
-        <table class="table allif-details-table">
-          <tbody>
-        <tr>
-          <td>Quote Value</td>
-          <td>{{Quote_id.total|floatformat:2|intcomma}}</td>
-          
-        </tr>
-        <tr>
-          <td>Discount Amount</td>
-          <td>this is the middle tables done</td>
-      
-          </tr>
-          <tr>
-            <td>Value After Discount</td>
-            <td>{{Quote_id.valueafterdiscount|floatformat:2|intcomma}}</td>
-      
-            </tr>
-      
-        </tbody>
-        </table>
-      
-        </div>
-            </div>
-      
-      
-       <!--start of column two-->
-       <div class="col-md-4">
-        <div class="allif-details-card ">
-          <!--start of the table here-->
-        <table class="table allif-details-table">
-          <tbody>
-        <tr>
-          <td>Quote Value</td>
-          <td>first for this value tal staabdles </td>
-        
-        </tbody>
-        </table>
-      
-      </div>
-    </div>
-      
-      </div><!--end of row div --->
-        
-          </div>
+  </div>
+  
+  </div><!--end....table column-->
 
 </div><!--end....table row-->
 
-<!--end of table-->
+<!--end of table......-->
 
 </div><!--end of main container of the page-->
 
+<!--the jquery lib below is for the search functionality to work-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+    $("#myInput").on("keyup", function() {
+      var value = $(this).val().toLowerCase();
+      $("#myList td").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+    });
+  });
+  </script>
    {% endblock %}
    
-
-
-
-
-
-
-

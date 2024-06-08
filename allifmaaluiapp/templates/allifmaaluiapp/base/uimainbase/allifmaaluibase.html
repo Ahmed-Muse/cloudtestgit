@@ -25,7 +25,7 @@
 {% endblock %}
 
 </head>
-<body>
+<body class="allif-ui-body">
 <!--below includes the side and top nav bars and their styles...-->
 {% include 'allifmaaluiapp/base/topnavbar/allifmaaluitopnavbar.html' %}
 {% include 'allifmaaluiapp/base/sidenavbar/allifmaaluisidenavbar.html' %}
@@ -38,8 +38,7 @@
 <!--the styling below allifmaalmainbootstrap.html is very important... so keep it there.-->
 {% include 'allifmaaluiapp/base/cssinhtml/allifmaalmainbootstrap.html' %}
 
-<!--these files below are html files that mainly hold js content... this is to avoid using/loading static content...-->
-{% include 'allifmaaluiapp/base/jsinhtml/allifmaaluijs.html' %}
+
 
 {% block body %}
 
@@ -49,6 +48,9 @@
 
 {% block scripts %}
 <!-- some js script files here... -->
+<!--these files below are html files that mainly hold js content... this is to avoid using/loading static content...-->
+{% include 'allifmaaluiapp/base/jsinhtml/allifmaaluijs.html' %}
+
 {% endblock %}
 
 </body>

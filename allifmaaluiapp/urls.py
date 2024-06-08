@@ -4,12 +4,16 @@ app_name='allifmaaluiapp'
 urlpatterns = [
     
 path('UI/Home/', views.allifmaalUIHome, name="allifmaalUIHome"),
+path('UI/Main/Dashboard/', views.allifmaalUIMainDashboard, name="allifmaalUIMainDashboard"),
 path('UI/Full/Single/Table/', views.allifmaalUIFullSingleTable, name="allifmaalUIFullSingleTable"),
 path('UI/Full/Single/Full/Tables/Many/', views.allifmaalUIFullTables, name="allifmaalUIFullTables"),
 path('UI/Half/Table/', views.allifmaalUIHalfTable, name="allifmaalUIHalfTable"),
 path('UI/Half/Table/s/', views.allifmaalUIHalfTables, name="allifmaalUIHalfTables"),
 path('UI/Details/Table/', views.allifmaalUIDetailsTable, name="allifmaalUIDetailsTable"),
 path('UI/Forms/Table/', views.allifmaalUIFormsTable, name="allifmaalUIFormsTable"),
+
+path('UI/Tabs/', views.allifmaalUITabs, name="allifmaalUITabs"),
+path('UI/search/', views.allifmaalUISearch, name="allifmaalUISearch"),
 
 
 

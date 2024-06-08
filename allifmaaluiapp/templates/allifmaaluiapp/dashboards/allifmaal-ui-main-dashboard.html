@@ -1,0 +1,634 @@
+{% extends 'allifmaaluiapp/base/uimainbase/allifmaaluibase.html'%}
+{% load humanize %}
+{% block title %}
+{{title}}
+{% endblock %}
+{% block style %}
+{%endblock%}
+   
+{% block body %}
+ 
+<!--we can insert the other section here-->
+
+<div class="allifmaincontainer">
+  <div id="allif-section-headers" class="card-header">
+    <div class="row mt-12" >
+    <div class="col-md-12">
+    <a href="{% url 'allifmaaluiapp:allifmaalUIFullTable' %}" class="module-menu-links">Sales </a>
+    <a href="#" class="module-menu-links">Sales Returns </a>
+    <a href="#" class="module-menu-links"> <span>Add Customer Details </span> </a>
+    </div></div></div>
+
+
+ <!--start of first row-->
+ <div class="row mt-4" >
+        
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header text-white" style="background-color:#006666;">
+              Main Company Assets {{assets_tot_val|floatformat:2|intcomma}}
+            </div>
+           
+            
+            
+            <div class="col-md-12">
+                <div class="column" style="background-color:#F6F7F8;">
+                  
+                  <canvas id="myallifchart" width="400" height="300"></canvas>
+                          <script>
+                              var ctx33 = document.getElementById('myallifchart').getContext('2d');
+                              var myallifchart = new Chart(ctx33, {
+                                  type: 'doughnut',
+
+                                  data: {
+                                    labels: [{% for items in main_assets %} '{{items.description|truncatewords:2}}', {% endfor %}],
+
+                                      datasets: [{
+                                        
+                                          label: 'Current Prospects',
+                                          data: [{% for items in main_assets %} {{items.value}}, {% endfor %}],
+                                          backgroundColor: [
+                                            'rgb(2, 7, 174)',
+                                            'rgb(35, 150, 92)',
+                                              
+                                              'rgb(2, 7, 0)',
+                                              'rgba(54, 162, 235, 1)',
+                                              'rgb(118, 40, 28,1)',
+                                              'rgba(75, 192, 192, 1)',
+                                              'rgba(153, 102, 255, 1)',
+                                              'rgb(254, 0, 181,1)',
+                                              
+                                              'rgb(121, 214, 1)',
+                                              'rgb(97, 7, 0)',
+                                              'rgb(255, 153, 1)',
+                                              'rgb(2, 98, 115)',
+                                              'rgb(94, 89, 92)',
+                                              'rgb(116, 46, 88)',
+                                              'rgb(73, 42, 141)',
+                                              
+                                          ],
+                                          borderColor: [
+                                            'rgb(2, 7, 174)',
+                                            'rgb(35, 150, 92)',
+                                              
+                                              'rgb(2, 7, 0)',
+                                              'rgba(54, 162, 235, 1)',
+                                              'rgb(118, 40, 28,1)',
+                                              'rgba(75, 192, 192, 1)',
+                                              'rgba(153, 102, 255, 1)',
+                                              'rgb(254, 0, 181,1)',
+                                              
+                                              'rgb(121, 214, 1)',
+                                              'rgb(97, 7, 0)',
+                                              'rgb(255, 153, 1)',
+                                              'rgb(2, 98, 115)',
+                                              'rgb(94, 89, 92)',
+                                              'rgb(116, 46, 88)',
+                                              'rgb(73, 42, 141)',
+                                          ],
+                                          borderWidth: 1
+                                      }]
+                                  },
+                                  options: {
+                                      scales: {
+                                          yAxes: [{
+                                              ticks: {
+                                                  beginAtZero: true
+                                              }
+                                          }]
+                                      }
+                                  }
+                              });
+                          </script>
+                </div>
+                </div>
+
+
+
+
+
+            
+        </div>
+    </div>
+    
+
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header text-white" style="background-color: #006666;">
+                Current Prospects Total Value :{{total_value_of_prospects|floatformat:2|intcomma}}
+            </div>
+            
+             
+
+            <div class="col-md-12">
+                <div class="column" style="background-color:#F6F7F8;">
+                  
+                  <canvas id="myChart3" width="400" height="300"></canvas>
+                          <script>
+                              var ctx3 = document.getElementById('myChart3').getContext('2d');
+                              var myChart3 = new Chart(ctx3, {
+                                  type: 'bar',
+
+                                  data: {
+                                    labels: [{% for items in prospects %} '{{items.customer.name|truncatewords:2}}', {% endfor %}],
+
+                                      datasets: [{
+                                        
+                                          label: 'Current Prospects',
+                                          data: [{% for items in prospects %} {{items.total}}, {% endfor %}],
+                                          backgroundColor: [
+                                            'rgb(2, 7, 174)',
+                                            'rgb(35, 150, 92)',
+                                              
+                                              'rgb(2, 7, 0)',
+                                              'rgba(54, 162, 235, 1)',
+                                              'rgb(118, 40, 28,1)',
+                                              'rgba(75, 192, 192, 1)',
+                                              'rgba(153, 102, 255, 1)',
+                                              'rgb(254, 0, 181,1)',
+                                              
+                                              'rgb(121, 214, 1)',
+                                              'rgb(97, 7, 0)',
+                                              'rgb(255, 153, 1)',
+                                              'rgb(2, 98, 115)',
+                                              'rgb(94, 89, 92)',
+                                              'rgb(116, 46, 88)',
+                                              'rgb(73, 42, 141)',
+                                              
+                                          ],
+                                          borderColor: [
+                                            'rgb(2, 7, 174)',
+                                            'rgb(35, 150, 92)',
+                                              
+                                              'rgb(2, 7, 0)',
+                                              'rgba(54, 162, 235, 1)',
+                                              'rgb(118, 40, 28,1)',
+                                              'rgba(75, 192, 192, 1)',
+                                              'rgba(153, 102, 255, 1)',
+                                              'rgb(254, 0, 181,1)',
+                                              
+                                              'rgb(121, 214, 1)',
+                                              'rgb(97, 7, 0)',
+                                              'rgb(255, 153, 1)',
+                                              'rgb(2, 98, 115)',
+                                              'rgb(94, 89, 92)',
+                                              'rgb(116, 46, 88)',
+                                              'rgb(73, 42, 141)',
+                                          ],
+                                          borderWidth: 1
+                                      }]
+                                  },
+                                  options: {
+                                      scales: {
+                                          yAxes: [{
+                                              ticks: {
+                                                  beginAtZero: true
+                                              }
+                                          }]
+                                      }
+                                  }
+                              });
+                          </script>
+                </div>
+                </div>
+
+
+                </div></div>
+                
+                <div class="col-md-4">
+                <div class="card">
+                <div class="card-header text-white" style="background-color:#006666;">
+                Posted Invoices {{total_value_of_latest_posted_invoices|floatformat:2|intcomma}}
+                </div>
+                
+                    <div class="column" style="background-color:#F6F7F8;">
+                      
+                      <canvas id="myChart5" width="150" height="100"></canvas>
+                              <script>
+                                  var ctx5 = document.getElementById('myChart5').getContext('2d');
+                                  var myChart5 = new Chart(ctx5, {
+                                      type: 'pie',
+                                      data: {
+                                          labels: [{% for items in posted_invoices %} '{{items.customer}}', {% endfor %}],
+                                          datasets: [{
+                                              label: 'Latest Posted Invoices',
+                                              data: [{% for items in posted_invoices %} {{items.invoice_total}}, {% endfor %}],
+                                              
+                                              backgroundColor: [
+                                              'rgb(2, 7, 174,0.5)',
+                                            'rgb(35, 150, 92,1)',
+                                              
+                                              'rgb(2, 7, 0,1)',
+                                              'rgba(54, 162, 235, 1)',
+                                              'rgb(118, 40, 28,1)',
+                                              'rgba(75, 192, 192, 1)',
+                                              'rgba(153, 102, 255, 1)',
+                                              'rgb(254, 0, 181,1)',
+                                              
+                                              'rgb(121, 214, 1)',
+                                              'rgb(97, 7, 0)',
+                                              'rgb(255, 153, 1)',
+                                              'rgb(2, 98, 115)',
+                                              'rgb(94, 89, 92)',
+                                              'rgb(116, 46, 88)',
+                                              'rgb(73, 42, 141)',
+                                              ],
+                                              borderColor: [
+                                            'rgb(2, 7, 174,1)',
+                                            'rgb(35, 150, 92,1)',
+                                              
+                                              'rgb(2, 7, 0,1)',
+                                              'rgba(54, 162, 235, 1)',
+                                              'rgb(118, 40, 28,1)',
+                                              'rgba(75, 192, 192, 1)',
+                                              'rgba(153, 102, 255, 1)',
+                                              'rgb(254, 0, 181,1)',
+                                              
+                                              'rgb(121, 214, 1)',
+                                              'rgb(97, 7, 0)',
+                                              'rgb(255, 153, 1)',
+                                              'rgb(2, 98, 115)',
+                                              'rgb(94, 89, 92)',
+                                              'rgb(116, 46, 88)',
+                                              'rgb(73, 42, 141)',
+                                          ],
+                                              borderWidth: 1
+                                          }]
+                                      },
+                                      options: {
+                                          scales: {
+                                              yAxes: [{
+                                                  ticks: {
+                                                      beginAtZero: true
+                                                  }
+                                              }]
+                                          }
+                                      }
+                                  });
+                              </script>
+                    </div>
+                    </div>
+
+        </div></div>
+
+        <!--end of first row-->
+
+        <!--start of second row-->
+
+        
+<div class="row mt-12" >
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header text-white" style="background-color: #006666;">
+               Platinum Customers Turnover {{gold_customers_turnover|floatformat:2|intcomma}}
+            </div>
+            
+
+                <!--start of the scrollable table section-->
+<div style="margin-top: 20px;">
+
+<style>
+    .Allifmaal-scroll-table{
+      background-color: #F6F7F8;
+      width: auto;
+      height: 250px;
+      
+      overflow-x: scroll;
+      overflow-y: scroll;
+      margin-left: 2px;
+      overflow: auto;
+      margin-right: 1px;
+    }
+      
+        tr:nth-child(odd) {
+        background-color: rgb(233, 229, 230);
+        }
+        tr:nth-child(even) {
+        background-color: #a6d3ff;
+        }
+
+        th:nth-child(odd) {
+        background-color: #F6F7F8;
+        }
+
+        th:nth-child(even) {
+        background-color: #F6F7F8;
+        }
+    </style>
+   
+   
+    <div class="Allifmaal-scroll-table" style="text-align: center;">
+
+        <table class="table">
+            <thead>
+              <tr>
+                 
+                  <th>Customer</th>
+                  <th>Balance</th>
+                  <th>Turnover</th>
+              
+              </tr></thead>
+              <tbody>
+                  {% for item in gold_customers %}
+                <tr>
+                  
+                  <td>{{item.name|truncatechars:10}}</td>
+                  <td>{{item.balance|intcomma}}</td>
+                  <td>{{item.turnover|intcomma}}</td>
+                  
+                </tr>
+               
+                {% endfor %}
+              </tbody>
+            </table>
+   
+    </div>
+    <!--end of the scrollable table section-->
+    </div>
+
+
+        </div>
+
+    </div>
+    
+
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header text-white" style="background-color: #006666;">
+            Main Debtors Total Balances {{debtor_total_balance|floatformat:2|intcomma}}
+            </div>
+            
+
+            <div class="col-md-12">
+                <div class="column" style="background-color:#F6F7F8;">
+                  
+                  <canvas id="myChart6" width="150" height="100"></canvas>
+                          <script>
+                              var ctx6 = document.getElementById('myChart6').getContext('2d');
+                              var myChart6 = new Chart(ctx6, {
+                                  type: 'pie',
+                                  data: {
+                                      labels: [{% for items in debtors %} '{{items.name}}', {% endfor %}],
+                                      datasets: [{
+                                          label: 'Main Debtors',
+                                          data: [{% for items in debtors %} {{items.balance}}, {% endfor %}],
+                                          backgroundColor: [
+                                              'rgba(255, 99, 132, 1)',
+                                              'rgba(54, 162, 235, 1)',
+                                              'rgba(255, 206, 86, 1)',
+                                              'rgba(75, 192, 192, 1)',
+                                              'rgba(153, 102, 255, 1)',
+                                              'rgba(255, 159, 64, 1)',
+                                              'rgba(25, 19, 132, 1)',
+                                              '#f8912ab',
+                                          ],
+                                          
+                                          borderColor: [
+                                              'rgba(255, 99, 132, 1)',
+                                              'rgba(54, 162, 235, 1)',
+                                              'rgba(255, 206, 86, 1)',
+                                              'rgba(75, 192, 192, 1)',
+                                              'rgba(153, 102, 255, 1)',
+                                              'rgba(255, 159, 64, 1)'
+                                          ],
+                                          borderWidth: 1
+                                      }]
+                                  },
+                                  options: {
+                                      scales: {
+                                          yAxes: [{
+                                              ticks: {
+                                                  beginAtZero: true
+                                              }
+                                          }]
+                                      }
+                                  }
+                              });
+                          </script>
+                </div>
+                </div>
+                </div></div>
+
+                <div class="col-md-4">
+                <div class="card">
+                <div class="card-header text-white" style="background-color: #006666;">
+                Main Creditors Total Balances {{creditors_total_balance|floatformat:2|intcomma}}
+                </div>
+                
+                    <div class="column" style="background-color:#F6F7F8;">
+                      
+                      <canvas id="myChart7" width="150" height="100"></canvas>
+                              <script>
+                                  var ctx7 = document.getElementById('myChart7').getContext('2d');
+                                  var myChart7 = new Chart(ctx7, {
+                                      type: 'polarArea',
+                                      data: {
+                                          labels: [{% for items in creditors %} '{{items.name}}', {% endfor %}],
+                                          datasets: [{
+                                              label: 'Main Creditors',
+                                              data: [{% for items in creditors %} {{items.balance}}, {% endfor %}],
+                                              backgroundColor: [
+                                                  'rgba(255, 99, 132, 1)',
+                                                  'rgba(54, 162, 235, 1)',
+                                                  'rgba(255, 206, 86, 1)',
+                                                  'rgba(75, 192, 192, 1)',
+                                                  'rgba(153, 102, 255, 1)',
+                                                  'rgba(255, 159, 64, 1)',
+                                                  'rgba(255, 99, 132, 1)',
+                                                  '#f8912ab',
+                                              ],
+                                              borderColor: [
+                                                  'rgba(255, 99, 132, 1)',
+                                                  'rgba(54, 162, 235, 1)',
+                                                  'rgba(255, 206, 86, 1)',
+                                                  'rgba(75, 192, 192, 1)',
+                                                  'rgba(153, 102, 255, 1)',
+                                                  'rgba(255, 159, 64, 1)'
+                                              ],
+                                              borderWidth: 1
+                                          }]
+                                      },
+                                      options: {
+                                          scales: {
+                                              yAxes: [{
+                                                  ticks: {
+                                                      beginAtZero: true
+                                                  }
+                                              }]
+                                          }
+                                      }
+                                  });
+                              </script>
+                    </div>
+                    </div>
+
+        </div>
+    
+    </div>
+        <!--end of second row-->
+
+
+
+
+
+
+                
+<div class="row mt-12" >
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header text-white" style="background-color: #006666;">
+               Platinum Customers Turnover {{gold_customers_turnover|floatformat:2|intcomma}}
+            </div>
+            <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+                <script>
+                    const xValues = [50,60,70,80,90,100,110,120,130,140,150];
+                    const yValues = [7,8,8,9,9,9,10,11,14,14,15];
+                    
+                    new Chart("myChart", {
+                      type: "line",
+                      data: {
+                        labels: xValues,
+                        datasets: [{
+                          fill: false,
+                          lineTension: 0,
+                          backgroundColor: "rgba(0,0,255,1.0)",
+                          borderColor: "rgba(0,0,255,0.1)",
+                          data: yValues
+                        }]
+                      },
+                      options: {
+                        legend: {display: false},
+                        scales: {
+                          yAxes: [{ticks: {min: 6, max:16}}],
+                        }
+                      }
+                    });
+                    </script>
+
+
+        </div>
+
+    </div>
+    
+
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header text-white" style="background-color: #006666;">
+            Main Debtors Total Balances {{debtor_total_balance|floatformat:2|intcomma}}
+            </div>
+            
+
+            <div class="col-md-12">
+                <div class="column" style="background-color:#F6F7F8;">
+                  
+                  <canvas id="myChart6" width="150" height="100"></canvas>
+                          <script>
+                              var ctx6 = document.getElementById('myChart6').getContext('2d');
+                              var myChart6 = new Chart(ctx6, {
+                                  type: 'pie',
+                                  data: {
+                                      labels: [{% for items in debtors %} '{{items.name}}', {% endfor %}],
+                                      datasets: [{
+                                          label: 'Main Debtors',
+                                          data: [{% for items in debtors %} {{items.balance}}, {% endfor %}],
+                                          backgroundColor: [
+                                              'rgba(255, 99, 132, 1)',
+                                              'rgba(54, 162, 235, 1)',
+                                              'rgba(255, 206, 86, 1)',
+                                              'rgba(75, 192, 192, 1)',
+                                              'rgba(153, 102, 255, 1)',
+                                              'rgba(255, 159, 64, 1)',
+                                              'rgba(25, 19, 132, 1)',
+                                              '#f8912ab',
+                                          ],
+                                          
+                                          borderColor: [
+                                              'rgba(255, 99, 132, 1)',
+                                              'rgba(54, 162, 235, 1)',
+                                              'rgba(255, 206, 86, 1)',
+                                              'rgba(75, 192, 192, 1)',
+                                              'rgba(153, 102, 255, 1)',
+                                              'rgba(255, 159, 64, 1)'
+                                          ],
+                                          borderWidth: 1
+                                      }]
+                                  },
+                                  options: {
+                                      scales: {
+                                          yAxes: [{
+                                              ticks: {
+                                                  beginAtZero: true
+                                              }
+                                          }]
+                                      }
+                                  }
+                              });
+                          </script>
+                          
+                </div>
+                </div>
+                </div></div>
+
+                <div class="col-md-4">
+                <div class="card">
+                <div class="card-header text-white" style="background-color: #006666;">
+                Main Creditors Total Balances {{creditors_total_balance|floatformat:2|intcomma}}
+                </div>
+                
+                    <div class="column" style="background-color:#F6F7F8;">
+                      
+                      <canvas id="myChart7" width="150" height="100"></canvas>
+                              <script>
+                                  var ctx7 = document.getElementById('myChart7').getContext('2d');
+                                  var myChart7 = new Chart(ctx7, {
+                                      type: 'polarArea',
+                                      data: {
+                                          labels: [{% for items in creditors %} '{{items.name}}', {% endfor %}],
+                                          datasets: [{
+                                              label: 'Main Creditors',
+                                              data: [{% for items in creditors %} {{items.balance}}, {% endfor %}],
+                                              backgroundColor: [
+                                                  'rgba(255, 99, 132, 1)',
+                                                  'rgba(54, 162, 235, 1)',
+                                                  'rgba(255, 206, 86, 1)',
+                                                  'rgba(75, 192, 192, 1)',
+                                                  'rgba(153, 102, 255, 1)',
+                                                  'rgba(255, 159, 64, 1)',
+                                                  'rgba(255, 99, 132, 1)',
+                                                  '#f8912ab',
+                                              ],
+                                              borderColor: [
+                                                  'rgba(255, 99, 132, 1)',
+                                                  'rgba(54, 162, 235, 1)',
+                                                  'rgba(255, 206, 86, 1)',
+                                                  'rgba(75, 192, 192, 1)',
+                                                  'rgba(153, 102, 255, 1)',
+                                                  'rgba(255, 159, 64, 1)'
+                                              ],
+                                              borderWidth: 1
+                                          }]
+                                      },
+                                      options: {
+                                          scales: {
+                                              yAxes: [{
+                                                  ticks: {
+                                                      beginAtZero: true
+                                                  }
+                                              }]
+                                          }
+                                      }
+                                  });
+                              </script>
+                    </div>
+                    </div>
+
+        </div>
+    
+    </div>
+
+
+</div><!--end of main container of the page-->
+
+
+   {% endblock %}
+   
